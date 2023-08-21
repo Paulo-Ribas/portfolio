@@ -23,8 +23,8 @@
                 <Project v-if="AMG_data" :projectImgProps="'logoTeste5.png'" projectNameProps="AMG" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
             </Transition>    
             <div class="project-text-container">
-                <h2>Link Cut</h2>
-                <p>bla bla bla lorem34</p>
+                <h2>{{ tittle }}</h2>
+                <p>{{ text }}</p>
             </div>
         </div>
     </section>
@@ -41,12 +41,17 @@ export default {
         WindowProject,
         Project
     },
+    mounted(){
+        this.showProject('LinkCut')
+    },
     data(){
         return {
             LinkCut_data: false,
             ChatSocket_data: false,
             Portfolio_data: false,
-            AMG_data: false
+            AMG_data: false,
+            text: '',
+            tittle: '',
         }
     },
     methods: {
@@ -56,6 +61,32 @@ export default {
             projeto === 'Portfolio' ? this.Portfolio_data = true : this.Portfolio_data = false
             projeto === 'AMG' ? this.AMG_data = true : this.AMG_data = false
         }
+    },
+    watch: {
+        LinkCut_data(){
+            if(this.LinkCut_data) {
+                this.tittle = 'Link Cut'
+                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfh dsaaaaaaaaaaaaaaa  odddosahfodisahfosdfh'
+            }
+        },
+        ChatSocket_data(){
+            if(this.ChatSocket_data) {
+                this.tittle = 'Venda De Amigos'
+                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfos sdadddddddddddddddddddddddddddd dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dsaddddddddddddddddddddddddddddddd dsadfh'
+            }
+        },
+        Portfolio_data() {
+            if (this.Portfolio_data) {
+                this.tittle = 'Projeto Futuro'
+                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfosdfh sdfdsfdsfdsfsdfdsfdfs'
+            }
+        },
+        AMG_data() {
+            if (this.AMG_data) {
+                this.tittle = 'Amigitos Spanol Y Sla'
+                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfosdfh dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfos sdadddddddddddddddddddddddddddd dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dsaddddddddddddddddddddddddddddddd dsadfh dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfos sdadddddddddddddddddddddddddddd dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dsaddddddddddddddddddddddddddddddd dsadfh'
+            }
+        },
     }
 }
 </script>
@@ -98,9 +129,17 @@ export default {
 .project-text-container{
     flex: 1;
     max-height: 500px;
+    max-width: 600px;
     overflow-Y: auto;
     color: var(--texto-padrao);
-    font-size: 1.1em
+    font-size: 1.1em;
+    padding: 0% 2%
+}
+.project-container h2 {
+    color: #0085FF;
+}
+.project-text-container p {
+    color: white;
 }
 
 .projectsTransition-1-enter-active,

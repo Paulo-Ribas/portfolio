@@ -1,28 +1,13 @@
 <template>
-    <div class="menu">
-        <MainMenu :MenuFixoProps="true" :ActivatedProps="'lk'"></MainMenu>
-    </div>
     <section id="links">
-        <div class="link-container">
-            <div class="link-box box-1">
-                <IconMenu prefixProps="fas" iconNameProps="envelope"></IconMenu>
-                <h2>Contato</h2>
-                email: paulo13paulo423@gmail.com
-            </div>
-            <div class="link-box box-2">
-                <IconMenu prefixProps="fab" iconNameProps="github"></IconMenu>
-                <h2>Github</h2>
-                <a href="https://github.com/Paulo-Ribas" target="_blank">https://github.com/Paulo-Ribas</a>
-            </div>
-            <div class="link-box box-3">
-                <IconMenu prefixProps="fas" iconNameProps="ejs"></IconMenu>
-                <h2>Undefined</h2>
-                <a>Indefinido</a>
-            </div>
+        <div class="menu">
+            <MainMenu :MenuFixoProps="true" :ActivatedProps="'lk'"></MainMenu>
+        </div>
+        <div class="links-container">
+            <div class=""></div>
         </div>
     </section>
-    <section>
-    </section>
+    
 </template>
 
 <script>
@@ -68,14 +53,18 @@ export default {
 }
 h2 {
     font-size: 1.3em;
-    color: var(--texto-padrao)
+    color: white;
 }
 .box-1, .box-2, .box-3 {
     background: var(--special-gradient);
     background-color: white;
     cursor: pointer;
     transition: 0.25s ease-in;
-    color: var(--texto-padrao);
+    color: white;
+    padding: 5px 0px;
+}
+a {
+    color: white;
 }
 .box-1{
     top: 35%;

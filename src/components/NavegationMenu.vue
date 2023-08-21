@@ -1,8 +1,8 @@
 <template>
     <Transition name="teste">
-    <nav :class="{MenuFixo,'container-icons': true}" @mouseover="closed = false" @mouseout="closed = true">
-        <ul>
-            <li v-show="closed"><img class="img-menu" src="../assets/img/menu.png"></li>
+    <nav :class="{MenuFixo,'container-icons': true}">
+        <img v-show="closed" class="img-menu" src="../assets/img/menu.png">
+        <ul v-show="!closed">
             <li>
                 <Transition name="ap">
                     <router-link :class="{Activated: Active === 'ap'}" to="/apresentation" v-if="!Animation"><IconMenu prefixProps="fas" iconNameProps="person-chalkboard" @enter="enterEmit('ap')" @leave="leaveEmit('ap')"></IconMenu></router-link>
@@ -16,6 +16,11 @@
             <li>
             <Transition name="cd">
                 <router-link :class="{Activated: Active === 'cd'}" to="/projects" v-if="!Animation"><IconMenu prefixProps="fas" iconNameProps="code" @enter="enterEmit('cd')" @leave="leaveEmit('cd')"></IconMenu></router-link>
+            </Transition>
+            </li>
+            <li>
+            <Transition name="cdg">
+                <router-link :class="{Activated: Active === 'cdg'}" to="/projects-general" v-if="!Animation"><IconMenu prefixProps="fas" iconNameProps="laptop-code" @enter="enterEmit('cdg')" @leave="leaveEmit('cdg')"></IconMenu></router-link>
             </Transition>
             </li>
             <li>
@@ -75,6 +80,11 @@ export default {
         font-size: 1.3em;
         padding: 0px 4px;
         
+    }
+    .img-menu  {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
     }
     .container-icons ul {
         list-style: none;
