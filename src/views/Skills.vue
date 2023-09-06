@@ -6,6 +6,7 @@
         <div class="container">
             <div class="text-container">
                 <TransitionGroup name="text-group">
+                    
                 <div class="html-text" v-if="html">
                     <h2>HTML</h2> <!-- tag abreviamento -->
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis facere non eius reiciendis mollitia ipsum ex commodi accusantium, quasi, iure laudantium enim illum dolores id consequatur? Perferendis quo, pariatur esse quae distinctio qui error magnam quasi minima totam temporibus porro voluptas dolore possimus aspernatur laborum officia dolorum impedit maiores cupiditate. Praesentium non, ratione maxime et, odio ab nemo nesciunt inventore facilis blanditiis neque! Sit hic veniam possimus magni odio accusamus illo modi iste quis! Unde perspiciatis earum quae? Debitis, vitae.</p>
