@@ -39,7 +39,7 @@ export default {
     countImg() {
       if(this.countImg === 2) {
         setTimeout(() => {
-          console.log('a')
+          this.loading = false
         }, 1600);
       }
     },

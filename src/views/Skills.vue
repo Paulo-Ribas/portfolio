@@ -9,19 +9,24 @@
                     
                 <div class="html-text" v-if="html">
                     <h2>HTML</h2> <!-- tag abreviamento -->
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis facere non eius reiciendis mollitia ipsum ex commodi accusantium, quasi, iure laudantium enim illum dolores id consequatur? Perferendis quo, pariatur esse quae distinctio qui error magnam quasi minima totam temporibus porro voluptas dolore possimus aspernatur laborum officia dolorum impedit maiores cupiditate. Praesentium non, ratione maxime et, odio ab nemo nesciunt inventore facilis blanditiis neque! Sit hic veniam possimus magni odio accusamus illo modi iste quis! Unde perspiciatis earum quae? Debitis, vitae.</p>
+                    <p>Inicie meus estudos em meados de 2020, focando em aprender a semantica para criar paginas acessiveis a todo tipo de publico, com ou sem deficiencia visual.</p>
                 </div>
                 <div class="css-text" v-if="css">
                     <h2>CSS</h2> <!-- tag sobre abreviamento -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus magni explicabo iste voluptatum hic doloribus esse, consequuntur eum aliquam blanditiis omnis autem illo quas libero voluptas, perferendis quisquam laborum cum non animi. Doloribus error quasi incidunt voluptate mollitia vitae odio consectetur eligendi rerum quos expedita laboriosam dolores unde cum, eum qui, veritatis maxime? Doloribus aliquid dicta enim vel explicabo velit asperiores reprehenderit nesciunt inventore libero, id obcaecati ducimus dolorum totam ratione voluptate eius voluptatum voluptatem rerum eveniet delectus? Reiciendis quos quod aperiam. Aspernatur placeat doloribus cumque perferendis, libero laboriosam nesciunt.</p>
+                    <p>Comecei meus estudos em meados de 2020 junto com html, visando aprender a usar todo potencial do css sem depender da utilização de frameworks e linguagens de programação(JavaScript).</p>
                 </div>
                 <div class="js-text" v-if="js">
                     <h2>Java Script</h2>
-                    <p>iniciei meus estudos em janeiro de 2021, comprei livro <!-- tag de citação --> js(livro) <!-- / --> e então parti para os cursos, começei pela lógica de programação usando portugol, depois de 1 mês, senti que estava pronto para partir para uma linguagem de verdade, decidi focar em javascript, assim que eu terminei de estudar lógica, e sentia que estava competente com html e css, comprei cursos focados em javascript, saldjsaodhosadhsa, jsdsajdasdhsadhs, complementei meus estudos pesquisando, procurando conteudos fora, e praticando, sempre fazendo tudo do 0 pois pela minha consepção, em um emprego você tem que está preparado para fazer qualquer coisa que seja possivel, e possivel é o que basta para você conseguir fazer o que tem que ser feito mesmo não tendo sido "ensinado" antes</p>   
+                    <p>Iniciei meus estudos em janeiro de 2021, comprei livros <!-- tag de citação --> js(livro) <!-- / --> e então parti para 
+                    os cursos, começei pela lógica de programação usando portugol, depois de 1 mês, senti que estava pronto para partir para 
+                    uma linguagem de verdade, decidi focar em javascript, assim que eu terminei de estudar lógica, e sentia que estava 
+                    competente com html e css, comprei cursos focados em javascript, saldjsaodhosadhsa, jsdsajdasdhsadhs, complementei meus 
+                    estudos pesquisando, procurando conteudos fora, e praticando, sempre fazendo tudo do 0 de forma criativa e funcional, visando dominar a linguagem antes de começar a usar qualquer framework.</p>   
                 </div>
                 <div class="node-text" v-if="node">
                     <h2>Node</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio aliquam sapiente, sunt recusandae molestias, porro, reprehenderit sint quo odit sequi omnis quos pariatur eaque sit? Dolor, ad provident? Porro minima est labore, reiciendis deserunt ullam id fugit, iusto pariatur ducimus maxime nam unde vero impedit possimus, adipisci rerum quam ipsa numquam laudantium! Molestias ullam libero quis consectetur. Et, delectus. Officia aspernatur quos obcaecati commodi, odio eius sunt. Sit, dolorum vel blanditiis accusamus praesentium consectetur cum soluta consequatur commodi quidem necessitatibus tempora aspernatur nulla rerum aperiam reprehenderit numquam non accusantium velit aliquam. Dicta a tenetur in tempora saepe repudiandae quaerat deleniti mollitia voluptates ut, voluptate commodi libero aut quam accusamus molestias, aliquam, nemo maiores ex modi earum iusto aspernatur! A vero molestiae tenetur cumque aspernatur dolorum dolore ea. Impedit quasi vitae quia quidem et laborum, harum recusandae maxime consequatur quo quam.</p>
+                    <p>Comecei meus estudos em 2021, conforme eu ia aumentando o nivel das aplicações que eu criava, vi a necessidade de um servidor para gerenciar cada uma delas. Comecei a estudar o conceito WEB, protocolos HTTP, e o conceito de API(APIRest), Após dominar esses assuntos, eu comecei a criar minhas proprias APIs utilizando frameworks como o express e ejs. Após perceber como era simples utilizar JS no lado do servidor comecei a estudar mais a fundo e usar o NODE.js para facilitar/automatizar tarefas proprias, assim manipulando os arquivos, dentre outras necessidades que eu tinha.
+                    </p>
                 </div>
                 <div class="mysql-text" v-if="mysql">
                     <h2>Mysql</h2>

@@ -1,6 +1,6 @@
 <template>
     <section id="start">
-            <div class="container"></div>
+            <div class="container"><MainMenu/></div>
     </section>
 </template>
 
