@@ -1,0 +1,230 @@
+<template>
+    <div class="menu">
+        <MainMenu :MenuFixoProps="true" :ActivatedProps="'ap'"></MainMenu>
+    </div>
+    <Transition name="hooks">
+    <section id="apresentation" v-if="animation">
+        <div class="container">
+            <div class="information-container">
+                <div class="img-container">
+                    <img src="../assets/img/eu33.png" alt="minha foto">
+                </div>
+                <div class="informations">
+                    <h2>Paulo Ribas</h2>
+                    <h3>Desenvolvedor web</h3>
+                </div>
+            </div> <!-- fim information-container -->
+            <div class="descrition">
+                <h2>{{tittle}}</h2>
+                <p>{{ text }}</p>
+                <div class="icon-container">
+                    <div class="icons">
+                        <IconsProject @clicked="ChangeCountText('-')" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsProject>
+                        <div class="numbers">{{countText}}/2</div>
+                        <IconsProject @clicked="ChangeCountText('+')" :iconNameProps="'caret-right'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsProject>
+                    </div>
+                </div>
+            </div> <!--fim descrition-->
+        </div> <!--fim container-->
+    </section>
+    </Transition>
+</template>
+
+<script>
+import MainMenu from "../components/NavegationMenu.vue";
+import IconsProject from "../components/Icons.vue"
+export default {
+    name: 'Apresentation-',
+    components:{ 
+        MainMenu,
+        IconsProject
+    },
+    data(){
+        return{
+            animation: false,
+            text: '',
+            tittle: '',
+            countText: 0,
+
+        }
+    },
+    mounted(){
+        this.animation = true
+        this.countText = 1
+    },
+    watch:{
+        countText(){
+            this.ChangeText()
+        }
+    },
+    methods: {
+        ChangeText(){
+            if (this.countText < 2) {
+                this.tittle = "FreeLancer/Pessoa Comum"
+                this.text = `Olá! Eu sou Paulo Ribas, um desenvolvedor web com 20 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. Isso me permitiu dar vida às ideias criativas na web.
+    Com o tempo, aprofundei meu conhecimento e aprendi JavaScript, o que me possibilitou criar sites interativos e dinâmicos. Também tenho experiência em construir sistemas de servidor eficientes usando Node.js e criar soluções personalizadas para diferentes necessidades.
+    Em meus projetos mais recentes, desenvolvi soluções completas, como sistemas de cadastro, login, chat em tempo real e upload de arquivos. Isso me ensinou a resolver problemas complexos de forma criativa.
+    Estou capacitado para criar uma ampla gama de sites, desde landing pages até lojas virtuais, assim como o design de tais.
+
+
+    `
+                
+            }
+            if(this.countText > 1) {
+                this.tittle = "Empresa/Programador"
+                this.text = `Olá, sou Paulo Ribas, um entusiasta de programação de 20 anos de idade. Iniciei minha jornada no mundo do desenvolvimento aos 17 anos, focando inicialmente no HTML e CSS para criar páginas web. Com dedicação e estudo, aprimorei minhas habilidades e mergulhei profundamente no JavaScript.
+
+Explorando o JavaScript, aprofundei meu entendimento da lógica de programação e do Document Object Model (DOM). Isso me permitiu criar projetos práticos em JavaScript, sem depender de frameworks.
+
+Decidi então partir para o desenvolvimento back-end com Node.js, onde aprendi sobre rotas, protocolos e escopos da web. Criei minhas próprias APIs e aplicações para manipulação de arquivos locais, aprimorando minha capacidade técnica de solucionar desafios complexos.
+
+Trabalhei com bancos de dados relacionais e não relacionais, como MySQL e MongoDB, além de explorar frameworks como EJS, Express, Sequelize, Knex e Mongoose para desenvolver aplicativos robustos.
+
+Por fim, me apaixonei pelo Vue.js e dediquei tempo para aprofundar minhas habilidades nessa área, incluindo a exploração do Nuxt.js para aprimorar meu desenvolvimento front-end.
+
+Nos últimos anos, foquei em projetos desafiadores que ampliaram minha capacidade técnica e solução de problemas. Um desses projetos em destaque, desenvolvido em Nuxt.js, inclui um sistema completo de cadastro e login, funcionalidade de upload de arquivos e a criação de salas com chat em tempo real.
+
+Acredito que a verdadeira aprendizagem vem da prática e da resolução de problemas/desafios. Cada dificuldade que tive em todos esses projetos agregaram na minha evolução e fizeram eu melhorar cada vez mais. Mesmo quando me deparo com tecnologias ou arquiteturas desconhecidas, vejo isso como uma oportunidade de aprendizado e adaptação, confiante de que posso dominá-las com o tempo.`
+            }
+        },
+        ChangeCountText(signal){
+            signal === '+' ? this.countText += 1 : this.countText -= 1
+            this.countText > 2 ? this.countText = 1 : this.countText < 1 ? this.countText = 2 : this.countText
+        },
+    }
+
+}
+</script>
+
+<style scoped>
+
+.menu{
+    position: absolute;
+    bottom: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+    
+}
+#apresentation {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    max-width: 980px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.information-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.informations {
+
+}
+h2, h3 {
+    color: white;
+}
+h3 {
+    font-size: 18px;
+}
+
+p {
+    color: white;
+    text-align: initial;
+}
+.img-container {
+    height: 350px;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 6%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, #0085FF 0%, #0D1258 100%);
+}
+.img-container img {
+    width: calc(100% - 11px);
+    height: calc(100% - 11px);
+    border-radius: 6%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
+}
+.descrition {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+.descrition p {
+    width: 90%;
+    max-height: 322px;
+    max-width: 440px;
+    overflow-y: auto;
+}
+.descrition h2 {
+    margin-bottom: 10px;
+}
+.icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    margin-top: 5px;
+}
+.icons {
+    width: 40%;
+    min-width: 60px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+    color: white;
+    align-items: center;
+
+}
+.icons svg {
+    cursor: pointer;
+}
+.numbers {
+    color: #0085FF;
+    font-size: 17px;
+
+}
+.hooks-enter-active {
+    transition: 1s;
+
+}
+
+.hooks-enter-from{
+    opacity: 0;
+    transform: scale(0);
+
+}
+.hook-enter-to {
+    opacity: 1;
+    transform: scale(1);
+}
+
+</style>
