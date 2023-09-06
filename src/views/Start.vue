@@ -1,14 +1,6 @@
 <template>
     <section id="start">
-            <MainMenu @enterEmit="enterBox"  @mouseenter="setEvent" @mouseleave="removeEvent" v-if="!left" :MenuFixoProps="false" :AnimationProps="true"></MainMenu>
-            <div class="text-container">
-            <TransitionGroup name="H-group">
-                <h2 v-if="apresentation && Event">Apresentação</h2>
-                <h2 v-if="skills && Event">Conhecimentos & Habilidades</h2>
-                <h2 v-if="code && Event">Projetos</h2>
-                <h2 v-if="link && Event">Links & Contato</h2>
-            </TransitionGroup>
-            </div>
+            <div class="container"></div>
     </section>
 </template>
 

@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="icon-containers">
-                        <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso é tudo (por enquanto)</span>
+                        <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
                         <div class="icons">
                              <IconMenu :class="{'html': true, 'absolute': true, 'zindex-up': true, 'active': html}" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
                              <IconMenu :class="{'css':true, 'absolute':true, 'zindex-up': true, 'active': css}" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
@@ -82,7 +82,7 @@
                              <IconMenu :class="{'sequelize':true, 'absolute':true, 'zindex-up': true, 'active': sequelize}" prefixProps="fas" iconNameProps="person-pregnant" @clicked="iconClicked" nameProps="sequelize"></IconMenu>
                              <IconMenu :class="{'vue':true, 'absolute':true, 'zindex-up': true, 'active': vue}" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
                              <IconMenu :class="{'sass':true, 'absolute':true, 'zindex-up': true, 'active': sass}" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
-                             <IconMenu :class="{'info':true, 'absolute':true, 'zindex-up': true, 'active': info}" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
+                             <IconMenu v-if="showInfo" :class="{'info':true, 'absolute':true, 'zindex-up': true, 'active': info}" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
                         </div>
                     </div>
                 </div>
@@ -116,6 +116,7 @@ export default {
             info: false,
             spanHidden: true,
             spanNotHidden: false,
+            showInfo: false,
         }
     },
     mounted(){
@@ -200,6 +201,7 @@ export default {
         toggleIcon(iconGroup, hidden, info = false){
             setTimeout(() => { 
                 if(info) {
+                    this.showInfo = true
                     document.querySelector('.info').style.opacity = 1
                     document.querySelector('.info').style.zIndex = 7 
                 }
@@ -425,7 +427,7 @@ export default {
     left: 5%;
     top: 46%;
     opacity: 0;
-    z-index: 7;
+    z-index: -1;
 }
 .html, .css, .js, .node, .mysql, .mongo, .knex, .mongosse, .sequelize, .sass, .vue, .info {
     transition: 0.1s;

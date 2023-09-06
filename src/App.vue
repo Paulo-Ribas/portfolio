@@ -1,13 +1,49 @@
 <template>
-    <router-view></router-view>
+    <Transition name="Load">
+      <Loading v-if="loading"></Loading>
+    </Transition>
+    <router-view v-show="!loading"></router-view>
 </template>
 
 <script>
-
+import Loading from './components/Loading.vue';
 
 export default {
   name: 'App',
-  components: {
+  mounted(){
+    this.createImgs()
+  },
+  data(){
+    return {
+      loading: true,
+      countImg: 0,
+    }
+  },
+   components: {
+    Loading
+  },
+  methods: {
+    createImgs(){
+      let backgroundImg1 = new Image(1000, 1000)
+      let backgroundImg2 = new Image(1000, 1000)
+      backgroundImg1.src = require('./assets/img/background.png')
+      backgroundImg2.src = require('./assets/img/linkcut.png')
+      backgroundImg1.onload = this.countIncrement()
+      backgroundImg2.onload = this.countIncrement()
+    },
+    countIncrement(){
+      this.countImg++
+    }
+  },
+  watch: {
+    countImg() {
+      if(this.countImg === 2) {
+        setTimeout(() => {
+          console.log('a')
+        }, 1600);
+      }
+    },
+
   }
 }
 </script>
@@ -70,5 +106,17 @@ body {
 
 };
 
-
+.Load-enter-active, .Load-leave-active {
+  opacity: 1;
+  transition: all 1.5s;
+}
+.Load-move {
+  transition: all 2s
+}
+.Load-leave-from {
+  opacity: 1;
+}
+.Load-leave-to {
+  opacity: 0;
+}
 </style>

@@ -61,40 +61,30 @@ export default {
         ChangeText(){
             if (this.countText < 2) {
                 this.tittle = "FreeLancer/Pessoa Comum"
-                this.text = `Olá! Eu sou [Seu Nome], um desenvolvedor web apaixonado com 20 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação e mergulhei em um universo de possibilidades.
+                this.text = `Olá! Eu sou Paulo Ribas, um desenvolvedor web com 20 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. Isso me permitiu dar vida às ideias criativas na web.
+    Com o tempo, aprofundei meu conhecimento e aprendi JavaScript, o que me possibilitou criar sites interativos e dinâmicos. Também tenho experiência em construir sistemas de servidor eficientes usando Node.js e criar soluções personalizadas para diferentes necessidades.
+    Em meus projetos mais recentes, desenvolvi soluções completas, como sistemas de cadastro, login, chat em tempo real e upload de arquivos. Isso me ensinou a resolver problemas complexos de forma criativa.
+    Estou capacitado para criar uma ampla gama de sites, desde landing pages até lojas virtuais, assim como o design de tais.
 
-    Minha paixão por criar começou com a construção de páginas web envolventes, onde utilizei HTML e CSS para dar vida a visões criativas. Aprofundando-me, dominei o JavaScript, uma linguagem que me permitiu criar projetos interativos e dinâmicos, expandindo meu conhecimento para além do código básico.
 
-    Ao longo dos anos, aprimorei minhas habilidades no desenvolvimento de sistemas back-end eficientes com Node.js, explorando a criação de APIs personalizadas e soluções versáteis para manipulação de dados.
-
-    Minha experiência abrange uma ampla gama de tecnologias, incluindo bancos de dados, onde tenho expertise em projetar e otimizar sistemas para atender às necessidades específicas de cada projeto.
-
-    Além disso, minha jornada me levou a explorar uma variedade de frameworks, aprofundando-me em ferramentas como Vue.js para criar interfaces sofisticadas e altamente funcionais.
-
-    Em meus projetos mais recentes, criei soluções abrangentes, incluindo sistemas de cadastro, login, chat em tempo real e upload de arquivos. Esses desafios me permitiram expandir minhas habilidades e aprender a enfrentar problemas complexos de forma criativa.
-
- Estou empolgado para colaborar em projetos que exijam uma abordagem versátil e soluções criativas. Se você está em busca de um desenvolvedor que entende a linguagem da web e tem o comprometimento de transformar conceitos em realidade, estou aqui para ajudar!`
+    `
                 
             }
             if(this.countText > 1) {
                 this.tittle = "Empresa/Programador"
-                this.text = `"Olá, sou [Seu Nome], um apaixonado por programação de 20 anos de idade que deu os primeiros passos no mundo do desenvolvimento aos 17. Minha jornada começou com HTML semântico e CSS, onde mergulhei profundamente até alcançar a habilidade de criar páginas web impressionantes, desafiando os limites dessas linguagens.
+                this.text = `Olá, sou Paulo Ribas, um entusiasta de programação de 20 anos de idade. Iniciei minha jornada no mundo do desenvolvimento aos 17 anos, focando inicialmente no HTML e CSS para criar páginas web. Com dedicação e estudo, aprimorei minhas habilidades e mergulhei profundamente no JavaScript.
 
-Motivado pela busca constante de conhecimento, mergulhei na lógica de programação e explorei o vasto território do JavaScript. Como parte dessa jornada, dominei o Document Object Model (DOM), o que me permitiu criar projetos pessoais envolventes para aplicar meus conhecimentos práticos em JavaScript, sem depender de frameworks.
+Explorando o JavaScript, aprofundei meu entendimento da lógica de programação e do Document Object Model (DOM). Isso me permitiu criar projetos práticos em JavaScript, sem depender de frameworks.
 
-No entanto, minha sede por desafios me levou ao desenvolvimento back-end, onde me aventurei no mundo do Node.js. Ao explorar esse ecossistema, aprofundei meu entendimento de rotas, protocolos e escopos da web. Pude até criar minhas próprias APIs e aplicações para manipulação de arquivos locais, demonstrando minha capacidade de inovação e resolução de problemas.
+Decidi então partir para o desenvolvimento back-end com Node.js, onde aprendi sobre rotas, protocolos e escopos da web. Criei minhas próprias APIs e aplicações para manipulação de arquivos locais, aprimorando minha capacidade técnica de solucionar desafios complexos.
 
-À medida que minha jornada progredia, abracei os desafios e vantagens dos bancos de dados relacionais e não relacionais, como MySQL e MongoDB. No entanto, o próximo passo emocionante foi a exploração de frameworks. Explorei uma variedade de ferramentas, incluindo EJS, Express, Sequelize, Knex e Mongoose. Com cada novo framework, expandi minha capacidade de desenvolver aplicativos robustos e eficientes.
+Trabalhei com bancos de dados relacionais e não relacionais, como MySQL e MongoDB, além de explorar frameworks como EJS, Express, Sequelize, Knex e Mongoose para desenvolver aplicativos robustos.
 
-Mas foi o Vue.js que realmente capturou meu coração. Este incrível framework me encantou com sua elegância e flexibilidade. Investi tempo e esforço em me aprofundar no Vue.js e até explorei o Nuxt.js para levar minhas habilidades de desenvolvimento de front-end a um novo patamar.
+Por fim, me apaixonei pelo Vue.js e dediquei tempo para aprofundar minhas habilidades nessa área, incluindo a exploração do Nuxt.js para aprimorar meu desenvolvimento front-end.
 
-Além disso, ao longo do último ano, mergulhei profundamente em uma fase de projetos específicos que considerava essenciais para meu crescimento como desenvolvedor. Durante esse período, busquei desafios que não apenas ampliassem minhas habilidades, mas também testassem minha capacidade de buscar soluções e adotar novas tecnologias por conta própria. Essa etapa representou um ponto de virada em minha jornada, onde deixei de depender exclusivamente de cursos ou livros, e aprendi a compreender documentações complexas e enfrentar erros inéditos com confiança.
+Nos últimos anos, foquei em projetos desafiadores que ampliaram minha capacidade técnica e solução de problemas. Um desses projetos em destaque, desenvolvido em Nuxt.js, inclui um sistema completo de cadastro e login, funcionalidade de upload de arquivos e a criação de salas com chat em tempo real.
 
-Essa jornada de autoaprendizado contribuiu enormemente para o enriquecimento do meu conhecimento. Um projeto notável que realizei foi desenvolvido em Nuxt.js, com um sistema abrangente de cadastro e login, funcionalidade de upload de arquivos e a criação de salas com chat em tempo real, onde os usuários também podiam assistir a vídeos simultaneamente. Esse projeto desafiador se tornou um marco significativo em minha trajetória. Desde os primeiros obstáculos enfrentados na integração com a API até os detalhes finais do front-end, pude observar uma evolução sem precedentes.
-
-O código-fonte do projeto conta a história da minha evolução como desenvolvedor. Ao analisar as diferentes táticas utilizadas, aprimoramentos aplicados e a crescente compreensão sobre serviços em nuvem, como AWS, percebo que minha jornada é claramente visível nas nuances do próprio código. Cada linha de código representa não apenas uma funcionalidade, mas um passo em direção ao domínio de tecnologias complexas e à resolução de problemas desafiadores.
-
-Nessa jornada, descobri que a verdadeira aprendizagem está na experiência prática e na superação de obstáculos. Cada desafio superado e cada novo conhecimento adquirido me impulsionaram a avançar ainda mais. Estou animado para continuar enfrentando novos projetos desafiadores, expandir meu conjunto de habilidades e explorar novas fronteiras no mundo do desenvolvimento."`
+Acredito que a verdadeira aprendizagem vem da prática e da resolução de problemas/desafios. Cada dificuldade que tive em todos esses projetos agregaram na minha evolução e fizeram eu melhorar cada vez mais. Mesmo quando me deparo com tecnologias ou arquiteturas desconhecidas, vejo isso como uma oportunidade de aprendizado e adaptação, confiante de que posso dominá-las com o tempo.`
             }
         },
         ChangeCountText(signal){
