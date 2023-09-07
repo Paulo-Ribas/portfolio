@@ -1,6 +1,7 @@
 <template>
     <section id="start">
             <div class="container"></div>
+            <MainMenu/>
     </section>
 </template>
 

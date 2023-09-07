@@ -65,6 +65,7 @@ export default {
             if(index === 1)slidebox.style.left = '40%'
             if(index === 2)slidebox.style.left = '70%'
         })
+        arraySlideBox[1].style.transform = 'scale(1.2)'
     },
     methods:{
         slide(direction){

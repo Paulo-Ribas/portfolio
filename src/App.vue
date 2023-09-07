@@ -2,7 +2,7 @@
     <Transition name="Load">
       <Loading v-if="loading"></Loading>
     </Transition>
-    <router-view v-show="!loading"></router-view>
+    <router-view v-if="!loading"></router-view>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
     }
   },
    components: {
-    Loading
+    Loading,
   },
   methods: {
     createImgs(){
@@ -39,7 +39,7 @@ export default {
     countImg() {
       if(this.countImg === 2) {
         setTimeout(() => {
-          console.log('a')
+          this.loading = false
         }, 1600);
       }
     },
@@ -86,11 +86,15 @@ export default {
       --special-gradient: linear-gradient(to right, #4e4376, #2b5876);
       --special-gradient-support: -webkit-linear-gradient(to right, #4e4376, #2b5876);
 }
+html {
+  font-size: 16px;
+}
 body {
   background: var(--background); 
   background: var(--background-gradient-support);
   background: var(--background-gradient);
   background-image: url('./assets/img/background.png');
+  overflow: hidden;
 
 
 }
@@ -105,13 +109,8 @@ body {
   padding-bottom: 50px
 
 };
-
-.Load-enter-active, .Load-leave-active {
-  opacity: 1;
-  transition: all 1.5s;
-}
-.Load-move {
-  transition: all 2s
+.Load-leave-active {
+  transition: 3s;
 }
 .Load-leave-from {
   opacity: 1;
@@ -119,4 +118,6 @@ body {
 .Load-leave-to {
   opacity: 0;
 }
+
+
 </style>
