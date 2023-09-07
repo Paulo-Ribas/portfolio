@@ -3,7 +3,7 @@
         <div class="menu">
             <MainMenu :MenuFixoProps="true" :ActivatedProps="'sk'"></MainMenu>
         </div>
-        <MqResponsive :target="['xl', 'sm', 'md', 'lg']">
+        <MqResponsive :target="['xl', 'sm', 'md', 'lg', 'xxl']">
             <div class="container">
                 <div class="text-container">
                     <TransitionGroup name="text-group">
@@ -67,9 +67,34 @@
             
                 </TransitionGroup>
             </div>
+            <div class="container-skills">
+                    <div class="general-container">
+                        <div class="scroll-container" @scroll="scrolled($event)">
+                            <div class="scroll">
+                                <span class="point">.</span>
+                            </div>
+                        </div>
+                        <div class="icon-containers">
+                            <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso Ã© tudo <br> (por enquanto)</span>
+                            <div class="icons">
+                                 <IconMenu :class="{'html': true, 'absolute': true, 'zindex-up': true, 'active': html}" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
+                                 <IconMenu :class="{'css':true, 'absolute':true, 'zindex-up': true, 'active': css}" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
+                                 <IconMenu :class="{'js':true, 'absolute':true, 'zindex-up': true, 'active': js}" prefixProps="fab" iconNameProps="js" @clicked="iconClicked" nameProps="js"></IconMenu>
+                                 <IconMenu :class="{'node':true, 'absolute':true, 'zindex-up': true, 'active': node}" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked" nameProps="node"></IconMenu>
+                                 <IconMenu :class="{'mysql':true, 'absolute':true, 'zindex-up': true, 'active': mysql}" prefixProps="fas" iconNameProps="database" @clicked="iconClicked" nameProps="mysql"></IconMenu>
+                                 <IconMenu :class="{'mongo':true, 'absolute':true, 'zindex-up': true, 'active': mongo}" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked" nameProps="mongo"></IconMenu>
+                                 <CostumIcon :class="{ 'knex':true, 'absolute':true, 'zindex-up': true, 'active': knex }" iconNameProps="knex" @clicked="iconClicked" :iconWhiteProps="false"></CostumIcon>
+                                 <IconMenu :class="{'mongoose':true, 'absolute':true, 'zindex-up': true, 'active': mongoose}" prefixProps="fas" iconNameProps="dog" @clicked="iconClicked" nameProps="mongoose"></IconMenu>
+                                 <IconMenu :class="{'sequelize':true, 'absolute':true, 'zindex-up': true, 'active': sequelize}" prefixProps="fas" iconNameProps="person-pregnant" @clicked="iconClicked" nameProps="sequelize"></IconMenu>
+                                 <IconMenu :class="{'vue':true, 'absolute':true, 'zindex-up': true, 'active': vue}" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
+                                 <IconMenu :class="{'sass':true, 'absolute':true, 'zindex-up': true, 'active': sass}" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
+                                 <IconMenu v-show="showInfo" :class="{'info':true, 'absolute':true, 'zindex-up': true, 'active': info}" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </MqResponsive>
-
 
 
 

@@ -227,4 +227,11 @@ p {
     transform: scale(1);
 }
 
+@media screen and (max-width: 650px){
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 </style>

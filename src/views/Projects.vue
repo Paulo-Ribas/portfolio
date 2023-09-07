@@ -34,13 +34,13 @@
                     <Project v-if="AMG_data" :projectImgProps="'logoTeste5.png'" projectNameProps="AMG" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
                 </Transition>    
                 <div class="project-text-container">
-                    <h2>{{ tittle }}</h2>
+                    <h2>Descrição</h2>
                     <p>{{ text }}</p>
                 </div>
             </div>
         </MqResponsive>
         <MqResponsive target="xs">
-            <div class="project-container mobile">
+            <div class="project-container-mobile">
                 <Transition name="projectsTransition-1">
                     <ProjectMobileVVue v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon: 'node-js', prefix: 'fab'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>
@@ -54,7 +54,7 @@
                     <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'logoTeste5.png'" projectNameProps="AMG" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>    
                 <div class="project-text-container">
-                    <h2>{{ tittle }}</h2>
+                    <h2>Descrição</h2>
                     <p>{{ text }}</p>
                 </div>
             </div>
@@ -165,11 +165,21 @@ export default {
     align-self: center;
     
 }
+.project-container-mobile{
+    min-height: 500px;
+    width: 100%;
+    height: 500px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    overflow-y: auto;
+}
 .project-text-container{
     flex: 1;
     max-height: 500px;
     max-width: 600px;
-    overflow-Y: auto;
     color: var(--texto-padrao);
     font-size: 1.1em;
     padding: 0% 2%
