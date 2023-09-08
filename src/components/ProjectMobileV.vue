@@ -59,9 +59,8 @@ export default {
 .project-details {
     width: 99%;
     margin: auto;
-    min-height: 500px;
+    min-height: 420px;
     display: flex;
-    flex-direction: column;
     transition: width 0.6s;
     overflow: hidden;
     position: relative;
@@ -84,7 +83,7 @@ export default {
 }
 
 .project {
-    width: 89%;
+    width: 95%;
     min-width: 300px;
     display: flex;
     flex-direction: column;
@@ -92,10 +91,9 @@ export default {
 
 .project-img {
     width: 100%;
-    height: 85%;
+    height: 90%;
     position: relative;
     overflow: hidden;
-    position: relative;
 }
 
 .project-img img {
@@ -117,9 +115,10 @@ export default {
 .project-info {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    gap: 15px;
 }
 
 .name-project {
@@ -140,11 +139,11 @@ export default {
 
 .project-icons-bar {
     width: 20px;
-    height: 85%;
+    height: 90%;
     background: linear-gradient(#0085FF, #0D1258);
     position: absolute;
-    right: 0%;
-    transform: translateX(-16px);
+    right: 5%;
+    transform: translateX(20px);
     border-radius: 0px 27.99px 27.99px 0px;
     display: flex;
     justify-content: center;
@@ -160,7 +159,7 @@ export default {
 
 .project-icons {
     width: 0%;
-    height: 85%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     transition: 0.6s;

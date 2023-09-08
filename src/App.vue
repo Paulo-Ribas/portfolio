@@ -106,7 +106,6 @@ body {
   justify-content: space-between;
   height: 100vh;
   align-items: center;
-  padding-bottom: 50px
 
 };
 .Load-leave-active {

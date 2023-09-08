@@ -30,7 +30,7 @@ export default {
 <style scoped>
 .menu{
     position: absolute;
-    bottom: 6%;
+    bottom: 2%;
     display: flex;
     justify-content: center;
     align-items: center;

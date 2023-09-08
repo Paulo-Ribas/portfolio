@@ -70,7 +70,7 @@ export default {
     width: 64%;
 }
 .project-details:hover > .project-icons {
-    width: 8%;
+    width: 70px;
     overflow-y: auto;
 }
 .project-details:hover > .project-icons .icons svg {
@@ -82,7 +82,7 @@ export default {
     transition: 0.2s;
 }
 .project{
-    width: 94%;
+    width: 95%;
     min-width: 300px;
     display: flex;
     flex-direction: column;
@@ -133,8 +133,8 @@ export default {
     height: 85%;
     background:linear-gradient(#0085FF, #0D1258);
     position: absolute;
-    right: 0%;
-    transform: translateX(-16px);
+    right: 5%;
+    transform: translateX(20px);
     border-radius: 0px 27.99px 27.99px 0px;
     display: flex;
     justify-content: center;

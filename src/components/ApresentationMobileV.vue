@@ -1,71 +1,66 @@
 <template>
-    <div class="menu">
-        <MainMenu :MenuFixoProps="true" :ActivatedProps="'ap'"></MainMenu>
+    <div id="container-mobile">
+        <div class="information-container">
+            <div class="img-container">
+                <img src="../assets/img/eu33.png" alt="minha foto">
+            </div>
+            <div class="informations">
+                <h2>Paulo Ribas</h2>
+                <h3>Desenvolvedor web</h3>
+            </div>
+        </div> <!-- fim information-container -->
+        <div class="description">
+            <h2 v-html="tittle"></h2>
+            <p v-html="text"></p>
+            <div class="icon-container">
+                <div class="icons">
+                    <IconsVue @clicked="ChangeCountText('-')" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsVue>
+                    <div class="numbers">{{ countText }}/2</div>
+                    <IconsVue @clicked="ChangeCountText('+')" :iconNameProps="'caret-right'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsVue>
+                </div>
+            </div>
+        </div> <!--fim descrition-->
+        <div class="next-before">
+            <IconsVue class="left" iconNameProps="circle-left" prefixProps="fas" @clicked="arrowLeft()" ></IconsVue>
+            <IconsVue class="right" iconNameProps="circle-right" prefixProps="fas" @clicked="arrowRight()"></IconsVue>
+        </div>
     </div>
-    <Transition name="hooks">
-    <section id="apresentation" v-if="animation">
-        <MqResponsive class="apresentation-pc" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
-            <div class="container">
-                <div class="information-container">
-                    <div class="img-container">
-                        <img src="../assets/img/eu33.png" alt="minha foto">
-                    </div>
-                    <div class="informations">
-                        <h2>Paulo Ribas</h2>
-                        <h3>Desenvolvedor web</h3>
-                    </div>
-                </div> <!-- fim information-container -->
-                <div class="descrition">
-                    <h2 v-html="tittle"></h2>
-                    <p v-html="text"></p>
-                    <div class="icon-container">
-                        <div class="icons">
-                            <IconsProject @clicked="ChangeCountText('-')" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsProject>
-                            <div class="numbers">{{countText}}/2</div>
-                            <IconsProject @clicked="ChangeCountText('+')" :iconNameProps="'caret-right'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsProject>
-                        </div>
-                    </div>
-                </div> <!--fim descrition-->
-            </div> <!--fim container-->
-        </MqResponsive>
-        <MqResponsive class="width100-height100"  target="xs" >
-            <ApresentationMobileV :textProps="text" :tittleProps="tittle"></ApresentationMobileV>
-        </MqResponsive>
-    </section>
-    </Transition>
 </template>
 
 <script>
-import MainMenu from "../components/NavegationMenu.vue";
-import IconsProject from "../components/Icons.vue"
-import ApresentationMobileV from "../components/ApresentationMobileV.vue";
+import IconsVue from './Icons.vue'
 export default {
-    name: 'Apresentation-',
-    components:{ 
-        MainMenu,
-        IconsProject,
-        ApresentationMobileV
+    name: 'apresentation-mobile',
+    props: {
+        tittleProps: String,
+        textProps: String,
     },
-    data(){
-        return{
+    components:{
+        IconsVue
+    },
+    data() {
+        return {
             animation: false,
-            text: '',
-            tittle: '',
+            text: this.$props.textProps,
+            tittle:this.$props.tittleProps,
             countText: 0,
+            moveCounter: 0,
 
         }
     },
-    mounted(){
+    mounted() {
         this.animation = true
         this.countText = 1
+        this.moveCounter = 0
     },
-    watch:{
-        countText(){
+    watch: {
+        countText() {
             this.ChangeText()
         }
     },
+
     methods: {
-        ChangeText(){
+        ChangeText() {
             if (this.countText < 2) {
                 this.tittle = "FreeLancer/Pessoa Comum"
                 this.text = `Olá! Eu sou Paulo Ribas, um desenvolvedor web com 20 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. Isso me permitiu dar vida às ideias criativas na web. <br>
@@ -75,9 +70,9 @@ export default {
 
 
     `
-                
+
             }
-            if(this.countText > 1) {
+            if (this.countText > 1) {
                 this.tittle = "Empresa/Programador"
                 this.text = `Olá, sou Paulo Ribas, um entusiasta de programação de 20 anos de idade. Iniciei minha jornada no mundo do desenvolvimento aos 17 anos, focando inicialmente no HTML e CSS para criar páginas web. Com dedicação e estudo, aprimorei minhas habilidades e mergulhei profundamente no JavaScript. <br>
 
@@ -94,67 +89,103 @@ Nos últimos anos, foquei em projetos desafiadores que ampliaram minha capacidad
 Acredito que a verdadeira aprendizagem vem da prática e da resolução de problemas/desafios. Cada dificuldade que tive em todos esses projetos agregaram na minha evolução e fizeram eu melhorar cada vez mais. Mesmo quando me deparo com tecnologias ou arquiteturas desconhecidas, vejo isso como uma oportunidade de aprendizado e adaptação, confiante de que posso dominá-las com o tempo.`
             }
         },
-        ChangeCountText(signal){
+        ChangeCountText(signal) {
             signal === '+' ? this.countText += 1 : this.countText -= 1
             this.countText > 2 ? this.countText = 1 : this.countText < 1 ? this.countText = 2 : this.countText
         },
+        arrowLeft(){
+            document.querySelector('.left').classList.toggle('clicked')
+            this.moveContainer()
+            setTimeout(() => {
+                document.querySelector('.left').classList.toggle('clicked')
+            }, 1000);
+        },
+        arrowRight() {
+            document.querySelector('.right').classList.toggle('clicked')
+            this.moveContainer()
+            setTimeout(() => {
+                document.querySelector('.right').classList.toggle('clicked')
+            }, 1000);
+        },
+        moveContainer(){
+            let container = document.getElementById('container-mobile')
+            let nextBefore = document.querySelector('.next-before')
+            this.moveCounter++
+            if(this.moveCounter > 1 || this.moveCounter < 0) this.moveCounter = 0
+            if(this.moveCounter === 1) {
+                container.style.transform = 'translateX(-100%)'
+                nextBefore.style.left = '125%'
+                nextBefore.style.transform = 'translate(-50%, -50%)'
+                console.log('é numero')
+                return
+            }
+            container.style.transform = 'translateX(0%)'
+            nextBefore.style.left = '25%'
+            nextBefore.style.transform = 'translate(-50%, -50%)'
+        },
+        
     }
-
+    
 }
 </script>
 
 <style scoped>
- .width100-height100 {
+    #container-mobile {
+        width: 200%;
+        height: 100%;
+        position: relative;
+        transition: 1.5s;
+        transform: translateX(0%);
+    }
+    .information-container, .description {
+        width: 50%;
+        height: 100%;
+        max-height: 400px;
+        position: absolute;
+    }
+    .description {
+        max-height: 400px;
+        position: absolute;
+        top: 150%;
+        left: 150%;
+        transform: translate(-150%, -150%);
+    }
+.next-before {
     width: 100%;
-    height: 100%;
- }
- .apresentation-pc {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    max-width: 1000px;
- }
-.menu{
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
-    bottom: 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    width: 100%;
-    
+    font-size: 2rem;
+    color: white;
+    top: 89%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    transition: 1.6s;
 }
-#apresentation {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
+.left, .right {
+    transition: 0.2s;
 }
-.container {
-    width: 100%;
-    max-width: 980px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.clicked {
+    color: #0085FF !important;
 }
 .information-container {
-    width: 50%;
     display: flex;
+    width: 49%;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-
+    max-height: 400px;
+    top: 50%;
+    left: 1%;
+    transform: translate(-1%, -50%);
 }
 .informations {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px
+    gap: 0px
 }
 h2, h3 {
     color: white;
@@ -168,8 +199,8 @@ p {
     text-align: initial;
 }
 .img-container {
-    height: 350px;
-    width: 100%;
+    height: 300px;
+    width: 98%;
     max-width: 380px;
     border-radius: 6%;
     overflow: hidden;
@@ -188,22 +219,29 @@ p {
 
     
 }
-.descrition {
-    width: 50%;
-    height: 100%;
+.description {
+    max-height: 400px;
+    width: 49%;
+    position: absolute;
+    top: 50%;
+    /* overflow-y: auto; */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 98%;
     flex-direction: column;
+    height: 90%;
+    /* justify-content: start; */
+    gap: 8px;
+    align-items: center;
+    transform: translate(6%, -50%);
    
 }
-.descrition p {
+.description p {
     width: 90%;
     max-height: 322px;
     max-width: 440px;
     overflow-y: auto;
 }
-.descrition h2 {
+.description h2 {
     margin-bottom: 10px;
 }
 .icon-container {
@@ -246,6 +284,7 @@ p {
     opacity: 1;
     transform: scale(1);
 }
+
 
 
 </style>

@@ -3,66 +3,71 @@
         <div class="menu">
             <MainMenu :MenuFixoProps="true" :ActivatedProps="'sk'"></MainMenu>
         </div>
-        <MqResponsive :target="['xl', 'sm', 'md', 'lg']">
+        <MqResponsive :target="['xl', 'sm', 'md', 'lg', 'xxl']">
             <div class="container">
                 <div class="text-container">
                     <TransitionGroup name="text-group">
-                    
-                    <div class="html-text" v-if="html">
-                        <h2>HTML</h2> <!-- tag abreviamento -->
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis facere non eius reiciendis mollitia ipsum ex commodi accusantium, quasi, iure laudantium enim illum dolores id consequatur? Perferendis quo, pariatur esse quae distinctio qui error magnam quasi minima totam temporibus porro voluptas dolore possimus aspernatur laborum officia dolorum impedit maiores cupiditate. Praesentium non, ratione maxime et, odio ab nemo nesciunt inventore facilis blanditiis neque! Sit hic veniam possimus magni odio accusamus illo modi iste quis! Unde perspiciatis earum quae? Debitis, vitae.</p>
-                    </div>
-                    <div class="css-text" v-if="css">
-                        <h2>CSS</h2> <!-- tag sobre abreviamento -->
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus magni explicabo iste voluptatum hic doloribus esse, consequuntur eum aliquam blanditiis omnis autem illo quas libero voluptas, perferendis quisquam laborum cum non animi. Doloribus error quasi incidunt voluptate mollitia vitae odio consectetur eligendi rerum quos expedita laboriosam dolores unde cum, eum qui, veritatis maxime? Doloribus aliquid dicta enim vel explicabo velit asperiores reprehenderit nesciunt inventore libero, id obcaecati ducimus dolorum totam ratione voluptate eius voluptatum voluptatem rerum eveniet delectus? Reiciendis quos quod aperiam. Aspernatur placeat doloribus cumque perferendis, libero laboriosam nesciunt.</p>
-                    </div>
-                    <div class="js-text" v-if="js">
-                        <h2>Java Script</h2>
-                        <p>iniciei meus estudos em janeiro de 2021, comprei livro <!-- tag de citação --> js(livro) <!-- / --> e então parti para os cursos, começei pela lógica de programação usando portugol, depois de 1 mês, senti que estava pronto para partir para uma linguagem de verdade, decidi focar em javascript, assim que eu terminei de estudar lógica, e sentia que estava competente com html e css, comprei cursos focados em javascript, saldjsaodhosadhsa, jsdsajdasdhsadhs, complementei meus estudos pesquisando, procurando conteudos fora, e praticando, sempre fazendo tudo do 0 pois pela minha consepção, em um emprego você tem que está preparado para fazer qualquer coisa que seja possivel, e possivel é o que basta para você conseguir fazer o que tem que ser feito mesmo não tendo sido "ensinado" antes</p>   
-                    </div>
-                    <div class="node-text" v-if="node">
-                        <h2>Node</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio aliquam sapiente, sunt recusandae molestias, porro, reprehenderit sint quo odit sequi omnis quos pariatur eaque sit? Dolor, ad provident? Porro minima est labore, reiciendis deserunt ullam id fugit, iusto pariatur ducimus maxime nam unde vero impedit possimus, adipisci rerum quam ipsa numquam laudantium! Molestias ullam libero quis consectetur. Et, delectus. Officia aspernatur quos obcaecati commodi, odio eius sunt. Sit, dolorum vel blanditiis accusamus praesentium consectetur cum soluta consequatur commodi quidem necessitatibus tempora aspernatur nulla rerum aperiam reprehenderit numquam non accusantium velit aliquam. Dicta a tenetur in tempora saepe repudiandae quaerat deleniti mollitia voluptates ut, voluptate commodi libero aut quam accusamus molestias, aliquam, nemo maiores ex modi earum iusto aspernatur! A vero molestiae tenetur cumque aspernatur dolorum dolore ea. Impedit quasi vitae quia quidem et laborum, harum recusandae maxime consequatur quo quam.</p>
-                    </div>
-                    <div class="mysql-text" v-if="mysql">
-                        <h2>Mysql</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sapiente accusamus, cupiditate modi nostrum quisquam assumenda provident excepturi ad sequi incidunt neque debitis optio. Eligendi at necessitatibus quam qui, fugit doloribus! Eveniet laboriosam vel earum perferendis nobis consequuntur veniam laborum iste labore eligendi non inventore minus, enim doloribus dolore laudantium et nostrum doloremque. Excepturi explicabo vel aspernatur beatae iure odio corrupti, earum pariatur, veniam voluptas quae praesentium saepe aperiam nisi magnam est nemo nihil illo? Delectus molestias provident nihil placeat possimus soluta autem natus recusandae quod culpa pariatur animi distinctio esse eum omnis debitis, facere minus fugit nesciunt? Omnis vitae dolorum modi accusamus quae deserunt, amet tempore laborum, doloremque fugit incidunt labore nobis corrupti rem repudiandae voluptate, numquam dignissimos voluptas?</p>
-                    </div>
-                    <div class="mongo-text" v-if="mongo">
-                        <h2>MongoDB</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, aliquam sint. Iusto iste est officiis consectetur corrupti explicabo dolor dolorum beatae consequatur repellat dolorem blanditiis voluptate aut, in maiores alias dolore ratione enim tempore! Nesciunt officiis aliquam dignissimos. Minima, fugiat quia! Animi sequi atque tenetur optio recusandae officia quod expedita, ipsum aperiam sint dicta nisi officiis ad! Repellendus modi quis magnam id impedit, asperiores commodi, dicta voluptates adipisci sit saepe voluptate quibusdam, officia fuga tempore aspernatur! Illum quod est ex, doloribus aut minima nobis laudantium fugiat expedita maxime eveniet quae aspernatur excepturi provident odit ipsam libero. Ab cum magnam nobis dolorum praesentium quam repellendus omnis commodi asperiores? Asperiores harum error sapiente ratione at deserunt consectetur repellendus, laudantium laboriosam quis assumenda.</p>
-                    </div>
-                    <div class="knex-text" v-if="knex">
-                        <h2>KNEX.JS</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis reprehenderit aut officiis ad. Quas sit repudiandae possimus commodi doloribus fuga expedita exercitationem assumenda eos cum fugit amet, tempore pariatur culpa sapiente tenetur vel! Fugit, alias. Voluptatum quos autem eligendi animi sint impedit neque laudantium, praesentium placeat perferendis aspernatur alias in aliquid dolore voluptates libero voluptate ipsa rem nostrum odit nam quas reprehenderit. Expedita, fugit animi distinctio, soluta a suscipit, nulla asperiores enim sequi iste nostrum voluptate atque reprehenderit natus obcaecati porro possimus. Rerum eaque ex similique rem tempore? Laudantium odit non perspiciatis neque. Aliquam impedit iste, excepturi est sit itaque.</p>
-                    </div>
-                    <div class="mongoose-text" v-if="mongoose">
-                        <h2>Mongoose</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus sunt illum earum nulla cumque, porro, exercitationem laboriosam ullam, velit voluptate. Incidunt ab dolor laborum natus officiis deserunt quam unde veritatis? Omnis, eum exercitationem. Maxime, tenetur voluptates temporibus at sint natus quasi laborum veniam blanditiis tempora dignissimos! Illo eaque beatae ipsam error minima dolorem? Delectus maxime exercitationem id asperiores sequi blanditiis quod, incidunt quaerat, nobis harum aut dolor magni atque iure iste! Ab necessitatibus illo nulla temporibus! Iusto voluptate dolorem veniam illo incidunt perferendis tempore eum sunt. Corporis aliquam quasi iure inventore? Inventore alias, harum rem officia eos asperiores eius.</p>
-                    </div>
-                    <div class="sequelize-text" v-if="sequelize">
-                        <h2>Sequelize</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo modi quam pariatur optio perspiciatis nesciunt assumenda molestias. Quasi aliquid accusantium inventore voluptatem excepturi cupiditate eum, neque atque porro. Expedita excepturi, laboriosam explicabo deleniti fugiat sapiente provident harum itaque nihil eius reprehenderit quae autem, nesciunt culpa eum doloribus similique. Rem.</p>
-                    </div>
-                    <div class="sass-text" v-if="sass">
-                        <h2>SASS</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora nisi expedita explicabo aliquam! Autem sequi nostrum et maiores iste optio dignissimos quasi labore ea voluptates officiis tempore, ipsum ducimus voluptas provident velit, laborum aut suscipit cupiditate numquam. Repellat, maiores fugiat optio nostrum facilis accusantium obcaecati ipsa illo rem nihil itaque ipsum expedita qui veritatis eius ratione consequuntur error iure! Deleniti assumenda magni dolores cum tenetur amet repudiandae rem commodi?</p>
-                    </div>
-                    <div class="vue-text" v-if="vue">
-                        <h2>Vue.Js</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit pariatur, perferendis ab magnam praesentium obcaecati animi illum. Maxime magni rem tenetur reiciendis cumque odit facilis cum fuga, totam fugit ea veritatis, soluta commodi hic sit accusamus. Voluptates, laborum optio. Rem ad perspiciatis sapiente quidem maiores praesentium quia suscipit sint quam facere! Nam accusamus minus pariatur fuga tempore distinctio eos itaque ullam cupiditate corrupti adipisci eius, recusandae eveniet ipsa animi molestias quod autem! Iste quasi dolore asperiores mollitia distinctio explicabo eius, odit, sit recusandae adipisci cupiditate porro doloribus blanditiis! Nihil libero vero voluptates debitis accusantium aut quam. Perferendis dolor quas nesciunt consectetur harum amet fugiat necessitatibus a, non dolores sit inventore, illo earum! Dolorum nostrum nemo ratione, maxime eum vel pariatur ab fuga libero fugiat mollitia voluptates assumenda consequatur aliquid cumque similique. Sed quos sunt quod eos vitae rerum praesentium numquam nobis iste? Eos dicta qui repellat porro sint facilis rem ipsa explicabo tenetur at voluptates quae repudiandae eveniet sapiente saepe assumenda sit, nobis nesciunt illo laudantium, dolores maxime ut est! Nihil, esse hic voluptate corrupti laboriosam, aliquam cumque ipsa non similique libero at repudiandae laborum culpa veritatis fugit illo quam delectus quae! Magnam, assumenda omnis recusandae tempore aliquid tenetur.</p>
-                    </div>
-        
-                     <div class="info-text" v-if="info">
-                        <h2>Adicional</h2>
-                        <p>
-                            em alguns dos meus projetos, eu também utilizei sequelize, o que eu não irei adicionar aqui, pois foi há 1 ano, não absorvi completamente pelo tempo e pratica que tive o utilizando, porém tenho familiaridade, já tive e ainda sei resolver alguns problemas do sequelize, e entendo o código se eu rever meu código ou ver de terceiros, também consigo criar um novo com essa base dos meus projetos antigos. <br>
-                            consumo de API, API/Rest/Restful entre outros eu também aprendi e absorvi e pratiquei, não irei adiciona-los aqui pois, sinto que seria muitas "skills" sem um propósito direto, apenas para "aumentar a quantidade", não que API'S sejam desnecessárias ou deveriam ser deixado de mão ou não tenham importancia, longe e completamente longe disso, é umas das coisas mais importantes caso você queira mostrar conhecimentos, mas o uso e o quanto sei e o que eu criei, vai ficar nitido e mais claro nos projetos do que aqui, então opitei por destacar isso na descrição dos projetos, e no fim, a melhor demonstração que será o próprio projeto. 
-                        </p>
-                    </div>
-                    </TransitionGroup>
+                <div class="html-text" v-if="html">
+                    <h2>HTML</h2> <!-- tag abreviamento -->
+                    <p>Inicie meus estudos em meados de 2020, focando em aprender a semantica para criar paginas acessiveis a todo tipo de publico, com ou sem deficiencia visual.</p>
                 </div>
-                <div class="container-skills">
+                <div class="css-text" v-if="css">
+                    <h2>CSS</h2> <!-- tag sobre abreviamento -->
+                    <p>Comecei meus estudos em meados de 2020 junto com html, visando aprender a usar todo potencial do css sem depender da utilização de frameworks e linguagens de programação(JavaScript).</p>
+                </div>
+                <div class="js-text" v-if="js">
+                    <h2>Java Script</h2>
+                    <p>Iniciei meus estudos em janeiro de 2021, comprei livros <!-- tag de citação --> js(livro) <!-- / --> e então parti para 
+                    os cursos, começei pela lógica de programação usando portugol, depois de 1 mês, senti que estava pronto para partir para 
+                    uma linguagem de verdade, decidi focar em javascript, assim que eu terminei de estudar lógica, e sentia que estava 
+                    competente com html e css, comprei cursos focados em javascript, saldjsaodhosadhsa, jsdsajdasdhsadhs, complementei meus 
+                    estudos pesquisando, procurando conteudos fora, e praticando, sempre fazendo tudo do 0 de forma criativa e funcional, visando dominar a linguagem antes de começar a usar qualquer framework.</p>   
+                </div>
+                <div class="node-text" v-if="node">
+                    <h2>Node</h2>
+                    <p>Comecei meus estudos em 2021, conforme eu ia aumentando o nivel das aplicações que eu criava, vi a necessidade de um servidor para gerenciar cada uma delas. Comecei a estudar o conceito WEB, protocolos HTTP, e o conceito de API(APIRest), Após dominar esses assuntos, eu comecei a criar minhas proprias APIs utilizando frameworks como o express e ejs. Após perceber como era simples utilizar JS no lado do servidor comecei a estudar mais a fundo e usar o NODE.js para facilitar/automatizar tarefas proprias, assim manipulando os arquivos, dentre outras necessidades que eu tinha.
+                    </p>
+                </div>
+                <div class="mysql-text" v-if="mysql">
+                    <h2>Mysql</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sapiente accusamus, cupiditate modi nostrum quisquam assumenda provident excepturi ad sequi incidunt neque debitis optio. Eligendi at necessitatibus quam qui, fugit doloribus! Eveniet laboriosam vel earum perferendis nobis consequuntur veniam laborum iste labore eligendi non inventore minus, enim doloribus dolore laudantium et nostrum doloremque. Excepturi explicabo vel aspernatur beatae iure odio corrupti, earum pariatur, veniam voluptas quae praesentium saepe aperiam nisi magnam est nemo nihil illo? Delectus molestias provident nihil placeat possimus soluta autem natus recusandae quod culpa pariatur animi distinctio esse eum omnis debitis, facere minus fugit nesciunt? Omnis vitae dolorum modi accusamus quae deserunt, amet tempore laborum, doloremque fugit incidunt labore nobis corrupti rem repudiandae voluptate, numquam dignissimos voluptas?</p>
+                </div>
+                <div class="mongo-text" v-if="mongo">
+                    <h2>MongoDB</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, aliquam sint. Iusto iste est officiis consectetur corrupti explicabo dolor dolorum beatae consequatur repellat dolorem blanditiis voluptate aut, in maiores alias dolore ratione enim tempore! Nesciunt officiis aliquam dignissimos. Minima, fugiat quia! Animi sequi atque tenetur optio recusandae officia quod expedita, ipsum aperiam sint dicta nisi officiis ad! Repellendus modi quis magnam id impedit, asperiores commodi, dicta voluptates adipisci sit saepe voluptate quibusdam, officia fuga tempore aspernatur! Illum quod est ex, doloribus aut minima nobis laudantium fugiat expedita maxime eveniet quae aspernatur excepturi provident odit ipsam libero. Ab cum magnam nobis dolorum praesentium quam repellendus omnis commodi asperiores? Asperiores harum error sapiente ratione at deserunt consectetur repellendus, laudantium laboriosam quis assumenda.</p>
+                </div>
+                <div class="knex-text" v-if="knex">
+                    <h2>KNEX.JS</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis reprehenderit aut officiis ad. Quas sit repudiandae possimus commodi doloribus fuga expedita exercitationem assumenda eos cum fugit amet, tempore pariatur culpa sapiente tenetur vel! Fugit, alias. Voluptatum quos autem eligendi animi sint impedit neque laudantium, praesentium placeat perferendis aspernatur alias in aliquid dolore voluptates libero voluptate ipsa rem nostrum odit nam quas reprehenderit. Expedita, fugit animi distinctio, soluta a suscipit, nulla asperiores enim sequi iste nostrum voluptate atque reprehenderit natus obcaecati porro possimus. Rerum eaque ex similique rem tempore? Laudantium odit non perspiciatis neque. Aliquam impedit iste, excepturi est sit itaque.</p>
+                </div>
+                <div class="mongoose-text" v-if="mongoose">
+                    <h2>Mongoose</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus sunt illum earum nulla cumque, porro, exercitationem laboriosam ullam, velit voluptate. Incidunt ab dolor laborum natus officiis deserunt quam unde veritatis? Omnis, eum exercitationem. Maxime, tenetur voluptates temporibus at sint natus quasi laborum veniam blanditiis tempora dignissimos! Illo eaque beatae ipsam error minima dolorem? Delectus maxime exercitationem id asperiores sequi blanditiis quod, incidunt quaerat, nobis harum aut dolor magni atque iure iste! Ab necessitatibus illo nulla temporibus! Iusto voluptate dolorem veniam illo incidunt perferendis tempore eum sunt. Corporis aliquam quasi iure inventore? Inventore alias, harum rem officia eos asperiores eius.</p>
+                </div>
+                <div class="sequelize-text" v-if="sequelize">
+                    <h2>Sequelize</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo modi quam pariatur optio perspiciatis nesciunt assumenda molestias. Quasi aliquid accusantium inventore voluptatem excepturi cupiditate eum, neque atque porro. Expedita excepturi, laboriosam explicabo deleniti fugiat sapiente provident harum itaque nihil eius reprehenderit quae autem, nesciunt culpa eum doloribus similique. Rem.</p>
+                </div>
+                <div class="sass-text" v-if="sass">
+                    <h2>SASS</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora nisi expedita explicabo aliquam! Autem sequi nostrum et maiores iste optio dignissimos quasi labore ea voluptates officiis tempore, ipsum ducimus voluptas provident velit, laborum aut suscipit cupiditate numquam. Repellat, maiores fugiat optio nostrum facilis accusantium obcaecati ipsa illo rem nihil itaque ipsum expedita qui veritatis eius ratione consequuntur error iure! Deleniti assumenda magni dolores cum tenetur amet repudiandae rem commodi?</p>
+                </div>
+                <div class="vue-text" v-if="vue">
+                    <h2>Vue.Js</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit pariatur, perferendis ab magnam praesentium obcaecati animi illum. Maxime magni rem tenetur reiciendis cumque odit facilis cum fuga, totam fugit ea veritatis, soluta commodi hic sit accusamus. Voluptates, laborum optio. Rem ad perspiciatis sapiente quidem maiores praesentium quia suscipit sint quam facere! Nam accusamus minus pariatur fuga tempore distinctio eos itaque ullam cupiditate corrupti adipisci eius, recusandae eveniet ipsa animi molestias quod autem! Iste quasi dolore asperiores mollitia distinctio explicabo eius, odit, sit recusandae adipisci cupiditate porro doloribus blanditiis! Nihil libero vero voluptates debitis accusantium aut quam. Perferendis dolor quas nesciunt consectetur harum amet fugiat necessitatibus a, non dolores sit inventore, illo earum! Dolorum nostrum nemo ratione, maxime eum vel pariatur ab fuga libero fugiat mollitia voluptates assumenda consequatur aliquid cumque similique. Sed quos sunt quod eos vitae rerum praesentium numquam nobis iste? Eos dicta qui repellat porro sint facilis rem ipsa explicabo tenetur at voluptates quae repudiandae eveniet sapiente saepe assumenda sit, nobis nesciunt illo laudantium, dolores maxime ut est! Nihil, esse hic voluptate corrupti laboriosam, aliquam cumque ipsa non similique libero at repudiandae laborum culpa veritatis fugit illo quam delectus quae! Magnam, assumenda omnis recusandae tempore aliquid tenetur.</p>
+                </div>
+    
+                 <div class="info-text" v-if="info">
+                    <h2>Adicional</h2>
+                    <p>
+                        em alguns dos meus projetos, eu também utilizei sequelize, o que eu não irei adicionar aqui, pois foi há 1 ano, não absorvi completamente pelo tempo e pratica que tive o utilizando, porém tenho familiaridade, já tive e ainda sei resolver alguns problemas do sequelize, e entendo o código se eu rever meu código ou ver de terceiros, também consigo criar um novo com essa base dos meus projetos antigos. <br>
+                        consumo de API, API/Rest/Restful entre outros eu também aprendi e absorvi e pratiquei, não irei adiciona-los aqui pois, sinto que seria muitas "skills" sem um propósito direto, apenas para "aumentar a quantidade", não que API'S sejam desnecessárias ou deveriam ser deixado de mão ou não tenham importancia, longe e completamente longe disso, é umas das coisas mais importantes caso você queira mostrar conhecimentos, mas o uso e o quanto sei e o que eu criei, vai ficar nitido e mais claro nos projetos do que aqui, então opitei por destacar isso na descrição dos projetos, e no fim, a melhor demonstração que será o próprio projeto. 
+                    </p>
+                </div>
+            
+                </TransitionGroup>
+            </div>
+            <div class="container-skills">
                     <div class="general-container">
                         <div class="scroll-container" @scroll="scrolled($event)">
                             <div class="scroll">
@@ -70,7 +75,7 @@
                             </div>
                         </div>
                         <div class="icon-containers">
-                            <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
+                            <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso Ã© tudo <br> (por enquanto)</span>
                             <div class="icons">
                                  <IconMenu :class="{'html': true, 'absolute': true, 'zindex-up': true, 'active': html}" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
                                  <IconMenu :class="{'css':true, 'absolute':true, 'zindex-up': true, 'active': css}" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
@@ -90,7 +95,6 @@
                 </div>
             </div>
         </MqResponsive>
-
 
 
 
@@ -368,7 +372,7 @@ export default {
 <style scoped>
 .menu{
     position: absolute;
-    bottom: 6%;
+    bottom: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
