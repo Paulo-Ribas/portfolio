@@ -1,7 +1,10 @@
 <template>
-    <div class="menu">
+    <MqResponsive class="menu" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
         <MainMenu :MenuFixoProps="true" :ActivatedProps="'cd'"></MainMenu>
-    </div>
+    </MqResponsive>
+    <MqResponsive class="menu" target="xs"> 
+        <MainMenuMobile :closedProps="true" :ActivatedProps="'cd'"/>
+    </MqResponsive>
     <section id="projects">
         <MqResponsive :target="['xl', 'sm', 'md', 'lg']">
             <div class="projects-window-container">
@@ -22,7 +25,15 @@
         <MqResponsive :target="['xl', 'sm', 'md', 'lg']">
             <div class="project-container">
                 <Transition name="projectsTransition-1">
-                    <Project v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon: 'node-js', prefix: 'fab'},{nameIcon:'circle', prefix:'fas'}]"></Project>
+                    <Project v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://qqq.com.br" :iconsProps="[
+                        { nameIcon: 'html5', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'css3', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'js', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'database', prefix: 'fas', fillProps: '#fff' },
+                        { nameIcon: 'node-js', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: 'white' },
+                        { nameIcon: 'sequelize', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: 'white' }
+                    ]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-2">
                     <Project v-if="ChatSocket_data" :projectImgProps="'logotipoPauloRibas.png'" projectNameProps="ChatSocket" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
@@ -31,7 +42,7 @@
                     <Project v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-4">
-                    <Project v-if="AMG_data" :projectImgProps="'logoTeste5.png'" projectNameProps="AMG" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
+                    <Project v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3 }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4 }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }]"></Project>
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>
@@ -39,10 +50,10 @@
                 </div>
             </div>
         </MqResponsive>
-        <MqResponsive target="xs">
+        <MqResponsive target="xs" class="mobile">
             <div class="project-container-mobile">
                 <Transition name="projectsTransition-1">
-                    <ProjectMobileVVue v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon: 'node-js', prefix: 'fab'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://qqq.com.br" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'node-js', prefix: 'fab' }, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0 }, { nameIcon: 'sequelize', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1 }]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-2">
                     <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'logotipoPauloRibas.png'" projectNameProps="ChatSocket" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
@@ -51,7 +62,7 @@
                     <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-4">
-                    <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'logoTeste5.png'" projectNameProps="AMG" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>
@@ -68,6 +79,8 @@ import WindowProject from "../components/ProjectWindow.vue"
 import Project from '../components/Project.vue'
 import ProjectMobileVVue from "@/components/ProjectMobileV.vue";
 import ProjectWindowMobileV from "@/components/ProjectWindowMobileV.vue";
+import MainMenuMobile from '../components/NavegationMenuMobile.vue'
+
 export default {
     name: 'Projects-',
     components:{
@@ -75,7 +88,8 @@ export default {
         WindowProject,
         Project,
         ProjectMobileVVue,
-        ProjectWindowMobileV
+        ProjectWindowMobileV,
+        MainMenuMobile
     },
     mounted(){
         this.showProject('LinkCut')
@@ -141,6 +155,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 .projects-window-container {
     width: 90%;
@@ -153,7 +168,7 @@ export default {
     justify-content: space-evenly;
 }
 .mobile {
-    flex-direction: column;
+    height: 100%;
 }
 .project-container{
     min-height: 500px;
@@ -175,20 +190,28 @@ export default {
     align-self: center;
     flex-direction: column;
     overflow-y: auto;
+    align-items: center;
 }
 .project-text-container{
-    flex: 1;
     max-height: 500px;
+    flex: 1;
+    height: calc(100% - 37px);
     max-width: 600px;
     color: var(--texto-padrao);
     font-size: 1.1em;
-    padding: 0% 2%
+    padding: 0% 0%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .project-container h2 {
     color: #0085FF;
 }
 .project-text-container p {
     color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-all;
+    padding: 0% 1%;
 }
 
 .projectsTransition-1-enter-active,
@@ -234,7 +257,31 @@ export default {
     opacity: 0;
     transform: translateX(-100%);
 }
-    
+@media screen and (max-height: 384px) {
+    .project-container-mobile {
+        max-height: 260px;
+        height: 98%;
+        min-height: unset;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .project-text-container {
+        max-height: 255px;
+    }
+}
+@media screen and (max-width: 384px) {
+    .project-text-container {
+        margin-top: 5px;
+        max-height: 180px;
+    }
+}
 
 
 </style>

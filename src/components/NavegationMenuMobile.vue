@@ -1,7 +1,9 @@
 <template>
     <Transition name="teste">
-        <nav :class="{MenuFixo,'container-icons': true}" @mouseover="closed = false" @mouseout="closed = true">
-            <img v-show="closed" class="img-menu" src="../assets/img/menu.png">
+        <nav :class="{MenuFixo,'container-icons': true}" @click="toggleMenu">
+            <div class="img-container"  v-if="closed">
+                <img class="img-menu" src="../assets/img/menu.png">
+            </div>
             <ul v-show="!closed">
                 <li>
                     <Transition name="ap">
@@ -27,14 +29,11 @@
                         </router-link>
                     </Transition>
                 </li>
-                <li>
-                    <Transition name="lk">
-                        <router-link :class="{Activated: Active === 'lk'}" to="/links" v-if="!Animation">
-                            <IconMenu prefixProps="fas" iconNameProps="laptopCode" @enter="enterEmit('cdg')"
-                                @leave="leaveEmit('cdg')"></IconMenu>
-                        </router-link>
-                    </Transition>
-                </li>
+               <li>
+            <Transition name="cdg">
+                <router-link :class="{Activated: Active === 'cdg'}" to="/projects-general" v-if="!Animation"><IconMenu prefixProps="fas" iconNameProps="laptop-code" @enter="enterEmit('cdg')" @leave="leaveEmit('cdg')"></IconMenu></router-link>
+            </Transition>
+            </li>
                 <li>
                     <Transition name="lk">
                         <router-link :class="{Activated: Active === 'lk'}" to="/links" v-if="!Animation">
@@ -60,7 +59,7 @@ export default {
             MenuFixo: this.MenuFixoProps,
             Animation: this.AnimationProps,
             Active: this.ActivatedProps,
-            closed: false,
+            closed: this.closedProps,
         }
     },
     mounted() {
@@ -70,6 +69,7 @@ export default {
         MenuFixoProps: Boolean,
         AnimationProps: Boolean,
         ActivatedProps: String,
+        closedProps: Boolean,
     },
     methods: {
         enterEmit(data) {
@@ -77,29 +77,41 @@ export default {
         },
         leaveEmit(data) {
             this.$emit(data)
-        }
+        },
+        toggleMenu(){
+            this.closed = !this.closed
+            this.MenuFixo = !this.closed
+            console.log(this.MenuFixo)
+        },
     }
 }
 </script>
 
 <style scoped>
 .container-icons {
-    max-width: 140px;
-    width: 100%;
-    height: 50px;
-    background: var(--background-special);
-    background: var(--special-gradient-support);
-    background: var(--special-gradient);
-    border-radius: 50px;
-    transition: 0.6s ease-in;
-    font-size: 1.3em;
-    padding: 0px 4px;
+    width: 98%;
+    max-width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
 
 }
 
+.img-container {
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
 .img-menu {
-    width: 30px;
-    height: 30px;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     object-fit: contain;
 }
 
@@ -110,15 +122,17 @@ export default {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 1.3em
 }
 
-.container-icons:hover {
-    max-width: 500px !important;
-
-}
 
 .MenuFixo {
     max-width: 500px !important;
+    background: var(--special-gradient-support) !important;
+    background: var(--special-gradient)!important;
+    height: 45px !important;
+    border-radius: 50px;
+    margin: 0px;
 }
 
 .Activated {

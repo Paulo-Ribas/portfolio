@@ -1,9 +1,12 @@
 <template>
     <section id="skills">
-        <div class="menu">
+        <MqResponsive class="menu" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
             <MainMenu :MenuFixoProps="true" :ActivatedProps="'sk'"></MainMenu>
-        </div>
-        <MqResponsive :target="['xl', 'sm', 'md', 'lg', 'xxl']">
+        </MqResponsive>
+        <MqResponsive class="menu" target="xs"> 
+            <MainMenuMobile :closedProps="true" :ActivatedProps="'sk'"/>
+        </MqResponsive>
+        <MqResponsive class="mq" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
             <div class="container">
                 <div class="text-container">
                     <TransitionGroup name="text-group">
@@ -83,9 +86,7 @@
                                  <IconMenu :class="{'node':true, 'absolute':true, 'zindex-up': true, 'active': node}" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked" nameProps="node"></IconMenu>
                                  <IconMenu :class="{'mysql':true, 'absolute':true, 'zindex-up': true, 'active': mysql}" prefixProps="fas" iconNameProps="database" @clicked="iconClicked" nameProps="mysql"></IconMenu>
                                  <IconMenu :class="{'mongo':true, 'absolute':true, 'zindex-up': true, 'active': mongo}" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked" nameProps="mongo"></IconMenu>
-                                 <CostumIcon :class="{ 'knex':true, 'absolute':true, 'zindex-up': true, 'active': knex }" iconNameProps="knex" @clicked="iconClicked" :iconWhiteProps="false"></CostumIcon>
-                                 <IconMenu :class="{'mongoose':true, 'absolute':true, 'zindex-up': true, 'active': mongoose}" prefixProps="fas" iconNameProps="dog" @clicked="iconClicked" nameProps="mongoose"></IconMenu>
-                                 <IconMenu :class="{'sequelize':true, 'absolute':true, 'zindex-up': true, 'active': sequelize}" prefixProps="fas" iconNameProps="person-pregnant" @clicked="iconClicked" nameProps="sequelize"></IconMenu>
+                                 <CostumIcon v-for="(icon, index) in arraySavior" :key="index + icon.iconName" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': false }" :iconClassNameProps="icon.className" :iconNameProps="icon.iconName" :whiteProps="icon.white" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" :effectHoverProps="true" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :fillProps="icon.fillProps" @clicked="iconClicked($event), costumIconClicked($event)"></CostumIcon>
                                  <IconMenu :class="{'vue':true, 'absolute':true, 'zindex-up': true, 'active': vue}" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
                                  <IconMenu :class="{'sass':true, 'absolute':true, 'zindex-up': true, 'active': sass}" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
                                  <IconMenu v-show="showInfo" :class="{'info':true, 'absolute':true, 'zindex-up': true, 'active': info}" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
@@ -98,93 +99,8 @@
 
 
 
-        <MqResponsive target="xs">
-            <div class="container-mobile">
-                <div class="text-container">
-                    <TransitionGroup name="text-group">
-                
-                    <div class="html-text" v-if="html">
-                        <h2>HTML</h2> <!-- tag abreviamento -->
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis facere non eius reiciendis mollitia ipsum ex commodi accusantium, quasi, iure laudantium enim illum dolores id consequatur? Perferendis quo, pariatur esse quae distinctio qui error magnam quasi minima totam temporibus porro voluptas dolore possimus aspernatur laborum officia dolorum impedit maiores cupiditate. Praesentium non, ratione maxime et, odio ab nemo nesciunt inventore facilis blanditiis neque! Sit hic veniam possimus magni odio accusamus illo modi iste quis! Unde perspiciatis earum quae? Debitis, vitae.</p>
-                    </div>
-                    <div class="css-text" v-if="css">
-                        <h2>CSS</h2> <!-- tag sobre abreviamento -->
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus magni explicabo iste voluptatum hic doloribus esse, consequuntur eum aliquam blanditiis omnis autem illo quas libero voluptas, perferendis quisquam laborum cum non animi. Doloribus error quasi incidunt voluptate mollitia vitae odio consectetur eligendi rerum quos expedita laboriosam dolores unde cum, eum qui, veritatis maxime? Doloribus aliquid dicta enim vel explicabo velit asperiores reprehenderit nesciunt inventore libero, id obcaecati ducimus dolorum totam ratione voluptate eius voluptatum voluptatem rerum eveniet delectus? Reiciendis quos quod aperiam. Aspernatur placeat doloribus cumque perferendis, libero laboriosam nesciunt.</p>
-                    </div>
-                    <div class="js-text" v-if="js">
-                        <h2>Java Script</h2>
-                        <p>iniciei meus estudos em janeiro de 2021, comprei livro <!-- tag de citação --> js(livro) <!-- / --> e então parti para os cursos, começei pela lógica de programação usando portugol, depois de 1 mês, senti que estava pronto para partir para uma linguagem de verdade, decidi focar em javascript, assim que eu terminei de estudar lógica, e sentia que estava competente com html e css, comprei cursos focados em javascript, saldjsaodhosadhsa, jsdsajdasdhsadhs, complementei meus estudos pesquisando, procurando conteudos fora, e praticando, sempre fazendo tudo do 0 pois pela minha consepção, em um emprego você tem que está preparado para fazer qualquer coisa que seja possivel, e possivel é o que basta para você conseguir fazer o que tem que ser feito mesmo não tendo sido "ensinado" antes</p>   
-                    </div>
-                    <div class="node-text" v-if="node">
-                        <h2>Node</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio aliquam sapiente, sunt recusandae molestias, porro, reprehenderit sint quo odit sequi omnis quos pariatur eaque sit? Dolor, ad provident? Porro minima est labore, reiciendis deserunt ullam id fugit, iusto pariatur ducimus maxime nam unde vero impedit possimus, adipisci rerum quam ipsa numquam laudantium! Molestias ullam libero quis consectetur. Et, delectus. Officia aspernatur quos obcaecati commodi, odio eius sunt. Sit, dolorum vel blanditiis accusamus praesentium consectetur cum soluta consequatur commodi quidem necessitatibus tempora aspernatur nulla rerum aperiam reprehenderit numquam non accusantium velit aliquam. Dicta a tenetur in tempora saepe repudiandae quaerat deleniti mollitia voluptates ut, voluptate commodi libero aut quam accusamus molestias, aliquam, nemo maiores ex modi earum iusto aspernatur! A vero molestiae tenetur cumque aspernatur dolorum dolore ea. Impedit quasi vitae quia quidem et laborum, harum recusandae maxime consequatur quo quam.</p>
-                    </div>
-                    <div class="mysql-text" v-if="mysql">
-                        <h2>Mysql</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sapiente accusamus, cupiditate modi nostrum quisquam assumenda provident excepturi ad sequi incidunt neque debitis optio. Eligendi at necessitatibus quam qui, fugit doloribus! Eveniet laboriosam vel earum perferendis nobis consequuntur veniam laborum iste labore eligendi non inventore minus, enim doloribus dolore laudantium et nostrum doloremque. Excepturi explicabo vel aspernatur beatae iure odio corrupti, earum pariatur, veniam voluptas quae praesentium saepe aperiam nisi magnam est nemo nihil illo? Delectus molestias provident nihil placeat possimus soluta autem natus recusandae quod culpa pariatur animi distinctio esse eum omnis debitis, facere minus fugit nesciunt? Omnis vitae dolorum modi accusamus quae deserunt, amet tempore laborum, doloremque fugit incidunt labore nobis corrupti rem repudiandae voluptate, numquam dignissimos voluptas?</p>
-                    </div>
-                    <div class="mongo-text" v-if="mongo">
-                        <h2>MongoDB</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, aliquam sint. Iusto iste est officiis consectetur corrupti explicabo dolor dolorum beatae consequatur repellat dolorem blanditiis voluptate aut, in maiores alias dolore ratione enim tempore! Nesciunt officiis aliquam dignissimos. Minima, fugiat quia! Animi sequi atque tenetur optio recusandae officia quod expedita, ipsum aperiam sint dicta nisi officiis ad! Repellendus modi quis magnam id impedit, asperiores commodi, dicta voluptates adipisci sit saepe voluptate quibusdam, officia fuga tempore aspernatur! Illum quod est ex, doloribus aut minima nobis laudantium fugiat expedita maxime eveniet quae aspernatur excepturi provident odit ipsam libero. Ab cum magnam nobis dolorum praesentium quam repellendus omnis commodi asperiores? Asperiores harum error sapiente ratione at deserunt consectetur repellendus, laudantium laboriosam quis assumenda.</p>
-                    </div>
-                    <div class="knex-text" v-if="knex">
-                        <h2>KNEX.JS</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis reprehenderit aut officiis ad. Quas sit repudiandae possimus commodi doloribus fuga expedita exercitationem assumenda eos cum fugit amet, tempore pariatur culpa sapiente tenetur vel! Fugit, alias. Voluptatum quos autem eligendi animi sint impedit neque laudantium, praesentium placeat perferendis aspernatur alias in aliquid dolore voluptates libero voluptate ipsa rem nostrum odit nam quas reprehenderit. Expedita, fugit animi distinctio, soluta a suscipit, nulla asperiores enim sequi iste nostrum voluptate atque reprehenderit natus obcaecati porro possimus. Rerum eaque ex similique rem tempore? Laudantium odit non perspiciatis neque. Aliquam impedit iste, excepturi est sit itaque.</p>
-                    </div>
-                    <div class="mongoose-text" v-if="mongoose">
-                        <h2>Mongoose</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus sunt illum earum nulla cumque, porro, exercitationem laboriosam ullam, velit voluptate. Incidunt ab dolor laborum natus officiis deserunt quam unde veritatis? Omnis, eum exercitationem. Maxime, tenetur voluptates temporibus at sint natus quasi laborum veniam blanditiis tempora dignissimos! Illo eaque beatae ipsam error minima dolorem? Delectus maxime exercitationem id asperiores sequi blanditiis quod, incidunt quaerat, nobis harum aut dolor magni atque iure iste! Ab necessitatibus illo nulla temporibus! Iusto voluptate dolorem veniam illo incidunt perferendis tempore eum sunt. Corporis aliquam quasi iure inventore? Inventore alias, harum rem officia eos asperiores eius.</p>
-                    </div>
-                    <div class="sequelize-text" v-if="sequelize">
-                        <h2>Sequelize</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo modi quam pariatur optio perspiciatis nesciunt assumenda molestias. Quasi aliquid accusantium inventore voluptatem excepturi cupiditate eum, neque atque porro. Expedita excepturi, laboriosam explicabo deleniti fugiat sapiente provident harum itaque nihil eius reprehenderit quae autem, nesciunt culpa eum doloribus similique. Rem.</p>
-                    </div>
-                    <div class="sass-text" v-if="sass">
-                        <h2>SASS</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora nisi expedita explicabo aliquam! Autem sequi nostrum et maiores iste optio dignissimos quasi labore ea voluptates officiis tempore, ipsum ducimus voluptas provident velit, laborum aut suscipit cupiditate numquam. Repellat, maiores fugiat optio nostrum facilis accusantium obcaecati ipsa illo rem nihil itaque ipsum expedita qui veritatis eius ratione consequuntur error iure! Deleniti assumenda magni dolores cum tenetur amet repudiandae rem commodi?</p>
-                    </div>
-                    <div class="vue-text" v-if="vue">
-                        <h2>Vue.Js</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit pariatur, perferendis ab magnam praesentium obcaecati animi illum. Maxime magni rem tenetur reiciendis cumque odit facilis cum fuga, totam fugit ea veritatis, soluta commodi hic sit accusamus. Voluptates, laborum optio. Rem ad perspiciatis sapiente quidem maiores praesentium quia suscipit sint quam facere! Nam accusamus minus pariatur fuga tempore distinctio eos itaque ullam cupiditate corrupti adipisci eius, recusandae eveniet ipsa animi molestias quod autem! Iste quasi dolore asperiores mollitia distinctio explicabo eius, odit, sit recusandae adipisci cupiditate porro doloribus blanditiis! Nihil libero vero voluptates debitis accusantium aut quam. Perferendis dolor quas nesciunt consectetur harum amet fugiat necessitatibus a, non dolores sit inventore, illo earum! Dolorum nostrum nemo ratione, maxime eum vel pariatur ab fuga libero fugiat mollitia voluptates assumenda consequatur aliquid cumque similique. Sed quos sunt quod eos vitae rerum praesentium numquam nobis iste? Eos dicta qui repellat porro sint facilis rem ipsa explicabo tenetur at voluptates quae repudiandae eveniet sapiente saepe assumenda sit, nobis nesciunt illo laudantium, dolores maxime ut est! Nihil, esse hic voluptate corrupti laboriosam, aliquam cumque ipsa non similique libero at repudiandae laborum culpa veritatis fugit illo quam delectus quae! Magnam, assumenda omnis recusandae tempore aliquid tenetur.</p>
-                    </div>
-    
-                     <div class="info-text" v-if="info">
-                        <h2>Adicional</h2>
-                        <p>
-                            em alguns dos meus projetos, eu também utilizei sequelize, o que eu não irei adicionar aqui, pois foi há 1 ano, não absorvi completamente pelo tempo e pratica que tive o utilizando, porém tenho familiaridade, já tive e ainda sei resolver alguns problemas do sequelize, e entendo o código se eu rever meu código ou ver de terceiros, também consigo criar um novo com essa base dos meus projetos antigos. <br>
-                            consumo de API, API/Rest/Restful entre outros eu também aprendi e absorvi e pratiquei, não irei adiciona-los aqui pois, sinto que seria muitas "skills" sem um propósito direto, apenas para "aumentar a quantidade", não que API'S sejam desnecessárias ou deveriam ser deixado de mão ou não tenham importancia, longe e completamente longe disso, é umas das coisas mais importantes caso você queira mostrar conhecimentos, mas o uso e o quanto sei e o que eu criei, vai ficar nitido e mais claro nos projetos do que aqui, então opitei por destacar isso na descrição dos projetos, e no fim, a melhor demonstração que será o próprio projeto. 
-                        </p>
-                    </div>
-    
-                    </TransitionGroup>
-                </div>
-                <div class="container-skills">
-                    <div class="general-container">
-                        <div class="scroll-container" @scroll="scrolled($event)">
-                            <div class="scroll">
-                                <span class="point">.</span>
-                            </div>
-                        </div>
-                        <div class="icon-containers">
-                            <span :class="{ spanHidden, spanNotHidden }" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
-                            <div class="icons">
-                                 <IconMenu :class="{ 'html': true, 'absolute': true, 'zindex-up': true, 'active': html }" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
-                                 <IconMenu :class="{ 'css': true, 'absolute': true, 'zindex-up': true, 'active': css }" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
-                                 <IconMenu :class="{ 'js': true, 'absolute': true, 'zindex-up': true, 'active': js }" prefixProps="fab" iconNameProps="js" @clicked="iconClicked" nameProps="js"></IconMenu>
-                                 <IconMenu :class="{ 'node': true, 'absolute': true, 'zindex-up': true, 'active': node }" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked" nameProps="node"></IconMenu>
-                                 <IconMenu :class="{ 'mysql': true, 'absolute': true, 'zindex-up': true, 'active': mysql }" prefixProps="fas" iconNameProps="database" @clicked="iconClicked" nameProps="mysql"></IconMenu>
-                                 <IconMenu :class="{ 'mongo': true, 'absolute': true, 'zindex-up': true, 'active': mongo }" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked" nameProps="mongo"></IconMenu>
-                                 <CostumIcon :class="{'knex': true, 'absolute': true, 'zindex-up': true, 'active': knex }" iconNameProps="knex" @clicked="iconClicked" :iconColorProps="false"></CostumIcon>
-                                 <IconMenu :class="{ 'mongoose': true, 'absolute': true, 'zindex-up': true, 'active': mongoose }" prefixProps="fas" iconNameProps="dog" @clicked="iconClicked" nameProps="mongoose"></IconMenu>
-                                 <IconMenu :class="{ 'sequelize': true, 'absolute': true, 'zindex-up': true, 'active': sequelize }" prefixProps="fas" iconNameProps="person-pregnant" @clicked="iconClicked" nameProps="sequelize"></IconMenu>
-                                 <IconMenu :class="{ 'vue': true, 'absolute': true, 'zindex-up': true, 'active': vue }" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
-                                 <IconMenu :class="{ 'sass': true, 'absolute': true, 'zindex-up': true, 'active': sass }" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
-                                 <IconMenu v-show="showInfo" :class="{ 'info': true, 'absolute': true, 'zindex-up': info, 'active': info }" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <MqResponsive class="mq" target="xs">
+            <SkillsMobile></SkillsMobile>
         </MqResponsive>
     </section>
 </template>
@@ -193,12 +109,17 @@
 import MainMenu from "../components/NavegationMenu.vue";
 import IconMenu from '../components/Icons.vue'
 import CostumIcon from "../components/svg/CostumIcon.vue";
+import MainMenuMobile from '../components/NavegationMenuMobile.vue'
+import SkillsMobile from '@/components/SkillsMobile.vue';
 export default {
     name: 'Skills-',
     components:{
         MainMenu,
         IconMenu,
-        CostumIcon
+        CostumIcon,
+        MainMenuMobile,
+        SkillsMobile
+        
     },
     data(){
         return {
@@ -217,6 +138,7 @@ export default {
             spanHidden: true,
             spanNotHidden: false,
             showInfo: false,
+            arraySavior:[{className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps:'#000428' }, { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' },  { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff' }, { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' }, { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'api', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, ]
         }
     },
     mounted(){
@@ -237,7 +159,15 @@ export default {
             name === 'vue' ? this.vue = true : this.vue = false
             name === 'info' ? this.info = true : this.info = false
         },
+        costumIconClicked(iconName){
+            let arrayIconNames = this.arraySavior.map(icon => {
+                return {iconName: icon.iconName, className: icon.className, effectHoverProps: iconName === icon.name, activeEffectProps: true, white: icon.iconName === iconName, hoverProps: icon.hoverProps, fillProps: icon.fillProps}
+            })
+            this.arraySavior = arrayIconNames
+
+        },
         scrolled($event){
+            console.log($event.target.scrollTop, 'eventos')
             const Rodar = document.querySelector('.icons')
             if($event.target.scrollTop < 100){
                 Rodar.style.transform = `rotate(0deg)`
@@ -245,6 +175,7 @@ export default {
                 this.toggleIcon(2, true)
                 this.toggleIcon(3, true)
                 this.toggleIcon(4, true)
+                this.toggleIcon(5, true)
 
                 this.spanHidden = true
                 this.spanNotHidden = false
@@ -254,6 +185,7 @@ export default {
                 this.toggleIcon(1, true)
                 this.toggleIcon(2, false)
                 this.toggleIcon(3, true)
+                this.toggleIcon(5, true)
 
                 this.spanHidden = true
                 this.spanNotHidden = false
@@ -264,6 +196,7 @@ export default {
                 this.toggleIcon(2, true)
                 this.toggleIcon(3, false)
                 this.toggleIcon(4, true)
+                this.toggleIcon(5, true)
 
                 this.spanHidden = true
                 this.spanNotHidden = false
@@ -273,29 +206,35 @@ export default {
                 this.toggleIcon(1, true)
                 this.toggleIcon(4, false)
                 this.toggleIcon(3, true)
+                this.toggleIcon(5, true)
 
                 this.spanHidden = true
                 this.spanNotHidden = false
             }
             if($event.target.scrollTop >= 400 && $event.target.scrollTop < 500){
-                Rodar.style.transform = `rotate(361deg)`
-                this.toggleIcon(1, true)
-                this.toggleIcon(2, true)
-                this.toggleIcon(3, true)
-                this.toggleIcon(4, true, true)
-
-                this.spanHidden = true
-                this.spanNotHidden = false
-            }
-            if($event.target.scrollTop >= 500){
-                Rodar.style.transform = `rotate(460deg)`
+                 Rodar.style.transform = `rotate(361deg)`
                 this.toggleIcon(1, true)
                 this.toggleIcon(2, true)
                 this.toggleIcon(3, true)
                 this.toggleIcon(4, true)
+                this.toggleIcon(5, false)
+            }
+            if($event.target.scrollTop >= 500 && $event.target.scrollTop < 600){
+                Rodar.style.transform = `rotate(460deg)`
+                this.toggleIcon(1, true)
+                this.toggleIcon(2, true)
+                this.toggleIcon(3, true)
+                this.toggleIcon(4, true, true)
+                this.toggleIcon(5, true)
 
+                this.spanHidden = true
+                this.spanNotHidden = false
+
+            }
+            if($event.target.scrollTop >= 600) {
                 this.spanHidden = false
                 this.spanNotHidden = true
+
             }
             //Rodar.style.transform = `translate(-33%, -53%) rotate(${count}deg)`
         },
@@ -317,23 +256,49 @@ export default {
                         document.querySelector('.css').style.opacity = 0 
                         document.querySelector('.js').style.opacity = 0 
                         
+                         document.querySelector('.html').style.pointerEvents = 'none' 
+                        document.querySelector('.css').style.pointerEvents = 'none' 
+                        document.querySelector('.js').style.pointerEvents = 'none' 
+                        
                     }
                     if (iconGroup === 2) {
                         document.querySelector('.node').style.opacity = 0 
                         document.querySelector('.mysql').style.opacity = 0 
                         document.querySelector('.mongo').style.opacity = 0 
+
+                         document.querySelector('.node').style.pointerEvents = 'none' 
+                        document.querySelector('.mysql').style.pointerEvents = 'none' 
+                        document.querySelector('.mongo').style.pointerEvents = 'none' 
                         
                     }
                     if (iconGroup === 3) {
                         document.querySelector('.knex').style.opacity = 0 
                         document.querySelector('.mongoose').style.opacity = 0 
                         document.querySelector('.sequelize').style.opacity = 0 
+
+                         document.querySelector('.knex').style.pointerEvents = 'none' 
+                        document.querySelector('.mongoose').style.pointerEvents = 'none' 
+                        document.querySelector('.sequelize').style.pointerEvents = 'none' 
                         
                     }
                     if (iconGroup === 4) {
                         document.querySelector('.sass').style.opacity = 0 
-                        document.querySelector('.vue').style.opacity = 0 
+                        document.querySelector('.vue').style.opacity = 0
+                        document.querySelector('.nuxt').style.opacity = 0
+
+                         document.querySelector('.sass').style.pointerEvents = 'none' 
+                        document.querySelector('.vue').style.pointerEvents = 'none' 
+                        document.querySelector('.nuxt').style.pointerEvents = 'none'   
                         
+                    }
+                    if (iconGroup === 5) {
+                        document.querySelector('.webpack').style.opacity = 0
+                        document.querySelector('.socket').style.opacity = 0
+                        document.querySelector('.api').style.opacity = 0
+
+                         document.querySelector('.webpack').style.opacity = 0 
+                        document.querySelector('.socket').style.opacity = 0 
+                        document.querySelector('.api').style.opacity = 0 
                     }
                     
                 }
@@ -342,24 +307,50 @@ export default {
                         document.querySelector('.html').style.opacity = 1 
                         document.querySelector('.css').style.opacity = 1 
                         document.querySelector('.js').style.opacity = 1 
+
+                        document.querySelector('.html').style.pointerEvents = 'all' 
+                        document.querySelector('.css').style.pointerEvents = 'all' 
+                        document.querySelector('.js').style.pointerEvents = 'all' 
                         
                     }
                     if (iconGroup === 2) {
                         document.querySelector('.node').style.opacity = 1 
                         document.querySelector('.mysql').style.opacity = 1 
                         document.querySelector('.mongo').style.opacity = 1 
+
+                        document.querySelector('.node').style.pointerEvents = 'all' 
+                        document.querySelector('.mysql').style.pointerEvents = 'all' 
+                        document.querySelector('.mongo').style.pointerEvents = 'all' 
                         
                     }
                     if (iconGroup === 3) {
                         document.querySelector('.knex').style.opacity = 1 
                         document.querySelector('.mongoose').style.opacity = 1 
                         document.querySelector('.sequelize').style.opacity = 1 
+
+                        document.querySelector('.knex').style.pointerEvents = 'all' 
+                        document.querySelector('.mongoose').style.pointerEvents = 'all' 
+                        document.querySelector('.sequelize').style.pointerEvents = 'all' 
                         
                     }
                     if (iconGroup === 4) {
                         document.querySelector('.sass').style.opacity = 1 
-                        document.querySelector('.vue').style.opacity = 1 
+                        document.querySelector('.vue').style.opacity = 1
+                        document.querySelector('.nuxt').style.opacity = 1  
+
+                        document.querySelector('.sass').style.pointerEvents = 'all' 
+                        document.querySelector('.vue').style.pointerEvents = 'all'
+                        document.querySelector('.nuxt').style.pointerEvents = 'all' 
                         
+                    }
+                    if(iconGroup === 5){
+                        document.querySelector('.webpack').style.opacity = 1
+                        document.querySelector('.socket').style.opacity = 1
+                        document.querySelector('.api').style.opacity = 1
+
+                        document.querySelector('.webpack').style.pointerEvents = 'all'
+                        document.querySelector('.socket').style.pointerEvents = 'all'
+                        document.querySelector('.api').style.pointerEvents = 'all'
                     }
                 }
             }, 300);
@@ -394,6 +385,9 @@ export default {
     max-width: 1366px;
     display: flex;
     align-items: center;
+}
+.mq {
+    width: 100%
 }
 .container-skills {
     width: 40%;
@@ -474,57 +468,67 @@ export default {
     left: 0;
     top: 0;
     transform: translate(66%, 166%);
+    pointer-events: all
 }
 .css{
     left: 5%;
     top: 46%;
+    pointer-events: all
     /* transform: translate(22%, 321%); */
 }
 .js{
     left: 53px;
     top: 68%;
+    pointer-events: all
 }
 .node{
     left: 36%;
     top: 82%;
     transform: rotate(252deg);
     opacity: 0;
+    pointer-events: none;
 }
 .mysql{
     left: 58%;
     top: 76%;
     transform: rotate(252deg);
     opacity: 0;
+    pointer-events: none;
 }
 .mongo{
     left: 75%;
     top: 64%;
     transform: rotate(252deg);
     opacity: 0;
+    pointer-events: none;
 }
-.knex svg{
+.knex {
     left: 81%;
     top: 49%;
     opacity: 0;
     cursor: pointer;
     width: 2rem !important;
     height: 2rem !important;
+    pointer-events: none;
 }
 .mongoose{
     left: 75%;
     top: 28%;
     opacity: 0;
+    pointer-events: none;
 }
 .sequelize{
     left: 64%;
     top: 9%;
     opacity: 0;
+    pointer-events: none;
 }
 .sass {
     left: 52%;
     top: 5%;
     transform: rotate(75deg);
     opacity: 0;
+    pointer-events: none;
 
 }
 .vue{
@@ -532,6 +536,33 @@ export default {
     top: 8.5%;
     transform: rotate(75deg);
     opacity: 0;
+    pointer-events: none;
+}
+.nuxt {
+    left: 11%;
+    top: 14.5%;
+    transform: rotate(75deg);
+    opacity: 0;
+    pointer-events: none;
+}
+.webpack {
+    left: 6%;
+    top: 23%;
+    opacity: 0;
+    pointer-events: none;
+}
+.socket{
+    left: 5%;
+    top: 46%;
+    opacity: 0;
+    pointer-events: none;
+    /* transform: translate(22%, 321%); */
+}
+.api{
+    left: 53px;
+    top: 68%;
+    opacity: 0;
+    pointer-events: nonde;
 }
 .info {
     left: 5%;
@@ -539,188 +570,15 @@ export default {
     opacity: 0;
     z-index: -1;
 }
-.html, .css, .js, .node, .mysql, .mongo, .knex, .mongosse, .sequelize, .sass, .vue, .info {
+.html, .css, .js, .node, .mysql, .mongo, .knex, .mongosse, .sequelize, .sass, .vue, .info , .nuxt {
     transition: 0.1s;
+    cursor: pointer;
 }
 .zindex-up {
     z-index: 5;
-    pointer-events: all;
-    cursor: pointer;
 }
 .absolute {
     position: absolute;
 }
-.text-container {
-    color: var(--texto-padrao);
-    display: flex;
-    padding: 4% 4%;
-    justify-content: center;
-}
-.text-group-enter-active, .text-group-leave-active {
-  transition: 1.2s;
-}
 
-.text-group-enter-from{
-    transform:translate(100%, -20%) scale(0);
-
-    
-}
-.text-group-enter-to{
-    transform:translate(0%, 0%) scale(1);
-    
-}
-.text-group-leave-from{
-    position: absolute;
-    transform:translate(0%, 0%) scale(1);
-}
-.text-group-leave-to{
-    position: absolute;
-    transform:translate(100%, -20%) scale(0);    
-}
-    
-.spanNotHidden {
-    color: var(--texto-padrao);
-    position: absolute;
-    left: 30%;
-    top: 50%;
-    transform: translate(-50%, -30%);
-    font-size: 0.6em;
-    opacity: 1;
-    transition: opacity 0.9s;
-}
-.spanHidden {
-    opacity: 0;
-    transition: opacity 0.6s;
-    
-}
-.active {
-    color: white !important;
-}
-
-.container-mobile {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-
-}
-.container-mobile .container-skills {
-    width: 100%;
-    height: 25%;
-    position: unset;
-    padding-right: 5px;
-    
-    
-}
-.container-mobile .general-container {
-    width: 100%;
-    height: 100%;
-    position: unset;
-    max-height: 450px;
-}
-.container-mobile .icon-containers {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background: none;
-    width: 100%;
-    transform: translate(-50%, -119%) rotate(-87deg);
-    max-width: 460px;
-    height: 100%;
-    max-height: none;
-    border-radius: 50%;
-    font-size: 2em;
-    z-index: 3;
-    pointer-events: none;
-    border-radius: 50%;
-    border-left: 3px solid #0085FF;
-}
-.container-mobile .icon-containers .icons {
-     position: absolute;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    font-size: 2em;
-    color: #0085FF;
-    transition: 1s;
-    min-width: 450px;
-    max-height: none;
-    border-left: none;
-}
-.container-mobile .text-container {
-    padding: 0% 0%;
-}
-.container-mobile .html {
-    left: 0;
-    top: 0;
-    transform: translate(67%, 211%) rotate(87deg);
-}
-.container-mobile .css{
-    left: 5%;
-    top: 46%;
-    transform: rotate(87deg);
-    /* transform: translate(22%, 321%); */
-}
-.container-mobile .js{
-    left: 53px;
-    top: 68%;
-    transform: rotate(87deg);
-    text-shadow: 1px 1px 22px #0085FF;
-
-}
-.container-mobile .node{
-    left: 36%;
-    top: 82%;
-    transform: rotate(252deg);
-    opacity: 0;
-}
-.container-mobile .mysql{
-    left: 58%;
-    top: 76%;
-    transform: rotate(252deg);
-    opacity: 0;
-}
-.container-mobile .mongo{
-    left: 75%;
-    top: 64%;
-    transform: rotate(252deg);
-    opacity: 0;
-}
-.container-mobile .knex{
-    left: 81%;
-    top: 49%;
-    opacity: 0;
-}
-.container-mobile .mongoose{
-    left: 75%;
-    top: 28%;
-    opacity: 0;
-}
-.container-mobile .sequelize{
-    left: 64%;
-    top: 9%;
-    opacity: 0;
-}
-.container-mobile .sass {
-    left: 52%;
-    top: 5%;
-    transform: rotate(75deg);
-    opacity: 0;
-
-}
-.container-mobile .vue{
-    left: 30%;
-    top: 8.5%;
-    transform: rotate(75deg);
-    opacity: 0;
-}
-.container-mobile .info {
-    left: 5%;
-    top: 46%;
-    opacity: 0;
-    z-index: -1;
-}
 </style>

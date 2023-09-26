@@ -18,7 +18,8 @@
         </div>
         <div class="project-icons">
             <div class="icons" v-for="icon in icons" :key="icon">
-                <IconsProject :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
+                <IconsProject v-if="!icon.costum" :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
+                <CostumIconVue v-if="icon.costum" :whiteProps="icon.white" :fillProps="icon.fill" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
             </div>
         </div>
     </div> <!--fim do project-details -->
@@ -27,10 +28,12 @@
 
 <script>
 import  IconsProject from './Icons.vue'
+import CostumIconVue from './svg/CostumIcon.vue'
 export default {
     name: 'ProjectShow',
     components: {
         IconsProject,
+        CostumIconVue
     },
     data(){
         return {
@@ -67,7 +70,10 @@ export default {
     border-top-right-radius: 27.99px;
 }
 .project-details:hover {
-    width: 64%;
+    width: 64% !important;
+}
+.project-details:hover > .project-icons-bar {
+    opacity: 0;
 }
 .project-details:hover > .project-icons {
     width: 70px;
@@ -75,6 +81,9 @@ export default {
 }
 .project-details:hover > .project-icons .icons svg {
     transform: translateX(0);
+}
+.project-details:hover > .project-icons .icons .costumIcons {
+    transform: translateX(0)
 }
 .project-details:hover .project-icons-bar svg {
     color: transparent;
@@ -131,7 +140,7 @@ export default {
 .project-icons-bar {
     width: 20px;
     height: 85%;
-    background:linear-gradient(#0085FF, #0D1258);
+    background: linear-gradient(#0085FF, #0D1258);
     position: absolute;
     right: 5%;
     transform: translateX(20px);
@@ -139,6 +148,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
 
 }
 .project-icons-bar svg {
@@ -167,6 +177,16 @@ svg {
     transition: 0.5s;
     color: #fff
     
+}
+.costumIcons {
+    cursor: pointer;
+    transform: translateX(-100px);
+    transition: 0.5s;
+    color: #fff;
+}
+*>>>.costumIcons svg {
+    margin-top: 17px !important;
+    margin-bottom: 3px !important;
 }
 .project-icons::-webkit-scrollbar {
   width: 9px;

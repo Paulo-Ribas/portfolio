@@ -2,7 +2,7 @@
     <div class="project-details">
         <div class="project">
             <div class="project-img">
-                <img :src="imgFile" :alt="projectName">
+                <img id="project-img" :src="imgFile" :alt="projectName">
             </div>
             <div class="project-info">
                 <h2 class="name-project">
@@ -13,23 +13,26 @@
                 </a>
             </div>
         </div>
-        <div class="project-icons-bar">
-            <IconsProject :iconNameProps="'caret-right'" :prefixProps="'fas'" :colorProps="'#fff'"></IconsProject>
+        <div class="project-icons-bar" id="icons-bar">
+            <IconsProject v-if="!showIcons" idProps="caret-left" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'" @clicked="showIcons = !showIcons"></IconsProject>
         </div>
-        <div class="project-icons">
-            <div class="icons" v-for="icon in icons" :key="icon">
-                <IconsProject :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
-            </div>
+        <div :class="{'project-icons': true, showIcons}" id="icons">
+                <div class="icons" v-for="icon in iconsArray" :key="icon">
+                    <IconsProject v-if="!icon.costum" :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
+                    <CostumIconVue v-if="icon.costum" :fillProps="icon.fillProps" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
+                </div>
         </div>
     </div> <!--fim do project-details -->
 </template>
 
 <script>
 import IconsProject from './Icons.vue'
+import CostumIconVue from './svg/CostumIcon.vue'
 export default {
     name: 'ProjectShow',
     components: {
         IconsProject,
+        CostumIconVue
     },
     data() {
         return {
@@ -37,12 +40,16 @@ export default {
             projectImg: this.projectImgProps,
             imgFile: '',
             link: this.linkProps,
-            icons: this.iconsProps,
+            iconsArray: this.iconsProps,
+            showIcons: false,
 
         }
     },
     beforeMount() {
         this.imgFile = require(`@/assets/img/${this.projectImgProps}`)
+    },
+    mounted(){
+        document.addEventListener('click', this.toggleClicked)
     },
     props: {
         projectNameProps: String,
@@ -50,6 +57,12 @@ export default {
         linkProps: String,
         iconsProps: Array,
 
+    },
+    methods: {
+        toggleClicked(e){
+            console.log(e.target.nodeName)
+            if (e.target.nodeName !== 'path' && this.showIcons === true) return this.showIcons = false
+        },
     }
 
 }
@@ -57,9 +70,10 @@ export default {
 
 <style scoped>
 .project-details {
-    width: 99%;
+    flex: 1.3;
     margin: auto;
-    min-height: 420px;
+    height: 100%;
+    width: 98%;
     display: flex;
     transition: width 0.6s;
     overflow: hidden;
@@ -67,20 +81,7 @@ export default {
     border-top-right-radius: 27.99px;
 }
 
-.project-details:hover>.project-icons {
-    width: 15%;
-    overflow-y: auto;
-}
 
-.project-details:hover>.project-icons .icons svg {
-    transform: translateX(0);
-}
-
-.project-details:hover .project-icons-bar svg {
-    color: transparent;
-    transform: translateX(2px);
-    transition: 0.2s;
-}
 
 .project {
     width: 95%;
@@ -118,18 +119,24 @@ export default {
     justify-content: center;
     align-items: center;
     flex: 1;
-    gap: 15px;
+    flex-direction: column;
+    font-size: 0.9rem;
+
 }
 
 .name-project {
     color: var(--texto-especial);
-    font-size: 1.8em
+    font-size: 1.8em;
+    transform: translateX(5%)
+
 }
 
 .link-project {
     color: var(--texto-padrao);
     font-size: 1.2em;
     text-decoration: none;
+    transform: translateX(5%);
+
 
 }
 
@@ -139,7 +146,7 @@ export default {
 
 .project-icons-bar {
     width: 20px;
-    height: 90%;
+    height: calc(100% - 61px);
     background: linear-gradient(#0085FF, #0D1258);
     position: absolute;
     right: 5%;
@@ -159,23 +166,45 @@ export default {
 
 .project-icons {
     width: 0%;
-    height: 90%;
+    height: calc(100% - 61px);
     display: flex;
-    flex-direction: column;
     transition: 0.6s;
-    background: linear-gradient(#0085FF, #0D1258);
+    background: linear-gradient(to right, #0084ffb9 0%, #0d1258c7 100%) !important;
     overflow-y: hidden;
     overflow-x: hidden;
     border-radius: 0px 27.99px 27.99px 0px;
-    ;
+    position: absolute;
+    
+
+}
+.showIcons {
+    width: 100% !important;
+    height: calc(100% - 61px) !important;
+    position: absolute !important;
+    z-index: 2 !important;
+    right: 0;
+}
+.icons-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform: translateX(0px);
+    font-size: 2.5rem;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    gap: 35px;
+    align-items: center;
+    flex-wrap: wrap;
 
 }
 
 svg {
-    font-size: 2.3em;
     cursor: pointer;
     margin: 15px 0px;
-    transform: translateX(-100px);
     transition: 0.5s;
     color: #fff
 }
@@ -197,4 +226,75 @@ svg {
     border-radius: 6px;
     height: 20px;
     /* roundness of the scroll thumb */
-}</style>
+}
+.icons-enter-active {
+    transition: 0.8s;
+    transition-delay: 0.3s;
+}
+.icons-leave-active {
+    transition: 0.3s;
+    
+}
+.icons-enter-from {
+    transform: translateX(-400px);
+}
+.icons-enter-to {
+    transform: translateX(0px);
+}
+.icons-leave-from{
+    opacity: 1;
+}
+.icons-leave-to{
+    opacity: 0;
+}
+@media screen and (max-height: 384px) {
+    .project-details {
+    width: 99%;
+    min-width: 300px;
+    height: 100%;
+    margin: 0px;
+    min-height: unset;
+    display: flex;
+    transition: width 0.6s;
+    overflow: hidden;
+    position: relative;
+    border-top-right-radius: 27.99px;
+    flex: 1;
+    }
+    .project {
+        width: 95%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    .project-info {
+        font-size: 0.9rem;
+    }
+    .project-icons-bar {
+        width: 20px;
+        height: calc(100% - 61px);
+        background: linear-gradient(#0085FF, #0D1258);
+        position: absolute;
+        right: 5%;
+        transform: translateX(20px);
+        border-radius: 0px 27.99px 27.99px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+    .project-icons {
+            width: 0%;
+    height: calc(100% - 61px);
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s;
+    background: linear-gradient(#0085FF, #0D1258);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0px 27.99px 27.99px 0px;
+    z-index: 1;
+    }
+
+}
+</style>

@@ -1,8 +1,11 @@
 <template>
     <section id="links">
-        <div class="menu">
+        <MqResponsive class="lk" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
             <MainMenu :MenuFixoProps="true" :ActivatedProps="'lk'"></MainMenu>
-        </div>
+        </MqResponsive>
+        <MqResponsive class="menu" target="xs"> 
+            <MainMenuMobile :closedProps="true" :ActivatedProps="'lk'"/>
+        </MqResponsive>
         <div class="link-radius-container">
             <div class="link-container">
                 <div class="slide-container">
@@ -45,11 +48,14 @@
 <script>
 import MainMenu from "../components/NavegationMenu.vue";
 import Icons from "../components/Icons.vue"
+import MainMenuMobile from '../components/NavegationMenuMobile.vue'
+
 export default {
     name: 'Links-',
     components:{
         MainMenu,
         Icons,
+        MainMenuMobile
     },
     data(){
         return {

@@ -1,5 +1,5 @@
 <template>
-        <Font-awesome-icon :icon="[ prefix, iconName]" @mouseenter="mouseEnter" @mouseleave="mouseLeave" @click="clickIcon"/>
+        <Font-awesome-icon :id='id' :icon="[ prefix, iconName]" @mouseenter="mouseEnter" @mouseleave="mouseLeave" @click="clickIcon"/>
 </template>
 
 <script>
@@ -12,6 +12,7 @@
                 L: this.prefixProps,
                 color: this.colorProps,
                 name: this.nameProps,
+                id: this.idProps
             }
         },
         props: {
@@ -20,6 +21,7 @@
             LProps: String,
             colorProps: String,
             nameProps: String,
+            idProps: String
           
         },
         components:{

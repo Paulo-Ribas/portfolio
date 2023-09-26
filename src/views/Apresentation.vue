@@ -1,7 +1,10 @@
 <template>
-    <div class="menu">
+    <MqResponsive class="menu" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
         <MainMenu :MenuFixoProps="true" :ActivatedProps="'ap'"></MainMenu>
-    </div>
+    </MqResponsive>
+    <MqResponsive class="menu" target="xs"> 
+        <MainMenuMobile :closedProps="true" :ActivatedProps="'ap'"/>
+    </MqResponsive>
     <Transition name="hooks">
     <section id="apresentation" v-if="animation">
         <MqResponsive class="apresentation-pc" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
@@ -39,12 +42,14 @@
 import MainMenu from "../components/NavegationMenu.vue";
 import IconsProject from "../components/Icons.vue"
 import ApresentationMobileV from "../components/ApresentationMobileV.vue";
+import MainMenuMobile from '../components/NavegationMenuMobile.vue'
 export default {
     name: 'Apresentation-',
     components:{ 
         MainMenu,
         IconsProject,
-        ApresentationMobileV
+        ApresentationMobileV,
+        MainMenuMobile
     },
     data(){
         return{
@@ -116,11 +121,12 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
  }
 .menu{
     position: absolute;
-    bottom: 2%;
+    bottom: 1%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     z-index: 10;
+    padding: 0px 10px;
     width: 100%;
     
 }
@@ -132,6 +138,7 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     align-items: center;
     overflow: hidden;
     position: relative;
+    padding: 10px 0px
 }
 .container {
     width: 100%;
