@@ -134,11 +134,12 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     position: absolute;
     bottom: 1%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     z-index: 10;
     padding: 0px 10px;
     width: 100%;
+    pointer-events: none;
 }
 #apresentation {
     width: 100%;
@@ -262,6 +263,14 @@ p {
 .hook-enter-to {
     opacity: 1;
     transform: scale(1);
+}
+
+@media screen and (max-height: 400px) {
+    
+.menu-mobile {
+    justify-content: flex-start;
+}
+    
 }
 
 

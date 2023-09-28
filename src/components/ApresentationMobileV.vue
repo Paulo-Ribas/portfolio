@@ -159,7 +159,7 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     position: absolute;
     font-size: 2rem;
     color: white;
-    top: 89%;
+    top: 90%;
     left: 25%;
     transform: translate(-50%, -50%);
     transition: 1.6s;
@@ -177,9 +177,9 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     flex-direction: column;
     align-items: center;
     max-height: 400px;
-    top: 50%;
+    top: 20%;
     left: 1%;
-    transform: translate(-1%, -50%);
+    transform: translate(-1%, -20%);
 }
 .informations {
     display: flex;
@@ -285,6 +285,23 @@ p {
     transform: scale(1);
 }
 
+@media screen and (max-height: 400px) {
+    .information-container {
+        justify-content: center;
+        
+    }
+    .img-container {
+    height: 69%;
+    width: 54%;
+    max-width: 330px;
+    max-height: 300;
+    border-radius: 6%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, #0085FF 0%, #0D1258 100%);
+}
+    
+}
 
 
 </style>

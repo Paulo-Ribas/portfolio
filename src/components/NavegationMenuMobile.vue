@@ -97,6 +97,7 @@ export default {
     display: flex;
     justify-content: center;
     transition: 0.5s;
+    pointer-events: all;
 
 }
 
