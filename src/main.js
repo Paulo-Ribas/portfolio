@@ -16,7 +16,7 @@ myApp.use(router)
 myApp.use(Vue3Mq, {
     breakpoints: {
         xs: 0,
-        sm: 695,
+        sm: 895,
         md: 1024,
         lg: 1440,
         xl: 1920,
