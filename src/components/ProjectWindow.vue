@@ -68,6 +68,7 @@ img {
 }
 .window-container:hover > .nameProject h2 {
     transform: translate(-50%, 100%);
+    z-index: 4;
     opacity: 1;
 }
 .window-container:hover > .img-container img {

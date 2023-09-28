@@ -76,7 +76,7 @@ export default {
     opacity: 0;
 }
 .project-details:hover > .project-icons {
-    width: 70px;
+    width: 55px;
     overflow-y: auto;
 }
 .project-details:hover > .project-icons .icons svg {

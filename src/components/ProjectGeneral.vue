@@ -1,26 +1,29 @@
 <template>
-    <div :class="{'project-container': true}">
-        <div :class="{'icons-bar': true, 'absolute': showIcons}" >
-            <div :class="{'carret-container': true, 'absolute-caret': showIcons}" @click="showIcons = !showIcons">
-                <Icons :iconNameProps="'caret-up'" :prefixProps="'fas'" v-show="showIcons"></Icons>
-                <Icons :iconNameProps="'caret-down'" :prefixProps="'fas'" v-show="!showIcons"></Icons>
-            </div>
-            <transition name="icons">
-                <div class="icons-container" v-if="showIcons">
-                    <Icons v-for="(icon, index) in iconsArray" :key="index" :icon-name-props="icon.name" :prefixProps="icon.prefix"></Icons>
+    <div :class="{'container-card': true}">
+        <Icons class="icon" iconNameProps="hourglass-half" prefixProps="fas" v-if="!finished"></Icons>
+        <div :class="{'project-container': true, 'unfinished': !finished}">
+            <div :class="{'icons-bar': true, 'absolute': showIcons}" >
+                <div :class="{'carret-container': true, 'absolute-caret': showIcons}" @click="showIcons = !showIcons">
+                    <Icons :iconNameProps="'caret-up'" :prefixProps="'fas'" v-show="showIcons"></Icons>
+                    <Icons :iconNameProps="'caret-down'" :prefixProps="'fas'" v-show="!showIcons"></Icons>
                 </div>
-            </transition>
-        </div>
-        <div class="link-name-container">
-            <h2>{{ name }}</h2>
-            <a :href="link" target="_blank">{{ link }}</a>
-        </div>
-        <div class="img-and-text-container">
-            <div class="img-container">
-                <img :src="imgUrl">
+                <transition name="icons">
+                    <div class="icons-container" v-if="showIcons">
+                        <Icons v-for="(icon, index) in iconsArray" :key="index" :icon-name-props="icon.name" :prefixProps="icon.prefix"></Icons>
+                    </div>
+                </transition>
             </div>
-            <div class="text">
-                {{ text }}
+            <div class="link-name-container">
+                <h2>{{ name }}</h2>
+                <a :href="link" target="_blank">{{ link }}</a>
+            </div>
+            <div class="img-and-text-container">
+                <div class="img-container">
+                    <img :src="imgUrl">
+                </div>
+                <div class="text">
+                    {{ text }}
+                </div>
             </div>
         </div>
     </div>
@@ -37,6 +40,7 @@ export default {
             showIcons: false,
             iconsArray: this.iconsArrayProps,
             animation: false,
+            finished: this.finishedProps,
         };
     },
     mounted(){
@@ -53,6 +57,7 @@ export default {
         imgUrlProps: String,
         textProps: String,
         iconsArrayProps: Array,
+        finishedProps: Boolean
     },
     components: { Icons }
 }
@@ -72,9 +77,29 @@ export default {
     background-color: #D9D9D9;
     overflow: hidden;
     transition: 0s;
+}
+.container-card {
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+    min-width: 300px;
+    max-height: 350px;
+    border-radius: 10px;
+    position: relative;
     margin-bottom: 30px;
 }
-
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    /* filter: drop-shadow(2px 4px 6px white); */
+    font-size: 2.4rem;
+    z-index: 11;
+    filter: none !important;
+    /* filter: brightness(14.5); */
+}
 .icons-bar {
     height: 24px;
     width: 100%;
@@ -151,12 +176,17 @@ export default {
     height: 100%;
     max-height: 300px;
     position: relative;
+    overflow: hidden;
 }
 
 .img-and-text-container .img-container img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: 0.8s;
+}
+.img-and-text-container .img-container img:hover {
+    transform: scale(1.05);
 }
 
 .text {
@@ -181,7 +211,14 @@ export default {
     height: 26px;
     width: 100%;
 }
+.unfinished {
+    filter: brightness(0.5);
+    pointer-events: none;
 
+}
+.filter {
+    filter: brightness(0.5);
+}
 .icons-enter-active {
     transition: 0.8s;
     transition-delay: 0.3s;

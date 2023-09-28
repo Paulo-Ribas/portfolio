@@ -100,7 +100,7 @@
 
 
         <MqResponsive class="mq" target="xs">
-            <SkillsMobile></SkillsMobile>
+            <SkillsMobile :costumIconsArrayProps="[arrayMobileGroup1, arrayMobileGroup2]"></SkillsMobile>
         </MqResponsive>
     </section>
 </template>
@@ -138,7 +138,24 @@ export default {
             spanHidden: true,
             spanNotHidden: false,
             showInfo: false,
-            arraySavior:[{className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps:'#000428' }, { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' },  { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff' }, { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' }, { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'api', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, ]
+            arraySavior: [
+                { className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
+                { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
+                { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
+                { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
+                { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
+                { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
+                { className: 'api', iconName: 'api', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }
+            ],
+
+            arrayMobileGroup1: [{ className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
+            { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
+            { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
+            { className: 'api', iconName: 'api', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }],
+
+            arrayMobileGroup2: [{ className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
+            { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
+            { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }]
         }
     },
     mounted(){
@@ -385,6 +402,7 @@ export default {
     max-width: 1366px;
     display: flex;
     align-items: center;
+    margin: auto;
 }
 .mq {
     width: 100%
@@ -498,7 +516,7 @@ export default {
 .mongo{
     left: 75%;
     top: 64%;
-    transform: rotate(252deg);
+    transform: rotate(252deg) !important;
     opacity: 0;
     pointer-events: none;
 }
@@ -507,15 +525,14 @@ export default {
     top: 49%;
     opacity: 0;
     cursor: pointer;
-    width: 2rem !important;
-    height: 2rem !important;
     pointer-events: none;
 }
 .mongoose{
-    left: 75%;
-    top: 28%;
+    left: 77%;
+    top: 33%;
     opacity: 0;
     pointer-events: none;
+    transform: rotate(160deg);
 }
 .sequelize{
     left: 64%;
@@ -579,6 +596,27 @@ export default {
 }
 .absolute {
     position: absolute;
+}
+.text-group-enter-active, .text-group-leave-active {
+  transition: 1.2s;
+}
+
+.text-group-enter-from{
+    transform:translate(100%, -20%) scale(0);
+
+    
+}
+.text-group-enter-to{
+    transform:translate(0%, 0%) scale(1);
+    
+}
+.text-group-leave-from{
+    position: absolute;
+    transform:translate(0%, 0%) scale(1);
+}
+.text-group-leave-to{
+    position: absolute;
+    transform:translate(100%, -20%) scale(0);    
 }
 
 </style>

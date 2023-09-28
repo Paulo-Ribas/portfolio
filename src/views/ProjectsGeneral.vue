@@ -11,10 +11,10 @@
     <div class="carrossel">
         <div class="carrossel-container">
             <div class="carrossel-itens">
-                <ProjectGeneral nameProps="Estética Excepcional" linkProps="https://esteticaexcepcional.com.br/" textProps="landing page sobre emagrecimento" imgUrlProps="estetica.png" :iconsArrayProps="[{name:'html5', prefix:'fab'},{name:'css3', prefix:'fab'},{name:'js', prefix:'fab'},{name:'node',prefix:'fab'}]"></ProjectGeneral>
-                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
-                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
-                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
+                <ProjectGeneral nameProps="Estética Excepcional" linkProps="https://esteticaexcepcional.com.br/" textProps="landing page sobre emagrecimento" :finishedProps="true" imgUrlProps="estetica.png" :iconsArrayProps="[{name:'html5', prefix:'fab'},{name:'css3', prefix:'fab'},{name:'js', prefix:'fab'},{name:'node',prefix:'fab'}]"></ProjectGeneral>
+                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
+                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
+                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
             </div>
         </div>
     </div>
