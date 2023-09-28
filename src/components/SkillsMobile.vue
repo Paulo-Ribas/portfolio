@@ -69,9 +69,10 @@
                                      <IconMenu :class="{ 'node': true, 'absolute': true, 'zindex-up': true, 'active': node }" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked" nameProps="node"></IconMenu>
                                      <IconMenu :class="{ 'mysql': true, 'absolute': true, 'zindex-up': true, 'active': mysql }" prefixProps="fas" iconNameProps="database" @clicked="iconClicked" nameProps="mysql"></IconMenu>
                                      <IconMenu :class="{ 'mongo': true, 'absolute': true, 'zindex-up': true, 'active': mongo }" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked" nameProps="mongo"></IconMenu>
-                                     <CostumIcon v-for="(icon, index) in arraySavior" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @clicked="iconClicked" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :fillProps="icon.fillProps"></CostumIcon>
+                                     <CostumIcon v-for="(icon, index) in iconArrayGroup1" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event)"  :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
                                      <IconMenu :class="{ 'vue': true, 'absolute': true, 'zindex-up': true, 'active': vue }" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
                                      <IconMenu :class="{ 'sass': true, 'absolute': true, 'zindex-up': true, 'active': sass }" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
+                                     <CostumIcon v-for="(icon, index) in iconArrayGroup2" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event)" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
                                      <IconMenu v-show="showInfo" :class="{ 'info': true, 'absolute': true, 'zindex-up': info, 'active': info }" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
                                 </div>
                             </div>
@@ -91,6 +92,17 @@ export default {
         CostumIcon,
 
     },
+    props: {
+        costumIconsArrayProps: Array,
+    },
+    computed: {
+        iconArrayGroup1(){
+            return this.costumIconsArray[0]
+        },
+        iconArrayGroup2() {
+            return this.costumIconsArray[1]
+        },
+    },
     data() {
         return {
             html: false,
@@ -108,7 +120,7 @@ export default {
             spanHidden: true,
             spanNotHidden: false,
             showInfo: false,
-            arraySavior: [{ className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff' }, { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'api', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },],
+            costumIconsArray: this.costumIconsArrayProps,
             startMousePosition: 0,
             prevTranslate: 0,
             currentTranslate: 0,
@@ -135,21 +147,23 @@ export default {
             name === 'vue' ? this.vue = true : this.vue = false
             name === 'info' ? this.info = true : this.info = false
         },
-        costumIconClicked(iconName) {
-            let arrayIconNames = this.arraySavior.map(icon => {
+        costumIconToggleActive(iconName) {
+            console.log('CHAMEIIIIIIIII', iconName)
+            let arrayIconNames = this.costumIconsArray.map(icon => {
+                console.log(icon.iconName, iconName)
                 return { iconName: icon.iconName, className: icon.className, effectHoverProps: iconName === icon.name, activeEffectProps: true, white: icon.iconName === iconName, hoverProps: icon.hoverProps, fillProps: icon.fillProps }
             })
-            this.arraySavior = arrayIconNames
+            this.costumIconsArray = arrayIconNames
 
         },
         DragStart($event){
             console.log($event)
             this.IsDragging = true
-            this.startMousePosition = $event.clientX || $event.touches[0].clientX
+            this.startMousePosition = $event.pageX || $event.touches[0].pageX
 
         },
         Drag($event){
-            let currentPosition = $event.clientX || $event.touches[0].clientX
+            let currentPosition = $event.pageX || $event.touches[0].pageX
             this.currentTranslate = this.prevTranslate + (currentPosition - this.startMousePosition)
             if(this.IsDragging) return this.setTranslate()
         },

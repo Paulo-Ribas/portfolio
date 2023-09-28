@@ -100,7 +100,7 @@
 
 
         <MqResponsive class="mq" target="xs">
-            <SkillsMobile></SkillsMobile>
+            <SkillsMobile :costumIconsArrayProps="[arrayMobileGroup1, arrayMobileGroup2]"></SkillsMobile>
         </MqResponsive>
     </section>
 </template>
@@ -138,7 +138,11 @@ export default {
             spanHidden: true,
             spanNotHidden: false,
             showInfo: false,
-            arraySavior:[{className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps:'#000428' }, { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' },  { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff' }, { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' }, { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'api', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, ]
+            arraySavior:[{className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps:'#000428' }, { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' },  { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff' }, { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false,hoverProps: '#fff', fillProps: '#000428' }, { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, { className: 'api', iconName: 'api', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }, ],
+
+            arrayMobileGroup1: [{ className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }, { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }, { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },{ className: 'api', iconName: 'api', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }],
+
+            arrayMobileGroup2: [{ className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }, { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }, { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }]
         }
     },
     mounted(){
@@ -385,6 +389,7 @@ export default {
     max-width: 1366px;
     display: flex;
     align-items: center;
+    margin: auto;
 }
 .mq {
     width: 100%

@@ -17,9 +17,11 @@
             <IconsProject v-if="!showIcons" idProps="caret-left" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'" @clicked="showIcons = !showIcons"></IconsProject>
         </div>
         <div :class="{'project-icons': true, showIcons}" id="icons">
-                <div class="icons" v-for="icon in iconsArray" :key="icon">
-                    <IconsProject v-if="!icon.costum" :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
-                    <CostumIconVue v-if="icon.costum" :fillProps="icon.fillProps" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
+            <div class="icons-container" v-for="icon in iconsArray" :key="icon">
+                <TransitionGroup name="iconsGroup">
+                        <IconsProject v-if="!icon.costum" :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
+                        <CostumIconVue v-if="icon.costum" :fillProps="icon.fillProps" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
+                    </TransitionGroup>
                 </div>
         </div>
     </div> <!--fim do project-details -->
@@ -174,6 +176,11 @@ export default {
     overflow-x: hidden;
     border-radius: 0px 27.99px 27.99px 0px;
     position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
     
 
 }
@@ -185,28 +192,17 @@ export default {
     right: 0;
 }
 .icons-container {
-    width: 100%;
-    height: 100%;
-    overflow-x: auto;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
     transform: translateX(0px);
     font-size: 2.5rem;
-    display: flex;
     color: white;
-    justify-content: space-evenly;
-    gap: 35px;
-    align-items: center;
-    flex-wrap: wrap;
 
 }
 
 svg {
     cursor: pointer;
-    margin: 15px 0px;
     transition: 0.5s;
-    color: #fff
+    color: #fff;
+    font-size: 2.5rem
 }
 
 .project-icons::-webkit-scrollbar {
@@ -227,25 +223,27 @@ svg {
     height: 20px;
     /* roundness of the scroll thumb */
 }
-.icons-enter-active {
-    transition: 0.8s;
-    transition-delay: 0.3s;
+.iconsGroup-enter-active {
+    transition: 0.8s !important;
+    transition-delay: 0.3s !important;
 }
-.icons-leave-active {
-    transition: 0.3s;
+.iconsGroup-leave-active {
+    transition: 0.3s !important;
     
 }
-.icons-enter-from {
-    transform: translateX(-400px);
+.iconsGroup-enter-from {
+    opacity: 0 !important;
+    transform: translateX(-400px) !important;
 }
-.icons-enter-to {
-    transform: translateX(0px);
+.iconsGroup-enter-to {
+    opacity: 1 !important;
+    transform: translateX(0px) !important;
 }
-.icons-leave-from{
-    opacity: 1;
+.iconsGroup-leave-from{
+    opacity: 1 !important;
 }
-.icons-leave-to{
-    opacity: 0;
+.iconsGroup-leave-to{
+    opacity: 0 !important;
 }
 @media screen and (max-height: 384px) {
     .project-details {

@@ -1,6 +1,6 @@
 <template>
     <section id="links">
-        <MqResponsive class="lk" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
+        <MqResponsive class="menu" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
             <MainMenu :MenuFixoProps="true" :ActivatedProps="'lk'"></MainMenu>
         </MqResponsive>
         <MqResponsive class="menu" target="xs"> 
@@ -26,9 +26,6 @@
                 <ul class="links">
                     <TransitionGroup name="lisGroups">
                         <li class="link-box" v-if="selected === 'gitHub'">
-                            <a href="https://github.com/Paulo-Ribas" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>Meu GitHub (Paulo Ribas)</a>
-                        </li>
-                        <li class="link-box"  v-if="selected === 'gitHub'">
                             <a href="https://github.com/Paulo-Ribas" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>Meu GitHub (Paulo Ribas)</a>
                         </li>
                         <li class="link-box " v-if="selected === 'email'">
@@ -67,9 +64,21 @@ export default {
         this.selected = 'gitHub'
         let arraySlideBox = document.querySelectorAll('.slide-box')
         arraySlideBox.forEach((slidebox, index) => {
-            if(index === 0)slidebox.style.left = '10%'
-            if(index === 1)slidebox.style.left = '40%'
-            if(index === 2)slidebox.style.left = '70%'
+            if(index === 0) {
+                slidebox.style.left = '10%'
+                slidebox.style.opacity = '0.7'
+
+            }
+            if(index === 1){
+                slidebox.style.left = '40%'
+                slidebox.style.opacity = '1'
+
+            }
+            if(index === 2){
+                slidebox.style.left = '70%'
+                slidebox.style.opacity = '0.7'
+
+            }
         })
         arraySlideBox[1].style.transform = 'scale(1.2)'
     },

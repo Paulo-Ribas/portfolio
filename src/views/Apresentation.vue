@@ -2,7 +2,7 @@
     <MqResponsive class="menu" :target="['xl', 'sm', 'md', 'lg', 'xxl']">
         <MainMenu :MenuFixoProps="true" :ActivatedProps="'ap'"></MainMenu>
     </MqResponsive>
-    <MqResponsive class="menu" target="xs"> 
+    <MqResponsive class="menu-mobile" target="xs"> 
         <MainMenuMobile :closedProps="true" :ActivatedProps="'ap'"/>
     </MqResponsive>
     <Transition name="hooks">
@@ -121,6 +121,17 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
  }
 .menu{
     position: absolute;
+    bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 0px 10px;
+    width: 100%;
+    
+}
+.menu-mobile {
+    position: absolute;
     bottom: 1%;
     display: flex;
     justify-content: flex-start;
@@ -128,7 +139,6 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     z-index: 10;
     padding: 0px 10px;
     width: 100%;
-    
 }
 #apresentation {
     width: 100%;

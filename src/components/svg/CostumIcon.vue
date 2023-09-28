@@ -25,7 +25,16 @@
         <svg v-if="iconName === 'nuxt'" :width="size" :height="size" viewBox="0 0 524 393" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M518.76 350.005L367.598 80.6897C364.978 78.5939 357.119 63.6611 341.4 63.6611C334.851 63.6611 325.681 66.2809 316.25 80.6897L296.864 111.603L243.944 17.0287C242.634 14.4089 233.465 0 217.746 0C211.196 0 200.717 2.6198 192.858 17.0287L4.75635 348.695C3.44645 351.315 -4.41294 366.772 3.44645 379.871C6.06624 386.42 13.9256 392.969 31.2163 392.969H493.872C496.492 392.969 513.521 392.969 521.38 379.871C524 373.583 526.62 363.104 518.76 350.005ZM159.848 348.695L155.919 363.104H32.5262L219.056 35.1053L279.311 143.303L159.848 348.695ZM188.928 363.104L296.602 174.478L406.109 363.104H188.928ZM438.595 363.104L433.355 348.695L314.416 143.041L341.4 97.7184L491.253 363.104H438.595Z" :fill="fill"/>
         </svg>
-    </div>
+        <svg v-if="iconName === 'api'" :width="size" :height="size" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect :width="size" :height="size" :fill="fill"/>
+          <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_376_108" transform="scale(0.0078125)"/>
+            </pattern>
+            <image id="image0_376_108" :width="size" :height="size" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEPklEQVR4nO2dUZLjIAxEyVYOk/ufJoeZquzPOuX1GBAgQC31+57BstQIWWAnJUJIXB67DVjG8/Vp+vufdwjf/NltANlLCJU3z/6DAFmAGSA4z90GDHOd3dJZe/07aZbovZ5RsDPAXdB6073F6y0AVwAlx88IyurrLQIzfWk4vHcJaBkTALwMYHm2WbYtA5YAEByMYOMJnJRVcuyReqXOz6Xq1v+X2GQcCCNTSnlnt6zl0qC0jCG1yyhYS4CEO8f/vB9NAcn9PUhQW8C5IYvp1qJNjUAY+WXU4aM1gqYtRoAx9EuP47U3g5wEP6WaAHY+0pQc2VJ4jd5Dy5g9Nq+gYFe+CAR7nr1F4x6c++G3AJ6vj/eb3jrWLjJxtb8d3FO41f6nZ21/vj7f//t5P8Q7g8Zrgv8FIHH2qhuaMetqtrd2FCUcY1nx21nI6VwEWqtsW4Igmf2t9yAZp9fGVQhiWu8EGk9hpIAgdmUBIARfYmPPfcwadzUVG+0XgQdWna3dfFqMv80g0kReAFZnHGmnqxNIQoBTA1g9eAGy1ufAzwCSAPQEada4xsAXABnChwDOM1HjsUy7C2gYuzXAjr78jv2HzeQVbdnwHTN0xn7DSjLx9bEE3KEZDMuBHcSvAFLSCZzj4KeEKICV3/rR2kI2DJYAes8saL0YIrkWmAjsPgVc0Tiwol0X5Gy6nLqxDI4AckiObfcGozZOSQQgYC0BEnKHNVsbQQ4/B3MHvgDOQZEciKyd/JWMIb0eAFiNIE2Hz/hETG5sC7hoBFl07BUEG09gCSAl2w62bFsGzKcASfWtsS+g8baRcfAywEFvowbleovAFUBK+c/BeLneAjCXgDNaTZ7Z1zMKdgYgw8QQwKxXwxwQQwAkC34NICXIjG6FGSA4FEBwKIDg+KgBetq0o2cLEXZPBeBngFXv8DnY+78DWwAar3vNuh4IuAKY9cZvMHzUABrMPCFkGF8C0AyigxO/EnCXAKKCHwFo79UHmP0peVsCRggS8Ct+MgDpwk8GWDGDQbt9JZgBpDgMfkqeMsAoTgNcgxkgOH4yAPhXu3fBDBAcCiA4FEBwKIDgUADBwfpCCOnHxRdCiDoUQHAogODkO4HsoIWAGSA4FEBwKIDg5GsA9gF8kanpmAGCQwEEhwIIjp8TQVdm/mycI5gBgpMXADuBfijEkhkgOH5rAKdrtjblDMBlAJ9KDOtLAEWAiyB27V/UYGq1TWMMx7+fR7C4TGA+BQTHzY8gkwqZpbu8nlMEPijUbX4KutnvNTh9b4I1QHAogOBQAMGhAIJDAQSHAggOBRAcnGdZtKYUSJ/AvpFogb9iXAimjYMP/oFhEbAGCI5ZZXb9FuBO0Oz9B96hUKOO/NoFtmxhLQFWg38GwcYTWAIg6uAIAGlmAdmKIwAyBQogOBRAcHAeA8Eer1BgBggOBRAcCoAQQsLyF8vB1qV1IEF/AAAAAElFTkSuQmCC"/>
+          </defs>
+        </svg>
+  </div>
 </template>
 
 <script>
@@ -105,4 +114,10 @@ export default {
 </script>
 
 <style scoped>
+  [data-costumIcons] {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
