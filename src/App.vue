@@ -118,7 +118,7 @@ body {
   opacity: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   *{
     font-family: Caveat !important;
   }
