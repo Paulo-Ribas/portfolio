@@ -17,12 +17,14 @@
             <IconsProject v-if="!showIcons" idProps="caret-left" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'" @clicked="showIcons = !showIcons"></IconsProject>
         </div>
         <div :class="{'project-icons': true, showIcons}" id="icons">
-            <div class="icons-container" v-for="icon in iconsArray" :key="icon">
-                <TransitionGroup name="iconsGroup">
+            <TransitionGroup name="icons-group" :key="icon">
+                <div class="icons" v-if="showIcons">
+                    <div class="icons-container" v-for="icon in iconsArray" :key="icon">
                         <IconsProject v-if="!icon.costum" :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
                         <CostumIconVue v-if="icon.costum" :fillProps="icon.fillProps" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
-                    </TransitionGroup>
+                    </div>
                 </div>
+            </TransitionGroup>
         </div>
     </div> <!--fim do project-details -->
 </template>
@@ -176,11 +178,6 @@ export default {
     overflow-x: hidden;
     border-radius: 0px 27.99px 27.99px 0px;
     position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
     
 
 }
@@ -190,6 +187,15 @@ export default {
     position: absolute !important;
     z-index: 2 !important;
     right: 0;
+}
+.icons {
+    width: 100%;
+    height: 100%;
+     display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 .icons-container {
     transform: translateX(0px);
@@ -223,27 +229,28 @@ svg {
     height: 20px;
     /* roundness of the scroll thumb */
 }
-.iconsGroup-enter-active {
+.icons-group-enter-active {
     transition: 0.8s !important;
     transition-delay: 0.3s !important;
 }
-.iconsGroup-leave-active {
+.icons-group-leave-active {
     transition: 0.3s !important;
     
 }
-.iconsGroup-enter-from {
+.icons-group-enter-from {
     opacity: 0 !important;
     transform: translateX(-400px) !important;
 }
-.iconsGroup-enter-to {
+.icons-group-enter-to {
     opacity: 1 !important;
     transform: translateX(0px) !important;
 }
-.iconsGroup-leave-from{
+.icons-group-leave-from{
     opacity: 1 !important;
 }
-.iconsGroup-leave-to{
+.icons-group-leave-to{
     opacity: 0 !important;
+    transform: translateX(400px) 
 }
 @media screen and (max-height: 384px) {
     .project-details {

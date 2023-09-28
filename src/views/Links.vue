@@ -153,9 +153,9 @@ export default {
 
 .link-radius-container {
     width: 95%;
-    max-width: 400px;
+    max-width: 350px;
     height: 95%;
-    max-height: 400px;
+    max-height: 350px;
     border-radius: 50%;
     border: 2.381px solid #FFF;
     background: linear-gradient(180deg, rgba(0, 133, 255, 0.75) 0%, rgba(13, 18, 88, 0.75) 100%);

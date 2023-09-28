@@ -60,20 +60,20 @@
                     </div>
                     <div class="container-skills">
                         <div class="general-container">
-                            <div class="icon-containers-mobile" @mousedown="DragStart($event)" @touchstart="DragStart($event)" @mousemove="Drag($event)" @touchmove="Drag($event)" @mouseup="StopDrag($event)" @mouseleave="StopDrag($event)" @touchend="StopDrag($event)">
+                            <div class="icon-containers-mobile" @click="setMousePosition" @mousedown="DragStart($event)" @touchstart="DragStart($event)" @mousemove="Drag($event)" @touchmove="Drag($event)" @mouseup="StopDrag($event)" @mouseleave="StopDrag($event)" @touchend="StopDrag($event)">
                                 <span :class="{ spanHidden, spanNotHidden }" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
                                 <div class="icons">
-                                     <IconMenu :class="{ 'html': true, 'absolute': true, 'zindex-up': true, 'active': html }" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
-                                     <IconMenu :class="{ 'css': true, 'absolute': true, 'zindex-up': true, 'active': css }" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
-                                     <IconMenu :class="{ 'js': true, 'absolute': true, 'zindex-up': true, 'active': js }" prefixProps="fab" iconNameProps="js" @clicked="iconClicked" nameProps="js"></IconMenu>
-                                     <IconMenu :class="{ 'node': true, 'absolute': true, 'zindex-up': true, 'active': node }" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked" nameProps="node"></IconMenu>
-                                     <IconMenu :class="{ 'mysql': true, 'absolute': true, 'zindex-up': true, 'active': mysql }" prefixProps="fas" iconNameProps="database" @clicked="iconClicked" nameProps="mysql"></IconMenu>
-                                     <IconMenu :class="{ 'mongo': true, 'absolute': true, 'zindex-up': true, 'active': mongo }" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked" nameProps="mongo"></IconMenu>
-                                     <CostumIcon v-for="(icon, index) in iconArrayGroup1" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event)"  :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
-                                     <IconMenu :class="{ 'vue': true, 'absolute': true, 'zindex-up': true, 'active': vue }" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
-                                     <IconMenu :class="{ 'sass': true, 'absolute': true, 'zindex-up': true, 'active': sass }" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
-                                     <CostumIcon v-for="(icon, index) in iconArrayGroup2" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event)" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
-                                     <IconMenu v-show="showInfo" :class="{ 'info': true, 'absolute': true, 'zindex-up': info, 'active': info }" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
+                                     <IconMenu :class="{ 'html': true, 'absolute': true, 'zindex-up': true, 'active': html }" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="html"></IconMenu>
+                                     <IconMenu :class="{ 'css': true, 'absolute': true, 'zindex-up': true, 'active': css }" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="css"></IconMenu>
+                                     <IconMenu :class="{ 'js': true, 'absolute': true, 'zindex-up': true, 'active': js }" prefixProps="fab" iconNameProps="js" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="js"></IconMenu>
+                                     <IconMenu :class="{ 'node': true, 'absolute': true, 'zindex-up': true, 'active': node }" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="node"></IconMenu>
+                                     <IconMenu :class="{ 'mysql': true, 'absolute': true, 'zindex-up': true, 'active': mysql }" prefixProps="fas" iconNameProps="database" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="mysql"></IconMenu>
+                                     <IconMenu :class="{ 'mongo': true, 'absolute': true, 'zindex-up': true, 'active': mongo }" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="mongo"></IconMenu>
+                                     <CostumIcon v-for="(icon, index) in iconArrayGroup1" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event), iconClicked($event)"  :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
+                                     <IconMenu :class="{ 'vue': true, 'absolute': true, 'zindex-up': true, 'active': vue }" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="vue"></IconMenu>
+                                     <IconMenu :class="{ 'sass': true, 'absolute': true, 'zindex-up': true, 'active': sass }" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="sass"></IconMenu>
+                                     <CostumIcon v-for="(icon, index) in iconArrayGroup2" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event), iconClicked($event)" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
+                                     <IconMenu v-show="showInfo" :class="{ 'info': true, 'absolute': true, 'zindex-up': info, 'active': info }" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="info"></IconMenu>
                                 </div>
                             </div>
                         </div>
@@ -95,14 +95,6 @@ export default {
     props: {
         costumIconsArrayProps: Array,
     },
-    computed: {
-        iconArrayGroup1(){
-            return this.costumIconsArray[0]
-        },
-        iconArrayGroup2() {
-            return this.costumIconsArray[1]
-        },
-    },
     data() {
         return {
             html: false,
@@ -121,6 +113,8 @@ export default {
             spanNotHidden: false,
             showInfo: false,
             costumIconsArray: this.costumIconsArrayProps,
+            iconArrayGroup1: this.costumIconsArrayProps[0],
+            iconArrayGroup2: this.costumIconsArrayProps[1],
             startMousePosition: 0,
             prevTranslate: 0,
             currentTranslate: 0,
@@ -149,27 +143,36 @@ export default {
         },
         costumIconToggleActive(iconName) {
             console.log('CHAMEIIIIIIIII', iconName)
-            let arrayIconNames = this.costumIconsArray.map(icon => {
-                console.log(icon.iconName, iconName)
-                return { iconName: icon.iconName, className: icon.className, effectHoverProps: iconName === icon.name, activeEffectProps: true, white: icon.iconName === iconName, hoverProps: icon.hoverProps, fillProps: icon.fillProps }
+            let arrayIconNames1 = this.iconArrayGroup1.map(icon => {
+                return { iconName: icon.iconName, className: icon.className, effectHoverProps: iconName === icon.iconName, activeEffectProps: true, white: icon.iconName === iconName, hoverProps: icon.hoverProps, fillProps: icon.fillProps }
             })
-            this.costumIconsArray = arrayIconNames
+            let arrayIconNames2 = this.iconArrayGroup2.map(icon => {
+                console.log(icon.iconName, iconName)
+                return { iconName: icon.iconName, className: icon.className, effectHoverProps: iconName === icon.iconName, activeEffectProps: true, white: icon.iconName === iconName, hoverProps: icon.hoverProps, fillProps: icon.fillProps }
+            })
+            this.iconArrayGroup1 = arrayIconNames1
+            this.iconArrayGroup2 = arrayIconNames2
+
+        },
+        setMousePosition(){
+            this.startMousePosition = 0
 
         },
         DragStart($event){
             console.log($event)
+            this.startMousePosition = $event.clientX || $event.touches[0].clientX
             this.IsDragging = true
-            this.startMousePosition = $event.pageX || $event.touches[0].pageX
 
         },
         Drag($event){
-            let currentPosition = $event.pageX || $event.touches[0].pageX
+            let currentPosition = $event.clientX || $event.touches[0].clientX
             this.currentTranslate = this.prevTranslate + (currentPosition - this.startMousePosition)
             if(this.IsDragging) return this.setTranslate()
         },
         StopDrag(){
             this.prevTranslate = this.currentTranslate
             this.IsDragging = false
+            this.startMousePosition = 0
             this.movedBy()
 
         },
@@ -212,9 +215,12 @@ export default {
 
 }
 .text-container {
+    margin-top: 100px;
     width: 99%;
     height: 100%;
     color: white;
+    display: flex;
+    overflow: hidden;
  
 }
 .html-text, .css-text, .js-text, 
@@ -241,8 +247,9 @@ export default {
 .container-mobile .container-skills {
     width: 100%;
     height: 25%;
-    position: unset;
     padding-right: 5px;
+    position: absolute;
+    top: 0%;
     
     
 }
@@ -251,6 +258,7 @@ export default {
     height: 100%;
     position: unset;
     max-height: 100px;
+    
 }
 
 .container-mobile .text-container {
@@ -330,7 +338,9 @@ export default {
 }
 
 @media screen and (max-height: 380px) {
-
+    .text-container {
+        margin-top: 70px;
+    }
     .text-container p {
     color: white;
     width: 90%;
@@ -338,6 +348,33 @@ export default {
     overflow-y: auto;
     max-height: 140px;
 }
+}
+.active {
+    color: white;
+}
+.text-group-enter-active, .text-group-leave-active {
+  transition: 0.6s;
+}
+
+.text-group-enter-from{
+    width: 50%;
+    transform:translate(-50%, 0%) scale(1);
+
+    
+}
+.text-group-enter-to{
+    width: 100%;
+    transform:translate(0%, 0%) scale(1);
+    
+}
+.text-group-leave-from{
+    width: 50%;
+    transform:translate(0%, 0%) scale(1);
+}
+.text-group-leave-to{
+    width: 0%;
+    transform:translate(-100%, -0%) scale(1);
+    opacity: 0;    
 }
 
 </style>
