@@ -24,7 +24,7 @@
                     <Icons @clicked="toRight()" :prefixProps="'fas'" class="carret-right" iconNameProps="caret-right"></Icons>
                 </div> <!--fim do slide-container-->
                 <ul class="links">
-                    <TransitionGroup name="lisGroups">
+                    <TransitionGroup name="lisgroup">
                         <li class="link-box" v-if="selected === 'gitHub'">
                             <a href="https://github.com/Paulo-Ribas" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>Meu GitHub (Paulo Ribas)</a>
                         </li>
@@ -227,6 +227,7 @@ export default {
     list-style: none;
     height: 50%;
     gap: 10px;
+    position: relative;
 }
 
 .link-box {
@@ -234,6 +235,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
+    transform: translate(0px);
 
 }
 .link-box a {
@@ -259,5 +261,25 @@ export default {
     align-items: center;
     
 }
-
+.lisgroup-enter-from {
+    opacity: 0.1;
+    transform: translateX(53px);  
+}
+.lisgroup-enter-to {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.lisgroup-enter-active, .lisgroup-leave-active {
+    transition: 0.3s;
+}
+.lisgroup-leave-from {
+    position: absolute;
+    opacity: 1;
+    transform: translateX(0px);   
+}
+.lisgroup-leave-to {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-33px);
+}
 </style>

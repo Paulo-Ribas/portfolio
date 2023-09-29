@@ -154,20 +154,18 @@ export default {
             this.iconArrayGroup2 = arrayIconNames2
 
         },
-        setMousePosition(){
-            this.startMousePosition = 0
-
-        },
         DragStart($event){
-            console.log($event)
-            this.startMousePosition = $event.clientX || $event.touches[0].clientX
+            console.log('iniciei apenas com o click', $event)
             this.IsDragging = true
+            this.startMousePosition = $event.pageX || $event.touches[0].pageX
 
         },
         Drag($event){
+            if(!this.IsDragging) return
             let currentPosition = $event.clientX || $event.touches[0].clientX
-            this.currentTranslate = this.prevTranslate + (currentPosition - this.startMousePosition)
-            if(this.IsDragging) return this.setTranslate()
+            this.currentTranslate = (this.prevTranslate + (currentPosition - this.startMousePosition))
+            this.currentTranslate >= 0 ? this.currentTranslate += 33 : this.currentTranslate -= 33
+            this.setTranslate()
         },
         StopDrag(){
             this.prevTranslate = this.currentTranslate
@@ -187,13 +185,13 @@ export default {
             let distanceBorderRight = Math.round(icons.getBoundingClientRect().right)
             console.log(distanceBorderRight)
 
-            if(distanceBorderLeft >= 50) {
+            if(distanceBorderLeft >= 33) {
                 this.currentTranslate = 0
                 this.prevTranslate = 0
                 this.startMousePosition = 0
                 icons.style.transform = `translateX(${this.currentTranslate}px)`
             }
-             if(distanceBorderRight <= 250) {
+             if(distanceBorderRight <= 340) {
                 this.currentTranslate =  iconsContainer.offsetWidth - icons.offsetWidth
                 this.prevTranslate = this.currentTranslate
                 icons.style.transform = `translateX(${this.currentTranslate}px)`
@@ -332,6 +330,7 @@ export default {
     transform: translateX(0px);
     display: flex;
     align-items: center;
+    transition: all 0.33s ease-out 0s;
 }
 .container-mobile .absolute {
     position: relative !important;

@@ -87,14 +87,12 @@ export default {
       this.$emit('costumIconClicked', this.iconName)
     },
     mouseEnter(){
-      console.log(this.$props.hoverProps)
       if(this.effectHover){
         this.fill = this.$props.hoverProps
       }
     },
     mouseLeave(){
       if(this.effectHover && !this.white){
-        console.log('por que vem aqui?', this.iconName, this.white)
         this.fill = this.$props.fillProps
       }
     },

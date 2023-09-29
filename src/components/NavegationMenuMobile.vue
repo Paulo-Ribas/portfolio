@@ -1,6 +1,6 @@
 <template>
     <Transition name="teste">
-        <nav :class="{MenuFixo,'container-icons': true}" @click="toggleMenu">
+        <nav :class="{MenuFixo,'container-icons': true}" id="menu-mobile" @click.stop="toggleMenu">
             <div class="img-container"  v-if="closed">
                 <img class="img-menu" src="../assets/img/menu.png">
             </div>
@@ -64,6 +64,8 @@ export default {
     },
     mounted() {
         this.Animation = false
+        document.addEventListener('click', this.toggleClicked)
+
     },
     props: {
         MenuFixoProps: Boolean,
@@ -81,8 +83,12 @@ export default {
         toggleMenu(){
             this.closed = !this.closed
             this.MenuFixo = !this.closed
-            console.log(this.MenuFixo)
         },
+        toggleClicked($event){
+            let menu = document.getElementById('menu-mobile')
+            console.log(this.closed, menu.contains($event.target))
+            if(!menu.contains($event.target) && !this.closed) this.toggleMenu()
+        }
     }
 }
 </script>
