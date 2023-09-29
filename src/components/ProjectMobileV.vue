@@ -95,7 +95,7 @@ export default {
 }
 
 .project-img {
-    width: 100%;
+    width: calc(100% - 20px);
     height: calc(100% - 60px);
     position: relative;
     overflow: hidden;

@@ -21,33 +21,48 @@
                         </div>
                         <div class="mysql-text" v-if="mysql">
                             <h2>Mysql</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sapiente accusamus, cupiditate modi nostrum quisquam assumenda provident excepturi ad sequi incidunt neque debitis optio. Eligendi at necessitatibus quam qui, fugit doloribus! Eveniet laboriosam vel earum perferendis nobis consequuntur veniam laborum iste labore eligendi non inventore minus, enim doloribus dolore laudantium et nostrum doloremque. Excepturi explicabo vel aspernatur beatae iure odio corrupti, earum pariatur, veniam voluptas quae praesentium saepe aperiam nisi magnam est nemo nihil illo? Delectus molestias provident nihil placeat possimus soluta autem natus recusandae quod culpa pariatur animi distinctio esse eum omnis debitis, facere minus fugit nesciunt? Omnis vitae dolorum modi accusamus quae deserunt, amet tempore laborum, doloremque fugit incidunt labore nobis corrupti rem repudiandae voluptate, numquam dignissimos voluptas?</p>
+                            <p>Após avançar mais no node.js comecei a entrar na parte de banco de dados, sendo meu primeiro contato banco de dados relacionais, conforme ia criando meus projetos fui aprendendo e dominando fazer relações de um para um, um para muitos e muitos para muitos o que me fez capaz de criar desde um simples blog e sessão de comentários, até um sistema de adição de amigos entre usuarios</p>
                         </div>
                         <div class="mongo-text" v-if="mongo">
                             <h2>MongoDB</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, aliquam sint. Iusto iste est officiis consectetur corrupti explicabo dolor dolorum beatae consequatur repellat dolorem blanditiis voluptate aut, in maiores alias dolore ratione enim tempore! Nesciunt officiis aliquam dignissimos. Minima, fugiat quia! Animi sequi atque tenetur optio recusandae officia quod expedita, ipsum aperiam sint dicta nisi officiis ad! Repellendus modi quis magnam id impedit, asperiores commodi, dicta voluptates adipisci sit saepe voluptate quibusdam, officia fuga tempore aspernatur! Illum quod est ex, doloribus aut minima nobis laudantium fugiat expedita maxime eveniet quae aspernatur excepturi provident odit ipsam libero. Ab cum magnam nobis dolorum praesentium quam repellendus omnis commodi asperiores? Asperiores harum error sapiente ratione at deserunt consectetur repellendus, laudantium laboriosam quis assumenda.</p>
+                            <p>E depois de aprender sobre bancos de dados relacionais e criar projetos na pratica utilizando eles, comecei a estudar banco de dados não relacionais, o que fez aumentar minha versatilidade e produtividade, utilizando o melhor dos dois mundos em projetos pude fazer sistemas complexos de maneira eficaz com uma infraestrutura  superior em situações em que o MongoDb brilha em comparação aos bancos relacionais</p>
                         </div>
                         <div class="knex-text" v-if="knex">
                             <h2>KNEX.JS</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis reprehenderit aut officiis ad. Quas sit repudiandae possimus commodi doloribus fuga expedita exercitationem assumenda eos cum fugit amet, tempore pariatur culpa sapiente tenetur vel! Fugit, alias. Voluptatum quos autem eligendi animi sint impedit neque laudantium, praesentium placeat perferendis aspernatur alias in aliquid dolore voluptates libero voluptate ipsa rem nostrum odit nam quas reprehenderit. Expedita, fugit animi distinctio, soluta a suscipit, nulla asperiores enim sequi iste nostrum voluptate atque reprehenderit natus obcaecati porro possimus. Rerum eaque ex similique rem tempore? Laudantium odit non perspiciatis neque. Aliquam impedit iste, excepturi est sit itaque.</p>
+                            <p>knex é uma das biblioteca que mais utilizo na criação de minhas api's <!-- (colocar depois uma tag de citação ou link para demonstrar o que é api) -->, além de ser uma ótima ferramenta que torna o manuzeio de dados algo mais sólido e prático, também possibilitou e me aprofundou a fazer migrações, criando as talas e colunas de uma forma automatica e eficiente e mantendo o sistema muito mais sustentavel e escalavel </p>
                         </div>
                         <div class="mongoose-text" v-if="mongoose">
                             <h2>Mongoose</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus sunt illum earum nulla cumque, porro, exercitationem laboriosam ullam, velit voluptate. Incidunt ab dolor laborum natus officiis deserunt quam unde veritatis? Omnis, eum exercitationem. Maxime, tenetur voluptates temporibus at sint natus quasi laborum veniam blanditiis tempora dignissimos! Illo eaque beatae ipsam error minima dolorem? Delectus maxime exercitationem id asperiores sequi blanditiis quod, incidunt quaerat, nobis harum aut dolor magni atque iure iste! Ab necessitatibus illo nulla temporibus! Iusto voluptate dolorem veniam illo incidunt perferendis tempore eum sunt. Corporis aliquam quasi iure inventore? Inventore alias, harum rem officia eos asperiores eius.</p>
+                            <p>mongoose fica em par com o knex nesse quesito de bibliotecas que mais utilizo também, a forma simples e direta de se conectar e criar schema e models sem a necessidade você mesmo ter que preparar isso antes, fazem com que os projetos utilizando essa ferramenta sejam além de bastante eficientes, divertidos também, como mongodb praticamente salva os dados em objetos invés de tabelas e colunas, faz com que seja possivel salvar vários tipos de dados destintos em um só objeto, aumenta a liberdade e possibilidades de alterar, remover e inserir quantidades de informações distintas em uma unica vez, fez com que eu conseguisse criar sistema de gerenciamento de usuarios e salas em tempo real, e tudo isso como se tudo fosse um simples arquivo puramente de JavaScript graças ao mongoose</p>
                         </div>
                         <div class="sequelize-text" v-if="sequelize">
                             <h2>Sequelize</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo modi quam pariatur optio perspiciatis nesciunt assumenda molestias. Quasi aliquid accusantium inventore voluptatem excepturi cupiditate eum, neque atque porro. Expedita excepturi, laboriosam explicabo deleniti fugiat sapiente provident harum itaque nihil eius reprehenderit quae autem, nesciunt culpa eum doloribus similique. Rem.</p>
+                            <p>Embora minha experiência com o Sequelize não seja tão recente ou grande comparado as citadas anteriormentes, tive a oportunidade de trabalhar com ele em projetos anteriores. Compreendo os conceitos fundamentais e a estrutura de código associada ao Sequelize. Sou capaz e estou disposto a refrescar e aprofundar meu conhecimento, caso a utilização do Sequelize seja necessária em futuros projetos.</p>
                         </div>
                         <div class="sass-text" v-if="sass">
                             <h2>SASS</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora nisi expedita explicabo aliquam! Autem sequi nostrum et maiores iste optio dignissimos quasi labore ea voluptates officiis tempore, ipsum ducimus voluptas provident velit, laborum aut suscipit cupiditate numquam. Repellat, maiores fugiat optio nostrum facilis accusantium obcaecati ipsa illo rem nihil itaque ipsum expedita qui veritatis eius ratione consequuntur error iure! Deleniti assumenda magni dolores cum tenetur amet repudiandae rem commodi?</p>
+                            <p>AAAAA EU ESQUECI QUE APRENDI ISSO</p>
                         </div>
                         <div class="vue-text" v-if="vue">
                             <h2>Vue.Js</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit pariatur, perferendis ab magnam praesentium obcaecati animi illum. Maxime magni rem tenetur reiciendis cumque odit facilis cum fuga, totam fugit ea veritatis, soluta commodi hic sit accusamus. Voluptates, laborum optio. Rem ad perspiciatis sapiente quidem maiores praesentium quia suscipit sint quam facere! Nam accusamus minus pariatur fuga tempore distinctio eos itaque ullam cupiditate corrupti adipisci eius, recusandae eveniet ipsa animi molestias quod autem! Iste quasi dolore asperiores mollitia distinctio explicabo eius, odit, sit recusandae adipisci cupiditate porro doloribus blanditiis! Nihil libero vero voluptates debitis accusantium aut quam. Perferendis dolor quas nesciunt consectetur harum amet fugiat necessitatibus a, non dolores sit inventore, illo earum! Dolorum nostrum nemo ratione, maxime eum vel pariatur ab fuga libero fugiat mollitia voluptates assumenda consequatur aliquid cumque similique. Sed quos sunt quod eos vitae rerum praesentium numquam nobis iste? Eos dicta qui repellat porro sint facilis rem ipsa explicabo tenetur at voluptates quae repudiandae eveniet sapiente saepe assumenda sit, nobis nesciunt illo laudantium, dolores maxime ut est! Nihil, esse hic voluptate corrupti laboriosam, aliquam cumque ipsa non similique libero at repudiandae laborum culpa veritatis fugit illo quam delectus quae! Magnam, assumenda omnis recusandae tempore aliquid tenetur.</p>
+                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
                         </div>
-    
+                         <div class="vue-text" v-if="vue">
+                            <h2>Vue.Js</h2>
+                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
+                        </div>
+                         <div class="vue-text" v-if="webpack">
+                            <h2>Vue.Js</h2>
+                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
+                        </div>
+                         <div class="nuxt-text" v-if="nuxt">
+                            <h2>Vue.Js</h2>
+                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
+                        </div>
+                         <div class="socket-text" v-if="socket">
+                            <h2>Vue.Js</h2>
+                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
+                        </div>
                          <div class="info-text" v-if="info">
                             <h2>Adicional</h2>
                             <p>
@@ -142,7 +157,6 @@ export default {
             name === 'info' ? this.info = true : this.info = false
         },
         costumIconToggleActive(iconName) {
-            console.log('CHAMEIIIIIIIII', iconName)
             let arrayIconNames1 = this.iconArrayGroup1.map(icon => {
                 return { iconName: icon.iconName, className: icon.className, effectHoverProps: iconName === icon.iconName, activeEffectProps: true, white: icon.iconName === iconName, hoverProps: icon.hoverProps, fillProps: icon.fillProps }
             })
@@ -155,7 +169,6 @@ export default {
 
         },
         DragStart($event){
-            console.log('iniciei apenas com o click', $event)
             this.IsDragging = true
             this.startMousePosition = $event.pageX || $event.touches[0].pageX
 
@@ -164,10 +177,14 @@ export default {
             if(!this.IsDragging) return
             let currentPosition = $event.clientX || $event.touches[0].clientX
             this.currentTranslate = (this.prevTranslate + (currentPosition - this.startMousePosition))
-            this.currentTranslate >= 0 ? this.currentTranslate += 33 : this.currentTranslate -= 33
+            this.startMousePosition >= currentPosition ? this.currentTranslate -= 33 : this.currentTranslate += 33
             this.setTranslate()
         },
-        StopDrag(){
+        StopDrag($event){
+            let currentPosition = $event.clientX || $event.touches[0].clientX
+            this.startMousePosition >= currentPosition ? this.currentTranslate -= 33 : this.currentTranslate += 33
+            this.setTranslate()
+
             this.prevTranslate = this.currentTranslate
             this.IsDragging = false
             this.startMousePosition = 0
@@ -240,6 +257,7 @@ export default {
     width: 90%;
     white-space: break-spaces;
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: 290px;
 }
 .container-mobile .container-skills {
@@ -351,23 +369,31 @@ export default {
 .active {
     color: white;
 }
-.text-group-enter-active, .text-group-leave-active {
-  transition: 0.6s;
+.text-group-enter-active{
+    transition-delay: 0.1s;
+    transition: 0.5s;
+}
+ .text-group-leave-active {
+  transition: 0.5s;
+
 }
 
 .text-group-enter-from{
-    width: 50%;
+    width: 0%;
+    opacity: 0.1;
     transform:translate(-50%, 0%) scale(1);
 
     
 }
 .text-group-enter-to{
     width: 100%;
+    opacity: 1;
     transform:translate(0%, 0%) scale(1);
     
 }
 .text-group-leave-from{
-    width: 50%;
+    width: 100%;
+    opacity: 1;
     transform:translate(0%, 0%) scale(1);
 }
 .text-group-leave-to{

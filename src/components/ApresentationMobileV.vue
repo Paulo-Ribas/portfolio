@@ -223,7 +223,7 @@ p {
     max-height: 400px;
     width: 49%;
     position: absolute;
-    top: 50%;
+    top: 20%;
     /* overflow-y: auto; */
     display: flex;
     left: 98%;
@@ -232,7 +232,7 @@ p {
     /* justify-content: start; */
     gap: 8px;
     align-items: center;
-    transform: translate(6%, -50%);
+    transform: translate(6%, -20%);
    
 }
 .description p {
