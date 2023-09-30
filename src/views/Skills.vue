@@ -145,13 +145,13 @@ export default {
                 { className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
                 { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
                 { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' },
-                { className: 'api', iconName: 'api', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#000428' }
+               
             ],
 
             arrayMobileGroup1: [{ className: 'knex', iconName: 'knex', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
             { className: 'mongoose', iconName: 'mongoose', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
             { className: 'sequelize', iconName: 'sequelize', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
-            { className: 'api', iconName: 'api', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }],
+            ],
 
             arrayMobileGroup2: [{ className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
             { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },

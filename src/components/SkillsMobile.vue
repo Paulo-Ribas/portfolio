@@ -51,18 +51,7 @@
                             <h2>Vue.Js</h2>
                             <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
                         </div>
-                         <div class="vue-text" v-if="webpack">
-                            <h2>Vue.Js</h2>
-                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
-                        </div>
-                         <div class="nuxt-text" v-if="nuxt">
-                            <h2>Vue.Js</h2>
-                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
-                        </div>
-                         <div class="socket-text" v-if="socket">
-                            <h2>Vue.Js</h2>
-                            <p>iniciei os estudos em 2022, após criar vários projetos a "mão" usando javascript, html e css puro, decidi que já poderia e que já estava na hora de utilizar algum um framework, dentre react, angular e vue, vue foi o que me conquistou, pelo fato dele ser simples facil de aprender e muito intuitivo. Conforme eu fui utilizando vue, percebi que saber e dominar as bases (html, css, js) realmente foi enssensial para tornar possivel tudo que criei utilizando vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e js fizeram com que problemas e erros fossem facilmente superados, criei projetos usando vuex, vue router, vue cli e cdn,  é minha ferramenta favorita e sempre estou evoluindo com ela</p>
-                        </div>
+    
                          <div class="info-text" v-if="info">
                             <h2>Adicional</h2>
                             <p>
@@ -134,6 +123,7 @@ export default {
             prevTranslate: 0,
             currentTranslate: 0,
             IsDragging: false,
+            prevIconClickedPosition: 0,
 
         }
     },
@@ -169,22 +159,67 @@ export default {
 
         },
         DragStart($event){
+            this.moveToIcon($event)
             this.IsDragging = true
             this.startMousePosition = $event.pageX || $event.touches[0].pageX
 
+        },
+        moveToIcon($event) {
+            setTimeout(() => {
+                console.log('veio no timeout')
+                if (this.IsDragging) return
+                console.log('passou daqui', this.IsDragging)
+                let currentPosition = $event.pageX || $event.touches[0].pageX
+                console.log('posição anterior', this.prevIconClickedPosition, 'posição atual:', currentPosition)
+                if (Math.round(currentPosition) > Math.round(this.prevIconClickedPosition)) {
+                    this.currentTranslate -= 70
+                    console.log('é maior', this.currentTranslate)
+                    this.setTranslate()
+                    this.prevIconClickedPosition = currentPosition
+                    return
+                }
+                if (Math.round(currentPosition) < Math.round(this.prevIconClickedPosition)) {
+                    console.log('antes de setar', this.currentTranslate)
+                    this.currentTranslate += 70
+                    console.log('é menor', this.currentTranslate)
+                    this.setTranslate()
+                    this.prevIconClickedPosition = currentPosition
+                    return
+                }
+                if (Math.round(currentPosition) === Math.round(this.prevIconClickedPosition)) {
+                    let screen = document.querySelector('body').offsetWidth
+                    let half = screen / 2
+                    if (half > Math.round(currentPosition)) {
+                        console.log('antes de setar', this.currentTranslate, 'half', half)
+                        this.currentTranslate += 70
+                        console.log('é menor', this.currentTranslate)
+                        this.setTranslate()
+                        this.prevIconClickedPosition = currentPosition
+                        return
+
+                    }
+                    else {
+                        this.currentTranslate -= 70
+                        console.log('é maior', this.currentTranslate)
+                        this.setTranslate()
+                        this.prevIconClickedPosition = currentPosition
+                        return
+                    }
+
+
+                }
+                this.prevIconClickedPosition = currentPosition
+            }, 50);
         },
         Drag($event){
             if(!this.IsDragging) return
             let currentPosition = $event.clientX || $event.touches[0].clientX
             this.currentTranslate = (this.prevTranslate + (currentPosition - this.startMousePosition))
-            this.startMousePosition >= currentPosition ? this.currentTranslate -= 33 : this.currentTranslate += 33
+            this.startMousePosition >= currentPosition ? this.currentTranslate += 33 : this.currentTranslate -= 33
             this.setTranslate()
         },
-        StopDrag($event){
-            let currentPosition = $event.clientX || $event.touches[0].clientX
-            this.startMousePosition >= currentPosition ? this.currentTranslate -= 33 : this.currentTranslate += 33
-            this.setTranslate()
-
+        StopDrag(){
+            if(!this.IsDragging) return
             this.prevTranslate = this.currentTranslate
             this.IsDragging = false
             this.startMousePosition = 0
