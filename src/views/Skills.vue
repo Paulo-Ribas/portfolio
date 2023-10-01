@@ -11,62 +11,80 @@
                 <div class="text-container">
                     <TransitionGroup name="text-group">
                 <div class="html-text" v-if="html">
-                    <h2>HTML</h2> <!-- tag abreviamento -->
-                    <p>Inicie meus estudos em meados de 2020, focando em aprender a semantica para criar paginas acessiveis a todo tipo de publico, com ou sem deficiencia visual.</p>
-                </div>
-                <div class="css-text" v-if="css">
-                    <h2>CSS</h2> <!-- tag sobre abreviamento -->
-                    <p>Comecei meus estudos em meados de 2020 junto com html, visando aprender a usar todo potencial do css sem depender da utilização de frameworks e linguagens de programação(JavaScript).</p>
-                </div>
-                <div class="js-text" v-if="js">
-                    <h2>Java Script</h2>
-                    <p>Iniciei meus estudos em janeiro de 2021, comprei livros <!-- tag de citação --> js(livro) <!-- / --> e então parti para 
-                    os cursos, começei pela lógica de programação usando portugol, depois de 1 mês, senti que estava pronto para partir para 
-                    uma linguagem de verdade, decidi focar em javascript, assim que eu terminei de estudar lógica, e sentia que estava 
-                    competente com html e css, comprei cursos focados em javascript, saldjsaodhosadhsa, jsdsajdasdhsadhs, complementei meus 
-                    estudos pesquisando, procurando conteudos fora, e praticando, sempre fazendo tudo do 0 de forma criativa e funcional, visando dominar a linguagem antes de começar a usar qualquer framework.</p>   
-                </div>
-                <div class="node-text" v-if="node">
-                    <h2>Node</h2>
-                    <p>Comecei meus estudos em 2021, conforme eu ia aumentando o nivel das aplicações que eu criava, vi a necessidade de um servidor para gerenciar cada uma delas. Comecei a estudar o conceito WEB, protocolos HTTP, e o conceito de API(APIRest), Após dominar esses assuntos, eu comecei a criar minhas proprias APIs utilizando frameworks como o express e ejs. Após perceber como era simples utilizar JS no lado do servidor comecei a estudar mais a fundo e usar o NODE.js para facilitar/automatizar tarefas proprias, assim manipulando os arquivos, dentre outras necessidades que eu tinha.
-                    </p>
-                </div>
-                <div class="mysql-text" v-if="mysql">
-                    <h2>Mysql</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sapiente accusamus, cupiditate modi nostrum quisquam assumenda provident excepturi ad sequi incidunt neque debitis optio. Eligendi at necessitatibus quam qui, fugit doloribus! Eveniet laboriosam vel earum perferendis nobis consequuntur veniam laborum iste labore eligendi non inventore minus, enim doloribus dolore laudantium et nostrum doloremque. Excepturi explicabo vel aspernatur beatae iure odio corrupti, earum pariatur, veniam voluptas quae praesentium saepe aperiam nisi magnam est nemo nihil illo? Delectus molestias provident nihil placeat possimus soluta autem natus recusandae quod culpa pariatur animi distinctio esse eum omnis debitis, facere minus fugit nesciunt? Omnis vitae dolorum modi accusamus quae deserunt, amet tempore laborum, doloremque fugit incidunt labore nobis corrupti rem repudiandae voluptate, numquam dignissimos voluptas?</p>
-                </div>
-                <div class="mongo-text" v-if="mongo">
-                    <h2>MongoDB</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, aliquam sint. Iusto iste est officiis consectetur corrupti explicabo dolor dolorum beatae consequatur repellat dolorem blanditiis voluptate aut, in maiores alias dolore ratione enim tempore! Nesciunt officiis aliquam dignissimos. Minima, fugiat quia! Animi sequi atque tenetur optio recusandae officia quod expedita, ipsum aperiam sint dicta nisi officiis ad! Repellendus modi quis magnam id impedit, asperiores commodi, dicta voluptates adipisci sit saepe voluptate quibusdam, officia fuga tempore aspernatur! Illum quod est ex, doloribus aut minima nobis laudantium fugiat expedita maxime eveniet quae aspernatur excepturi provident odit ipsam libero. Ab cum magnam nobis dolorum praesentium quam repellendus omnis commodi asperiores? Asperiores harum error sapiente ratione at deserunt consectetur repellendus, laudantium laboriosam quis assumenda.</p>
-                </div>
-                <div class="knex-text" v-if="knex">
-                    <h2>KNEX.JS</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis reprehenderit aut officiis ad. Quas sit repudiandae possimus commodi doloribus fuga expedita exercitationem assumenda eos cum fugit amet, tempore pariatur culpa sapiente tenetur vel! Fugit, alias. Voluptatum quos autem eligendi animi sint impedit neque laudantium, praesentium placeat perferendis aspernatur alias in aliquid dolore voluptates libero voluptate ipsa rem nostrum odit nam quas reprehenderit. Expedita, fugit animi distinctio, soluta a suscipit, nulla asperiores enim sequi iste nostrum voluptate atque reprehenderit natus obcaecati porro possimus. Rerum eaque ex similique rem tempore? Laudantium odit non perspiciatis neque. Aliquam impedit iste, excepturi est sit itaque.</p>
-                </div>
-                <div class="mongoose-text" v-if="mongoose">
-                    <h2>Mongoose</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus sunt illum earum nulla cumque, porro, exercitationem laboriosam ullam, velit voluptate. Incidunt ab dolor laborum natus officiis deserunt quam unde veritatis? Omnis, eum exercitationem. Maxime, tenetur voluptates temporibus at sint natus quasi laborum veniam blanditiis tempora dignissimos! Illo eaque beatae ipsam error minima dolorem? Delectus maxime exercitationem id asperiores sequi blanditiis quod, incidunt quaerat, nobis harum aut dolor magni atque iure iste! Ab necessitatibus illo nulla temporibus! Iusto voluptate dolorem veniam illo incidunt perferendis tempore eum sunt. Corporis aliquam quasi iure inventore? Inventore alias, harum rem officia eos asperiores eius.</p>
-                </div>
-                <div class="sequelize-text" v-if="sequelize">
-                    <h2>Sequelize</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo illo modi quam pariatur optio perspiciatis nesciunt assumenda molestias. Quasi aliquid accusantium inventore voluptatem excepturi cupiditate eum, neque atque porro. Expedita excepturi, laboriosam explicabo deleniti fugiat sapiente provident harum itaque nihil eius reprehenderit quae autem, nesciunt culpa eum doloribus similique. Rem.</p>
-                </div>
-                <div class="sass-text" v-if="sass">
-                    <h2>SASS</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora nisi expedita explicabo aliquam! Autem sequi nostrum et maiores iste optio dignissimos quasi labore ea voluptates officiis tempore, ipsum ducimus voluptas provident velit, laborum aut suscipit cupiditate numquam. Repellat, maiores fugiat optio nostrum facilis accusantium obcaecati ipsa illo rem nihil itaque ipsum expedita qui veritatis eius ratione consequuntur error iure! Deleniti assumenda magni dolores cum tenetur amet repudiandae rem commodi?</p>
-                </div>
-                <div class="vue-text" v-if="vue">
-                    <h2>Vue.Js</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit pariatur, perferendis ab magnam praesentium obcaecati animi illum. Maxime magni rem tenetur reiciendis cumque odit facilis cum fuga, totam fugit ea veritatis, soluta commodi hic sit accusamus. Voluptates, laborum optio. Rem ad perspiciatis sapiente quidem maiores praesentium quia suscipit sint quam facere! Nam accusamus minus pariatur fuga tempore distinctio eos itaque ullam cupiditate corrupti adipisci eius, recusandae eveniet ipsa animi molestias quod autem! Iste quasi dolore asperiores mollitia distinctio explicabo eius, odit, sit recusandae adipisci cupiditate porro doloribus blanditiis! Nihil libero vero voluptates debitis accusantium aut quam. Perferendis dolor quas nesciunt consectetur harum amet fugiat necessitatibus a, non dolores sit inventore, illo earum! Dolorum nostrum nemo ratione, maxime eum vel pariatur ab fuga libero fugiat mollitia voluptates assumenda consequatur aliquid cumque similique. Sed quos sunt quod eos vitae rerum praesentium numquam nobis iste? Eos dicta qui repellat porro sint facilis rem ipsa explicabo tenetur at voluptates quae repudiandae eveniet sapiente saepe assumenda sit, nobis nesciunt illo laudantium, dolores maxime ut est! Nihil, esse hic voluptate corrupti laboriosam, aliquam cumque ipsa non similique libero at repudiandae laborum culpa veritatis fugit illo quam delectus quae! Magnam, assumenda omnis recusandae tempore aliquid tenetur.</p>
-                </div>
-    
-                 <div class="info-text" v-if="info">
-                    <h2>Adicional</h2>
-                    <p>
-                        em alguns dos meus projetos, eu também utilizei sequelize, o que eu não irei adicionar aqui, pois foi há 1 ano, não absorvi completamente pelo tempo e pratica que tive o utilizando, porém tenho familiaridade, já tive e ainda sei resolver alguns problemas do sequelize, e entendo o código se eu rever meu código ou ver de terceiros, também consigo criar um novo com essa base dos meus projetos antigos. <br>
-                        consumo de API, API/Rest/Restful entre outros eu também aprendi e absorvi e pratiquei, não irei adiciona-los aqui pois, sinto que seria muitas "skills" sem um propósito direto, apenas para "aumentar a quantidade", não que API'S sejam desnecessárias ou deveriam ser deixado de mão ou não tenham importancia, longe e completamente longe disso, é umas das coisas mais importantes caso você queira mostrar conhecimentos, mas o uso e o quanto sei e o que eu criei, vai ficar nitido e mais claro nos projetos do que aqui, então opitei por destacar isso na descrição dos projetos, e no fim, a melhor demonstração que será o próprio projeto. 
-                    </p>
-                </div>
+        <h2>HTML</h2> <!-- tag abreviamento -->
+        <h3>(HTML é a linguagem padrão de marcação utilizada para criar e estruturar páginas web.)</h3>
+        <p>Iniciei meus estudos em meados de 2020, focando em aprender a semântica para criar páginas acessíveis a todo tipo de público, com ou sem deficiência visual.</p>
+    </div>
+    <div class="css-text" v-if="css">
+        <h2>CSS</h2> <!-- tag sobre abreviamento -->
+        <h3>(CSS é uma linguagem de estilo utilizada para controlar a aparência e o layout de uma página web.)</h3>
+        <p>Comecei meus estudos em meados de 2020 junto com HTML, visando aprender a usar todo potencial do CSS sem depender da utilização de frameworks e linguagens de programação (JavaScript).</p>
+    </div>
+    <div class="js-text" v-if="js">
+        <h2>JavaScript</h2>
+        <h3>(JavaScript é uma linguagem de programação de alto nível e orientada a objetos amplamente utilizada para tornar as páginas web interativas e dinâmicas.)</h3>
+        <p>Iniciei meus estudos em janeiro de 2021, comprei livro <!-- tag de citação --> JS(livro) <!-- / --> e então parti para os cursos. Comecei pela lógica de programação usando Portugol, depois de 1 mês, senti que estava pronto para partir para uma linguagem de verdade, decidi focar em JavaScript. Assim que terminei de estudar lógica, e sentia que estava competente com HTML e CSS, comprei cursos focados em JavaScript. Complementei meus estudos pesquisando, procurando conteúdos fora, e praticando, sempre fazendo tudo do zero, pois pela minha concepção, em um emprego você tem que estar preparado para fazer qualquer coisa que seja possível, e possível é o que basta para você conseguir fazer o que tem que ser feito mesmo não tendo sido "ensinado" antes.</p>
+    </div>
+    <div class="node-text" v-if="node">
+        <h2>Node</h2>
+        <h3>(Node.js é um ambiente de execução para JavaScript do lado do servidor. Ele permite que os desenvolvedores usem JavaScript para criar aplicações backend.)</h3>
+        <p>Comecei meus estudos em 2021. Conforme eu ia aumentando o nível das aplicações que eu criava, vi a necessidade de um servidor para gerenciar cada uma delas. Comecei a estudar o conceito WEB, protocolos HTTP, e o conceito de API (API Rest). Após dominar esses assuntos, eu comecei a criar minhas próprias APIs utilizando frameworks como o Express e EJS. Após perceber como era simples utilizar JS no lado do servidor comecei a estudar mais a fundo e usar o Node.js para facilitar/automatizar tarefas próprias, assim manipulando os arquivos, dentre outras necessidades que eu tinha.</p>
+    </div>
+    <div class="mysql-text" v-if="mysql">
+        <h2>MySQL</h2>
+        <h3>(MySQL é um sistema de gerenciamento de banco de dados relacional de código aberto, amplamente utilizado em aplicações web e empresariais.)</h3>
+        <p>Após avançar mais no Node.js comecei a entrar na parte de banco de dados, sendo meu primeiro contato com banco de dados relacionais. Conforme ia criando meus projetos fui aprendendo e dominando fazer relações de um para um, um para muitos e muitos para muitos o que me fez capaz de criar desde um simples blog e sessão de comentários, até um sistema de adição de amigos entre usuários.</p>
+    </div>
+    <div class="mongo-text" v-if="mongo">
+        <h2>MongoDB</h2>
+        <h3>(MongoDB é um banco de dados NoSQL orientado a documentos, projetado para armazenar, consultar e processar grandes volumes de dados.)</h3>
+        <p>E depois de aprender sobre bancos de dados relacionais e criar projetos na prática utilizando eles, comecei a estudar banco de dados não relacionais, o que fez aumentar minha versatilidade e produtividade, utilizando o melhor dos dois mundos em projetos pude fazer sistemas complexos de maneira eficaz com uma infraestrutura superior em situações em que o MongoDB brilha em comparação aos bancos relacionais.</p>
+    </div>
+    <div class="knex-text" v-if="knex">
+        <h2>KNEX.JS</h2>
+        <h3>(Knex.js é um construtor de consultas SQL para Node.js que facilita a interação com bancos de dados relacionais.)</h3>
+        <p>Knex é uma das bibliotecas que mais utilizo na criação de minhas API's. <!-- (colocar depois uma tag de citação ou link para demonstrar o que é API) --> Além de ser uma ótima ferramenta que torna o manuseio de dados algo mais sólido e prático, também possibilitou e me aprofundou a fazer migrações, criando as tabelas e colunas de uma forma automática e eficiente e mantendo o sistema muito mais sustentável e escalável.</p>
+    </div>
+    <div class="mongoose-text" v-if="mongoose">
+        <h2>Mongoose</h2>
+        <h3>(Mongoose é uma biblioteca Node.js que simplifica a interação com bancos de dados MongoDB, um banco de dados NoSQL baseado em documentos.)</h3>
+        <p>Mongoose fica em par com o Knex nesse quesito de bibliotecas que mais utilizo também, a forma simples e direta de se conectar e criar schema e models sem a necessidade de você mesmo ter que preparar isso antes, fazem com que os projetos utilizando essa ferramenta sejam além de bastante eficientes, divertidos também. Como o MongoDB praticamente salva os dados em objetos em vez de tabelas e colunas, faz com que seja possível salvar vários tipos de dados distintos em um só objeto, aumenta a liberdade e possibilidades de alterar, remover e inserir quantidades de informações distintas de uma única vez, fez com que eu conseguisse criar sistema de gerenciamento de usuários e salas em tempo real, e tudo isso como se tudo fosse um simples arquivo puramente de JavaScript graças ao Mongoose.</p>
+    </div>
+    <div class="sequelize-text" v-if="sequelize">
+        <h2>Sequelize</h2>
+        <h3>(Sequelize é um ORM (Object-Relational Mapping) para Node.js e JavaScript, que facilita a interação com bancos de dados relacionais.)</h3>
+        <p>Embora minha experiência com o Sequelize não seja tão recente ou grande comparado às citadas anteriormente, tive a oportunidade de trabalhar com ele em projetos anteriores. Compreendo os conceitos fundamentais e a estrutura de código associada ao Sequelize. Sou capaz e estou disposto a refrescar e aprofundar meu conhecimento, caso a utilização do Sequelize seja necessária em futuros projetos.</p>
+    </div>
+    <div class="sass-text" v-if="sass">
+        <h2>SASS</h2>
+        <p>AAAAA EU ESQUECI QUE APRENDI ISSO</p>
+    </div>
+    <div class="vue-text" v-if="vue">
+        <h2>Vue.js</h2>
+        <h3>(Vue.js é um framework de JavaScript que facilita a criação de interfaces de usuário interativas e reativas, amplamente usado em criação de SPA (single page application))</h3>
+        <p>Iniciei os estudos em 2022, após criar vários projetos "na mão" usando JavaScript, HTML e CSS puro. Decidi que já poderia e que já estava na hora de utilizar algum framework, entre React, Angular e Vue, Vue foi o que me conquistou, pelo fato dele ser simples, fácil de aprender e muito intuitivo. Conforme eu fui utilizando Vue, percebi que saber e dominar as bases (HTML, CSS, JS) realmente foi essencial para tornar possível tudo que criei utilizando Vue sem ter limitações ou erros permanentes, saber os conceitos da DOM e JS fizeram com que problemas e erros fossem facilmente superados. Criei projetos usando Vuex, Vue Router, Vue CLI e CDN. É minha ferramenta favorita e sempre estou evoluindo com ela.</p>
+    </div>
+    <div class="nuxt-text" v-if="nuxt">
+        <h2>Nuxt.js</h2>
+        <h3>(Nuxt.js é um framework de aplicativo web construído em cima de Vue.js que facilita a criação de aplicações Vue universais e otimizadas para SEO)</h3>
+        <p>Iniciei os estudos em 2022 alguns meses após ter usado Vue em projetos pessoais. Como buscava fazer algo grande, resolvi dar uma olhada nesse framework. Com suas funcionalidades de server-side-rendering e a forma de manipular as rotas por meio de diretórios, usar componentes sem ter que importá-los e o jeito simples de usar o Vuex, junto com as opções de middlewares e layout, fez com que fosse a ferramenta perfeita para criar meu projeto de assistir vídeos ao mesmo tempo. Sistema de banimento de salas, assim como deslogamento, ficaram muito mais eficazes utilizando a funcionalidade do server-side. Assim como o asyncData e fetch para a busca de arquivos. Uma ótima ferramenta e uma mão na roda para criar aplicações grandes e complexas.</p>
+    </div>
+    <div class="webpack-text" v-if="webpack">
+        <h2>Webpack</h2>
+        <h3> (Webpack é uma ferramenta de empacotamento (bundling) para aplicações web. Ele agrupa e organiza arquivos de código-fonte)</h3>
+        <p>Comecei meus estudos no final de 2021 com o objetivo de ter uma compreensão mais racional e lógica de como funcionavam os imports e builders. Porque como eu vi que tanto React, tanto o Vue e Angular e vários outros frameworks/bibliotecas utilizam-se dele, quis me aprofundar um pouco antes na base para ficar mais preparado e ter uma compreensão melhor para pensar fora da caixa caso encontrasse problemas usando tais ferramentas.</p>
+    </div>
+    <div class="socket-text" v-if="socket">
+        <h2>Socket.io</h2>
+        <h3>(Socket.IO é uma biblioteca JavaScript que permite a comunicação em tempo real)</h3>
+        <p>Comecei meus estudos em meados de 2021 criando interações entre chats e evolui o meu nível ao criar toda uma aplicação baseada em comunicação em tempo real, indo de mensagens de chat para eventos de vídeos, sistema de administração e requisições de amizade, o que me deu ampla capacidade de raciocínio e modo de utilização dos eventos do Socket.IO para criar as funcionalidades desejadas.</p>
+    </div>
+    <div class="info-text" v-if="info">
+        <h2>Adicional</h2>
+        <p>Em alguns dos meus projetos, eu também utilizei Sequelize, o que eu não irei adicionar aqui, pois foi há 1 ano, não absorvi completamente pelo tempo e prática que tive o utilizando, porém tenho familiaridade, já tive e ainda sei resolver alguns problemas do Sequelize, e entendo o código se eu rever meu código ou ver de terceiros, também consigo criar um novo com essa base dos meus projetos antigos. <br>
+        Consumo de API, API/Rest/Restful entre outros eu também aprendi e absorvi e pratiquei, não irei adicioná-los aqui pois, sinto que seria muitas "skills" sem um propósito direto, apenas para "aumentar a quantidade", não que API'S sejam desnecessárias ou deveriam ser deixadas de mão ou não tenham importância, longe e completamente longe disso, é uma das coisas mais importantes caso você queira mostrar conhecimentos, mas o uso e o quanto sei e o que eu criei, vai ficar nítido e mais claro nos projetos do que aqui, então optei por destacar isso na descrição dos projetos, e no fim, a melhor demonstração será o próprio projeto.</p>
+    </div>
+
             
                 </TransitionGroup>
             </div>
@@ -78,7 +96,7 @@
                             </div>
                         </div>
                         <div class="icon-containers">
-                            <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso Ã© tudo <br> (por enquanto)</span>
+                            <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
                             <div class="icons">
                                  <IconMenu :class="{'html': true, 'absolute': true, 'zindex-up': true, 'active': html}" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
                                  <IconMenu :class="{'css':true, 'absolute':true, 'zindex-up': true, 'active': css}" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
@@ -134,6 +152,9 @@ export default {
             sequelize: false,
             sass: false,
             vue: false,
+            nuxt: false,
+            webpack: false,
+            socket:false,
             info: false,
             spanHidden: true,
             spanNotHidden: false,
@@ -174,6 +195,9 @@ export default {
             name === 'sequelize' ? this.sequelize = true : this.sequelize = false
             name === 'sass' ? this.sass = true : this.sass = false
             name === 'vue' ? this.vue = true : this.vue = false
+            name === 'nuxt' ? this.nuxt = true : this.nuxt = false
+            name === 'webpack' ? this.webpack = true : this.webpack = false
+            name === 'socket' ? this.socket = true : this.socket = false
             name === 'info' ? this.info = true : this.info = false
         },
         costumIconClicked(iconName){
@@ -311,11 +335,9 @@ export default {
                     if (iconGroup === 5) {
                         document.querySelector('.webpack').style.opacity = 0
                         document.querySelector('.socket').style.opacity = 0
-                        document.querySelector('.api').style.opacity = 0
 
-                         document.querySelector('.webpack').style.opacity = 0 
-                        document.querySelector('.socket').style.opacity = 0 
-                        document.querySelector('.api').style.opacity = 0 
+                         document.querySelector('.webpack').style.pointerEvents = 'none' 
+                        document.querySelector('.socket').style.pointerEvents = 'none' 
                     }
                     
                 }
@@ -363,11 +385,9 @@ export default {
                     if(iconGroup === 5){
                         document.querySelector('.webpack').style.opacity = 1
                         document.querySelector('.socket').style.opacity = 1
-                        document.querySelector('.api').style.opacity = 1
 
                         document.querySelector('.webpack').style.pointerEvents = 'all'
                         document.querySelector('.socket').style.pointerEvents = 'all'
-                        document.querySelector('.api').style.pointerEvents = 'all'
                     }
                 }
             }, 300);
@@ -414,6 +434,15 @@ export default {
     padding-right: 5px;
     
     
+    
+}
+.spanNotHidden {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(25%, -50%);
+    color: var(--texto-padrao);
+    font-size: 1.4rem;
 }
 .general-container {
     width: 100%;
@@ -472,10 +501,20 @@ export default {
 .text-container h2 {
     color: #0085FF;
     font-size: 1.9em;
-    margin: 20px 0px;
+    margin-top: 20px;
+}
+
+.text-container h3 {
+    margin: 5px 0px;
+    font-size: 1.2rem;
+    font-weight: 100;
+    /* text-shadow: 0px 0px 1px white; */
+    color: var(--texto-padrao);
 }
 .text-container p {
     color: white;
+    width: 90%;
+    white-space: break-spaces;
 }
 .scroll {
     height: 2000px;
@@ -556,8 +595,8 @@ export default {
     pointer-events: none;
 }
 .nuxt {
-    left: 11%;
-    top: 14.5%;
+    left: 12%;
+    top: 18.5%;
     transform: rotate(75deg);
     opacity: 0;
     pointer-events: none;
@@ -590,6 +629,17 @@ export default {
 .html, .css, .js, .node, .mysql, .mongo, .knex, .mongosse, .sequelize, .sass, .vue, .info , .nuxt {
     transition: 0.1s;
     cursor: pointer;
+}
+.html-text, .css-text, .js-text, 
+.node-text, .mysql-text, .mongo-text,
+.knex-text, .sequelize-text, .mongoose-text,
+.sass-text, .vue-text, .nuxt-text, 
+.webpack-text .socket-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .zindex-up {
     z-index: 5;

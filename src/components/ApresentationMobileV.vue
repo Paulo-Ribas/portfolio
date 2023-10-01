@@ -163,9 +163,11 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     left: 25%;
     transform: translate(-50%, -50%);
     transition: 1.6s;
+    pointer-events: none;
 }
 .left, .right {
     transition: 0.2s;
+    pointer-events: all;
 }
 .clicked {
     color: #0085FF !important;

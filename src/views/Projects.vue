@@ -25,7 +25,7 @@
         <MqResponsive :target="['xl', 'sm', 'md', 'lg']">
             <div class="project-container">
                 <Transition name="projectsTransition-1">
-                    <Project v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://qqq.com.br" :iconsProps="[
+                    <Project v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://linkcut.fun" :iconsProps="[
                         { nameIcon: 'html5', prefix: 'fab', fillProps: '#fff' },
                         { nameIcon: 'css3', prefix: 'fab', fillProps: '#fff' },
                         { nameIcon: 'js', prefix: 'fab', fillProps: '#fff' },
@@ -36,17 +36,17 @@
                     ]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-2">
-                    <Project v-if="ChatSocket_data" :projectImgProps="'logotipoPauloRibas.png'" projectNameProps="ChatSocket" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
+                    <Project v-if="ChatSocket_data" :projectImgProps="'logotipoPauloRibas.png'" projectNameProps="PapoBate" linkProps="https://papobate.fun.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <Project v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="https://qqq.com.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
+                    <Project v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-4">
                     <Project v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3 }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4 }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }]"></Project>
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>
-                    <p>{{ text }}</p>
+                    <p v-html="text"></p>
                 </div>
             </div>
         </MqResponsive>
@@ -59,14 +59,14 @@
                     <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'logotipoPauloRibas.png'" projectNameProps="ChatSocket" linkProps="https://papobate.fun" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="https://qqq.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-4">
                     <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://qqq.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>
-                    <p>{{ text }}</p>
+                    <p v-html="text"></p>
                 </div>
             </div>
         </MqResponsive>
@@ -116,25 +116,25 @@ export default {
         LinkCut_data(){
             if(this.LinkCut_data) {
                 this.tittle = 'Link Cut'
-                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfh dsaaaaaaaaaaaaaaa  odddosahfodisahfosdfh'
+                this.text = '(Um Encurtador de URL E Nomeador) <br> Um projeto tanto quanto simples e com o design feio com o figma. foi o meu primeiro projeto após completar o curso de node.js, as técnologias usadas foram:<br> <span class="projects-span">(html, css, js, ejs, node, express, sequelize).</span> <br> mantive o mesmo código de quando foi criado pela primeira vez e não utilizei nenhuma biblioteca para gerar as urls aleatórias'
             }
         },
         ChatSocket_data(){
             if(this.ChatSocket_data) {
-                this.tittle = 'Venda De Amigos'
-                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfos sdadddddddddddddddddddddddddddd dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dsaddddddddddddddddddddddddddddddd dsadfh'
+                this.tittle = 'PapoPate'
+                this.text = '(Um Chat Em Tempo Real) <br> o segundo projeto que eu criei para entrar no mundo das aplicações em tempo real, com um sistema simples de costumização de cores e tema junto a um sistema de modelação de mensagens e design feio com o figma, as técnologias usadas foram:<br> <span class="projects-span">(html, css, js, sass, ejs, webpack, express, node, express-flash).</span> '
             }
         },
         Portfolio_data() {
             if (this.Portfolio_data) {
-                this.tittle = 'Projeto Futuro'
-                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfosdfh sdfdsfdsfdsfsdfdsfdfs'
+                this.tittle = 'Master Tem Que Escolher O Nome'
+                this.text = '(Um Portfólio De Designer) <br> Um Portfólio feito para um designer feito em vue.js com api de envio de emails com design feito com o figma,  as técnologias usadas foram: <br>  <span class="projects-span">(html, css, js, vue.js, vueCli, express, node).</span>'
             }
         },
         AMG_data() {
             if (this.AMG_data) {
                 this.tittle = 'Amigitos Spanol Y Sla'
-                this.text = 'dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfosdfh dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfos sdadddddddddddddddddddddddddddd dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dsaddddddddddddddddddddddddddddddd dsadfh dsadsadsaaaaaa sajkdbsdbsakdbbfdd dfdslfsdbfd.skafb.sdkafbdsk.fbdsaf sdfsdafhsdfhodddosahfodisahfos sdadddddddddddddddddddddddddddd dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dsaddddddddddddddddddddddddddddddd dsadfh'
+                this.text = '(Um Site Para Assistir Videos Ao Mesmo Tempo E Doctor Who) <br> Um projeto complexo que utilizei diversas técnologias para cria-lo, não utilizei nenhum design e fiz a mão, usei isso para práticar e concretizar totalmente meus conhecimentos de css para nunca depender de ferramentes de design, os sistemas desse site incluem, sistema de: cadastro, login, sistema de requisição, negação, remoção, adição de amizade em tempo real, gerenciamento de conta feito pelo usuario (editar nome, email, senha, imagem, descrição), recuperação de senha via email e token, upload e conversor de videos, criação de salas para assistir videos sincronizados (tanto videos enviados via upload e tanto videos enviados por link do youtube) e deletamento de tais em tempo real, admistração de salas e gestão de usuarios nas mesmas, player de video, escolher e assistir séries (Doctor Who), chat em tempo real, sincronização de sala, membros e videos e etc... <br> consumindo uma api própria feita em node.js utilizando node, express, fmpeg, multer, aws, mongoDB, Mysql, aws(sdk), socket.io, etc... <br> as técnologias usadas foram: <br> <span class="projects-span">(html, css, js, nuxt, mongoDB, mysql, mysql2, knex, mongoose, node, nodemailer, express, multer, multer-s3, ffmpeg, aws-sdk, bcrypt, jwt, uuid, socket.io, jest).</span><br> também cheguei a usar testes unitários como o jest, porém senti que isso estava deixando mais lento e atrapalhando do que ajudando (para meu nivel quando iniciei), porém após uns 7 meses e o conhecimento e evolução que essa aplicação me forneceu, tornou algo até que trivial eu diria, faria com ele se fosse atualmente'
             }
         },
     }
@@ -210,7 +210,7 @@ export default {
     color: white;
     overflow-y: auto;
     overflow-x: hidden;
-    word-break: break-all;
+    white-space: break-spaces;
     padding: 0% 1%;
 }
 
