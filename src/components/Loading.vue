@@ -12,6 +12,7 @@
         </div>
 </template>
 
+
 <script>
 import ContornoVue from './svg/Contorno.vue'
 import GlassesVue from './svg/Glasses.vue'
