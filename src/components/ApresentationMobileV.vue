@@ -159,7 +159,7 @@ Acredito que a verdadeira aprendizagem vem da prática e da resolução de probl
     position: absolute;
     font-size: 2rem;
     color: white;
-    top: 90%;
+    top: 80%;
     left: 25%;
     transform: translate(-50%, -50%);
     transition: 1.6s;
@@ -257,6 +257,7 @@ p {
 .icons {
     width: 40%;
     min-width: 60px;
+    max-width: 200px;
     display: flex;
     justify-content: space-around;
     font-size: 22px;
@@ -301,6 +302,9 @@ p {
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #0085FF 0%, #0D1258 100%);
+}
+.next-before {
+    top: 90%;
 }
     
 }

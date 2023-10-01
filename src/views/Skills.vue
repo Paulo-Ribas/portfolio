@@ -634,7 +634,7 @@ export default {
 .node-text, .mysql-text, .mongo-text,
 .knex-text, .sequelize-text, .mongoose-text,
 .sass-text, .vue-text, .nuxt-text, 
-.webpack-text .socket-text {
+.webpack-text, .socket-text {
     width: 100%;
     display: flex;
     align-items: center;

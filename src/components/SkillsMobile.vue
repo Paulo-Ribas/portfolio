@@ -146,6 +146,7 @@ export default {
             currentTranslate: 0,
             IsDragging: false,
             prevIconClickedPosition: 0,
+            canSlideToLeft: false,
 
         }
     },
@@ -200,11 +201,13 @@ export default {
                 if(roundCurrentPositon > roundPrevIconClickedPosition) {
                     this.currentTranslate -= 70
                     this.setTranslate()
+                    this.movedBy()
                     return
                 }
                 if(roundCurrentPositon < roundPrevIconClickedPosition) {
                     this.currentTranslate += 70
                     this.setTranslate()
+                    this.movedBy()
                     return
                 }
                 if(roundCurrentPositon == roundPrevIconClickedPosition) {
@@ -213,14 +216,18 @@ export default {
                     if (roundCurrentPositon > half) {
                         this.currentTranslate -= 70
                         this.setTranslate()
+                        this.movedBy()
                         return
                     }
                     if(roundCurrentPositon < half){
-                        this.currentTranslate += 70
+                        if(this.canSlideToLeft) this.currentTranslate += 70
+                        if(!this.canSlideToLeft) this.currentTranslate -= 70
                         this.setTranslate()
+                        this.movedBy()
                         return
                     }
                     if(half == roundCurrentPositon){
+                        this.movedBy()
                         return
                     }
                 }
@@ -318,13 +325,16 @@ export default {
             let iconsContainer = document.querySelector('.icon-containers-mobile')
             let distanceBorderLeft = Math.round(icons.getBoundingClientRect().left)
             let distanceBorderRight = Math.round(icons.getBoundingClientRect().right)
-            console.log(distanceBorderRight)
-
+            console.log(distanceBorderLeft)
+            if(distanceBorderLeft <= -231) {
+                this.canSlideToLeft = true
+            }
             if(distanceBorderLeft >= 33) {
                 this.currentTranslate = 0
                 this.prevTranslate = 0
                 this.startMousePosition = 0
                 icons.style.transform = `translateX(${this.currentTranslate}px)`
+                this.canSlideToLeft = false
             }
              if(distanceBorderRight <= 340) {
                 this.currentTranslate =  iconsContainer.offsetWidth - icons.offsetWidth
@@ -360,7 +370,7 @@ export default {
 .node-text, .mysql-text, .mongo-text,
 .knex-text, .sequelize-text, .mongoose-text,
 .sass-text, .vue-text, .nuxt-text, 
-.webpack-text .socket-text {
+.webpack-text, .socket-text {
     width: 100%;
     display: flex;
     align-items: center;

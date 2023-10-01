@@ -18,7 +18,7 @@
                 <a :href="link" target="_blank">{{ link }}</a>
             </div>
             <div class="img-and-text-container">
-                <div class="img-container">
+                <div :class="{'img-container': true, loaded: !loaded}">
                     <img @load="loaded = true" v-show="loaded" :src="imgUrl">
                     <LoadingVue v-if="!loaded"></LoadingVue>         
                 </div>
@@ -157,6 +157,10 @@ export default {
     text-transform: capitalize;
     font-size: 28px;
 
+}
+
+.loaded {
+    height: 190px !important;
 }
 
 .link-name-container a {

@@ -19,7 +19,7 @@
         <div class="project-icons">
             <div class="icons" v-for="icon in icons" :key="icon">
                 <IconsProject v-if="!icon.costum" :iconNameProps="icon.nameIcon" :prefixProps="icon.prefix"></IconsProject>
-                <CostumIconVue v-if="icon.costum" :whiteProps="icon.white" :fillProps="icon.fill" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
+                <CostumIconVue v-if="icon.costum" :whiteProps="icon.white" :fillProps="icon.fillProps" :iconClassNameProps="icon.iconClass" :sizeProps="icon.size" :iconNameProps="icon.nameIcon" :indexIconProps="icon.index"></CostumIconVue>
             </div>
         </div>
     </div> <!--fim do project-details -->

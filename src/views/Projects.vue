@@ -31,18 +31,18 @@
                         { nameIcon: 'js', prefix: 'fab', fillProps: '#fff' },
                         { nameIcon: 'database', prefix: 'fas', fillProps: '#fff' },
                         { nameIcon: 'node-js', prefix: 'fab', fillProps: '#fff' },
-                        { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: 'white' },
-                        { nameIcon: 'sequelize', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: 'white' }
+                        { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' },
+                        { nameIcon: 'sequelize', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }
                     ]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-2">
-                    <Project v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="PapoBate" linkProps="https://papobate.fun.br" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
+                    <Project v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="PapoBate" linkProps="https://papobate.fun" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 2, fillProps: '#fff' }, { nameIcon: 'webpack', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <Project v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></Project>
+                    <Project v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vue', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-4">
-                    <Project v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3 }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4 }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }]"></Project>
+                    <Project v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2.1rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5, fillProps:'#fff' }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 6, fillProps: '#fff' }, ]"></Project>
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>
@@ -53,17 +53,25 @@
         <MqResponsive target="xs" class="mobile">
             <div class="project-container-mobile">
                 <Transition name="projectsTransition-1">
-                    <ProjectMobileVVue v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://linkcut.fun" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'node-js', prefix: 'fab' }, { nameIcon: 'ejs', white: true, size: '2.5rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' }, { nameIcon: 'sequelize', white: true, size: '2.5rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://linkcut.fun" :iconsProps="[
+                        { nameIcon: 'html5', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'css3', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'js', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'database', prefix: 'fas', fillProps: '#fff' },
+                        { nameIcon: 'node-js', prefix: 'fab', fillProps: '#fff' },
+                        { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' },
+                        { nameIcon: 'sequelize', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }
+                    ]"></ProjectMobileVVue>
                 </Transition>
                <!--  oaifoaifa -->
                 <Transition name="projectsTransition-2">
-                    <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="ChatSocket" linkProps="https://papobate.fun" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="ChatSocket" linkProps="https://papobate.fun" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' }, { nameIcon: 'webpack', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'vue', prefix: 'fab' }, { nameIcon: 'node', prefix: 'fab' }]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-4">
-                    <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://qqq.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://qqq.com.br/" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 8, fillProps: '#fff' },]"></ProjectMobileVVue>
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>

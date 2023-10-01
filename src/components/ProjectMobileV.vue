@@ -13,8 +13,8 @@
                 </a>
             </div>
         </div>
-        <div class="project-icons-bar" id="icons-bar">
-            <IconsProject v-if="!showIcons" idProps="caret-left" :iconNameProps="'caret-left'" :prefixProps="'fas'" :colorProps="'#fff'" @clicked="showIcons = !showIcons"></IconsProject>
+        <div class="project-icons-bar" id="icons-bar" @click="showIcons = !showIcons">
+            <IconsProject v-if="!showIcons" idProps="caret-left" :iconNameProps="'caret-right'" :prefixProps="'fas'" :colorProps="'#fff'" @click.stop="showIcons = !showIcons"></IconsProject>
         </div>
         <div :class="{'project-icons': true, showIcons}" id="icons">
             <TransitionGroup name="icons-group" :key="icon">
@@ -55,6 +55,9 @@ export default {
     mounted(){
         document.addEventListener('click', this.toggleClicked)
     },
+    beforeUnmount(){
+        document.removeEventListener('click', this.toggleClicked)
+    },
     props: {
         projectNameProps: String,
         projectImgProps: String,
@@ -64,8 +67,9 @@ export default {
     },
     methods: {
         toggleClicked(e){
-            console.log(e.target.nodeName)
+            //let bar = document.getElementById('icons-bar')
             if (e.target.nodeName !== 'path' && this.showIcons === true) return this.showIcons = false
+            //if(bar.contains(e.target) && this.showIcons === true) return this.showIcons = false
         },
     }
 
@@ -182,11 +186,12 @@ export default {
 
 }
 .showIcons {
-    width: 100% !important;
+    width: 95% !important;
     height: calc(100% - 61px) !important;
     position: absolute !important;
     z-index: 2 !important;
-    right: 0;
+    border-radius: 0px 19.99px 27.99px 0px;
+    left: 0;
 }
 .icons {
     width: 100%;
