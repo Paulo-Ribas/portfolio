@@ -8,7 +8,7 @@
                 <h2 class="name-project">
                     {{projectName}}
                 </h2>
-                <a class="link-project" href="https://www.youtube.com" target="_blank">
+                <a class="link-project" :href="link" target="_blank">
                      {{link}}
                 </a>
             </div>

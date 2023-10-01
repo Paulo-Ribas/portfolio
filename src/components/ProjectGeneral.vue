@@ -19,7 +19,8 @@
             </div>
             <div class="img-and-text-container">
                 <div class="img-container">
-                    <img :src="imgUrl">
+                    <img @load="loaded = true" v-show="loaded" :src="imgUrl">
+                    <LoadingVue v-if="!loaded"></LoadingVue>         
                 </div>
                 <div class="text">
                     {{ text }}
@@ -31,6 +32,7 @@
 
 <script>
 import Icons from '@/components/Icons.vue';
+import LoadingVue from './Loading.vue';
 export default {
     data() {
         return {
@@ -41,6 +43,7 @@ export default {
             iconsArray: this.iconsArrayProps,
             animation: false,
             finished: this.finishedProps,
+            loaded: false,
         };
     },
     mounted(){
@@ -59,7 +62,7 @@ export default {
         iconsArrayProps: Array,
         finishedProps: Boolean
     },
-    components: { Icons }
+    components: { Icons, LoadingVue }
 }
 </script>
 

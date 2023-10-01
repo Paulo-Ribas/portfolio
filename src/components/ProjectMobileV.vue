@@ -8,7 +8,7 @@
                 <h2 class="name-project">
                     {{ projectName }}
                 </h2>
-                <a class="link-project" href="https://www.youtube.com" target="_blank">
+                <a class="link-project" :href="link" target="_blank">
                     {{ link }}
                 </a>
             </div>
@@ -154,7 +154,7 @@ export default {
     background: linear-gradient(#0085FF, #0D1258);
     position: absolute;
     right: 5%;
-    transform: translateX(20px);
+    transform: translateX(-5%);
     border-radius: 0px 27.99px 27.99px 0px;
     display: flex;
     justify-content: center;
@@ -281,7 +281,7 @@ svg {
         background: linear-gradient(#0085FF, #0D1258);
         position: absolute;
         right: 5%;
-        transform: translateX(20px);
+        transform: translateX(-5%);
         border-radius: 0px 27.99px 27.99px 0px;
         display: flex;
         justify-content: center;
@@ -289,7 +289,7 @@ svg {
         z-index: 2;
     }
     .project-icons {
-            width: 0%;
+    width: 0%;
     height: calc(100% - 61px);
     display: flex;
     flex-direction: column;

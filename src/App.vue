@@ -25,7 +25,7 @@ export default {
   methods: {
     createImgs(){
       let backgroundImg1 = new Image(1000, 1000)
-      let backgroundImg2 = new Image(1000, 1000)
+      let backgroundImg2 = new Image(2000, 2000)
       backgroundImg1.src = require('./assets/img/background.png')
       backgroundImg2.src = require('./assets/img/linkcut.png')
       backgroundImg1.onload = this.countIncrement()
@@ -116,6 +116,9 @@ body {
 }
 .Load-leave-to {
   opacity: 0;
+}
+.projects-span {
+    color: var(--texto-padrao);
 }
 
 @media screen and (max-width: 1200px) {
