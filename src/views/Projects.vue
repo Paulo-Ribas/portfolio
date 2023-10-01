@@ -55,6 +55,7 @@
                 <Transition name="projectsTransition-1">
                     <ProjectMobileVVue v-if="LinkCut_data" :projectImgProps="'linkcut.png'" projectNameProps="LinkCut" linkProps="https://linkcut.fun" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'node-js', prefix: 'fab' }, { nameIcon: 'ejs', white: true, size: '2.5rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' }, { nameIcon: 'sequelize', white: true, size: '2.5rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }]"></ProjectMobileVVue>
                 </Transition>
+               <!--  oaifoaifa -->
                 <Transition name="projectsTransition-2">
                     <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="ChatSocket" linkProps="https://papobate.fun" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'dog', prefix:'fas'},{nameIcon:'cube', prefix:'fas'},{nameIcon:'circle', prefix:'fas'}]"></ProjectMobileVVue>
                 </Transition>
