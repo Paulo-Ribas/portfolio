@@ -40,7 +40,9 @@
 <script>
 export default {
   mounted(){
-    this.setClass()
+    setTimeout(() => {
+      this.setClass()
+    }, 333);
   },
  props: {
     iconNameProps: String,

@@ -85,19 +85,21 @@
                         <div class="general-container">
                             <div class="icon-containers-mobile" @click="setMousePosition" @mousedown="DragStart($event)" @touchstart="DragStart($event)" @mousemove="Drag($event)" @touchmove="Drag($event)" @mouseup="StopDrag($event)" @mouseleave="StopDrag($event)" @touchend="StopDrag($event)">
                                 <span :class="{ spanHidden, spanNotHidden }" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
-                                <div class="icons">
-                                     <IconMenu :class="{ 'html': true, 'absolute': true, 'zindex-up': true, 'active': html }" prefixProps="fab" iconNameProps="html5" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="html"></IconMenu>
-                                     <IconMenu :class="{ 'css': true, 'absolute': true, 'zindex-up': true, 'active': css }" prefixProps="fab" iconNameProps="css3" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="css"></IconMenu>
-                                     <IconMenu :class="{ 'js': true, 'absolute': true, 'zindex-up': true, 'active': js }" prefixProps="fab" iconNameProps="js" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="js"></IconMenu>
-                                     <IconMenu :class="{ 'node': true, 'absolute': true, 'zindex-up': true, 'active': node }" prefixProps="fab" iconNameProps="node-js" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="node"></IconMenu>
-                                     <IconMenu :class="{ 'mysql': true, 'absolute': true, 'zindex-up': true, 'active': mysql }" prefixProps="fas" iconNameProps="database" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="mysql"></IconMenu>
-                                     <IconMenu :class="{ 'mongo': true, 'absolute': true, 'zindex-up': true, 'active': mongo }" prefixProps="fas" iconNameProps="leaf" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="mongo"></IconMenu>
-                                     <CostumIcon v-for="(icon, index) in iconArrayGroup1" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" @click.stop="slideToIcon" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event), iconClicked($event)"  :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
-                                     <IconMenu :class="{ 'vue': true, 'absolute': true, 'zindex-up': true, 'active': vue }" prefixProps="fab" iconNameProps="vuejs" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="vue"></IconMenu>
-                                     <IconMenu :class="{ 'sass': true, 'absolute': true, 'zindex-up': true, 'active': sass }" prefixProps="fab" iconNameProps="sass" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="sass"></IconMenu>
-                                     <CostumIcon v-for="(icon, index) in iconArrayGroup2" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" @click.stop="slideToIcon" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event), iconClicked($event)" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
-                                     <IconMenu v-show="showInfo" :class="{ 'info': true, 'absolute': true, 'zindex-up': info, 'active': info }" prefixProps="fas" iconNameProps="info-circle" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="info"></IconMenu>
-                                </div>
+                                <Transition name="animationIcons">
+                                    <div class="icons" v-if="mountedBar">
+                                         <IconMenu :class="{ 'html': true, 'absolute': true, 'zindex-up': true, 'active': html }" prefixProps="fab" iconNameProps="html5" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="html"></IconMenu>
+                                         <IconMenu :class="{ 'css': true, 'absolute': true, 'zindex-up': true, 'active': css }" prefixProps="fab" iconNameProps="css3" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="css"></IconMenu>
+                                         <IconMenu :class="{ 'js': true, 'absolute': true, 'zindex-up': true, 'active': js }" prefixProps="fab" iconNameProps="js" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="js"></IconMenu>
+                                         <IconMenu :class="{ 'node': true, 'absolute': true, 'zindex-up': true, 'active': node }" prefixProps="fab" iconNameProps="node-js" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="node"></IconMenu>
+                                         <IconMenu :class="{ 'mysql': true, 'absolute': true, 'zindex-up': true, 'active': mysql }" prefixProps="fas" iconNameProps="database" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="mysql"></IconMenu>
+                                         <IconMenu :class="{ 'mongo': true, 'absolute': true, 'zindex-up': true, 'active': mongo }" prefixProps="fas" iconNameProps="leaf" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="mongo"></IconMenu>
+                                         <CostumIcon v-for="(icon, index) in iconArrayGroup1" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" @click.stop="slideToIcon" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event), iconClicked($event)"  :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
+                                         <IconMenu :class="{ 'vue': true, 'absolute': true, 'zindex-up': true, 'active': vue }" prefixProps="fab" iconNameProps="vuejs" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="vue"></IconMenu>
+                                         <IconMenu :class="{ 'sass': true, 'absolute': true, 'zindex-up': true, 'active': sass }" prefixProps="fab" iconNameProps="sass" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="sass"></IconMenu>
+                                         <CostumIcon v-for="(icon, index) in iconArrayGroup2" :key="index" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': knex }" @click.stop="slideToIcon" :iconNameProps="icon.iconName" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" @costumIconClicked="costumIconToggleActive($event), iconClicked($event)" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :whiteProps="icon.white" :fillProps="icon.fillProps"></CostumIcon>
+                                         <IconMenu v-show="showInfo" :class="{ 'info': true, 'absolute': true, 'zindex-up': info, 'active': info }" prefixProps="fas" iconNameProps="info-circle" @click.stop="slideToIcon" @clicked="iconClicked($event), costumIconToggleActive($event)" nameProps="info"></IconMenu>
+                                    </div>
+                                </Transition>
                             </div>
                         </div>
                     </div>
@@ -147,11 +149,13 @@ export default {
             IsDragging: false,
             prevIconClickedPosition: 0,
             canSlideToLeft: false,
+            mountedBar: false,
 
         }
     },
     mounted() {
         this.html = true
+        this.mountedBar = true
     },
     methods: {
         iconClicked(name) {
@@ -238,21 +242,10 @@ export default {
             return Math.round(half / 2)
         },
 
-
-
-
-
-
-
-
-
         moveToIcon($event) {
             setTimeout(() => {
-                console.log('veio no timeout')
                 if (this.IsDragging) return
-                console.log('passou daqui', this.IsDragging)
                 let currentPosition = $event.pageX || $event.touches[0].pageX
-                console.log('posição anterior', this.prevIconClickedPosition, 'posição atual:', currentPosition)
                 if (Math.round(currentPosition) > Math.round(this.prevIconClickedPosition)) {
                     this.currentTranslate -= 70
                     console.log('é maior', this.currentTranslate)
@@ -263,9 +256,7 @@ export default {
                     return
                 }
                 if (Math.round(currentPosition) < Math.round(this.prevIconClickedPosition)) {
-                    console.log('antes de setar', this.currentTranslate)
                     this.currentTranslate += 70
-                    console.log('é menor', this.currentTranslate)
                     this.setTranslate()
                     this.prevIconClickedPosition = currentPosition + 70
                     this.prevTranslate = this.currentTranslate
@@ -275,9 +266,7 @@ export default {
                     let screen = document.querySelector('body').offsetWidth
                     let half = screen / 2
                     if (half > Math.round(currentPosition)) {
-                        console.log('antes de setar', this.currentTranslate, 'half', half)
                         this.currentTranslate += 70
-                        console.log('é menor', this.currentTranslate)
                         this.setTranslate()
                         this.prevIconClickedPosition = currentPosition + 70
                         this.prevTranslate = this.currentTranslate
@@ -286,7 +275,6 @@ export default {
                     }
                     else {
                         this.currentTranslate -= 70
-                        console.log('é maior', this.currentTranslate)
                         this.setTranslate()
                         this.prevIconClickedPosition = currentPosition
                         this.prevTranslate = this.currentTranslate
@@ -508,6 +496,16 @@ export default {
 }
 .active {
     color: white;
+}
+.animationIcons-enter-active {
+    transition: 0.7s !important;
+}
+.animationIcons-enter-from {
+    transform: translateX(350px) !important;
+}
+.animationIcons-enter-to {
+    transform: translateX(0px) !important;
+
 }
 .text-group-enter-active{
     transition-delay: 0.1s;

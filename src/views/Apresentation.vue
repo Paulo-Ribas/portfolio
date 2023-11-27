@@ -51,6 +51,15 @@ export default {
         ApresentationMobileV,
         MainMenuMobile
     },
+    head(){
+        return {
+            title: 'Sobre Mim',
+            meta: [
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+            ],
+        }
+    },
     data(){
         return{
             animation: false,

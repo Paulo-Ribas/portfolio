@@ -57,7 +57,8 @@
     </div>
     <div class="sass-text" v-if="sass">
         <h2>SASS</h2>
-        <p>AAAAA EU ESQUECI QUE APRENDI ISSO</p>
+        <h3>SASS é uma linguagem de estilos de CSS estáticos misturados com linguagem de programação para facilitar a gestão de estilos.</h3>
+        <p>Já utilizei SASS em meus projetos, então tenho algumas experiências. Posso me aprofundar mais no assunto caso seja necessário.</p>
     </div>
     <div class="vue-text" v-if="vue">
         <h2>Vue.js</h2>
@@ -98,15 +99,15 @@
                         <div class="icon-containers">
                             <span :class="{ spanHidden, spanNotHidden}" v-show="spanNotHidden">Isso é tudo <br> (por enquanto)</span>
                             <div class="icons">
-                                 <IconMenu :class="{'html': true, 'absolute': true, 'zindex-up': true, 'active': html}" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked" nameProps="html"></IconMenu>
-                                 <IconMenu :class="{'css':true, 'absolute':true, 'zindex-up': true, 'active': css}" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked" nameProps="css"></IconMenu>
-                                 <IconMenu :class="{'js':true, 'absolute':true, 'zindex-up': true, 'active': js}" prefixProps="fab" iconNameProps="js" @clicked="iconClicked" nameProps="js"></IconMenu>
-                                 <IconMenu :class="{'node':true, 'absolute':true, 'zindex-up': true, 'active': node}" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked" nameProps="node"></IconMenu>
-                                 <IconMenu :class="{'mysql':true, 'absolute':true, 'zindex-up': true, 'active': mysql}" prefixProps="fas" iconNameProps="database" @clicked="iconClicked" nameProps="mysql"></IconMenu>
-                                 <IconMenu :class="{'mongo':true, 'absolute':true, 'zindex-up': true, 'active': mongo}" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked" nameProps="mongo"></IconMenu>
+                                 <IconMenu :class="{'html': true, 'absolute': true, 'zindex-up': true, 'active': html}" prefixProps="fab" iconNameProps="html5" @clicked="iconClicked('html'), costumIconClicked('html')" nameProps="html"></IconMenu>
+                                 <IconMenu :class="{'css':true, 'absolute':true, 'zindex-up': true, 'active': css}" prefixProps="fab" iconNameProps="css3" @clicked="iconClicked('css'), costumIconClicked('css')" nameProps="css"></IconMenu>
+                                 <IconMenu :class="{'js':true, 'absolute':true, 'zindex-up': true, 'active': js}" prefixProps="fab" iconNameProps="js" @clicked="iconClicked('js'), costumIconClicked('js')" nameProps="js"></IconMenu>
+                                 <IconMenu :class="{'node':true, 'absolute':true, 'zindex-up': true, 'active': node}" prefixProps="fab" iconNameProps="node-js" @clicked="iconClicked('node'), costumIconClicked('node')" nameProps="node"></IconMenu>
+                                 <IconMenu :class="{'mysql':true, 'absolute':true, 'zindex-up': true, 'active': mysql}" prefixProps="fas" iconNameProps="database" @clicked="iconClicked('mysql'), costumIconClicked('mysql')" nameProps="mysql"></IconMenu>
+                                 <IconMenu :class="{'mongo':true, 'absolute':true, 'zindex-up': true, 'active': mongo}" prefixProps="fas" iconNameProps="leaf" @clicked="iconClicked('mongo'), costumIconClicked('mongo')" nameProps="mongo"></IconMenu>
                                  <CostumIcon v-for="(icon, index) in arraySavior" :key="index + icon.iconName" :class="{ 'costumIcon': true, 'absolute': true, 'zindex-up': true, 'active': false }" :iconClassNameProps="icon.className" :iconNameProps="icon.iconName" :whiteProps="icon.white" :activeEffectProps="icon.activeEffectProps" sizeProps="4rem" :effectHoverProps="true" :indexIconProps="index" :iconColorProps="false" :hoverProps="icon.hoverProps" :fillProps="icon.fillProps" @clicked="iconClicked($event), costumIconClicked($event)"></CostumIcon>
-                                 <IconMenu :class="{'vue':true, 'absolute':true, 'zindex-up': true, 'active': vue}" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked" nameProps="vue"></IconMenu>
-                                 <IconMenu :class="{'sass':true, 'absolute':true, 'zindex-up': true, 'active': sass}" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked" nameProps="sass"></IconMenu>
+                                 <IconMenu :class="{'vue':true, 'absolute':true, 'zindex-up': true, 'active': vue}" prefixProps="fab" iconNameProps="vuejs" @clicked="iconClicked('vue'), costumIconClicked('vue')" nameProps="vue"></IconMenu>
+                                 <IconMenu :class="{'sass':true, 'absolute':true, 'zindex-up': true, 'active': sass}" prefixProps="fab" iconNameProps="sass" @clicked="iconClicked('sass'), costumIconClicked('sass')" nameProps="sass"></IconMenu>
                                  <IconMenu v-show="showInfo" :class="{'info':true, 'absolute':true, 'zindex-up': true, 'active': info}" prefixProps="fas" iconNameProps="info-circle" @clicked="iconClicked" nameProps="info"></IconMenu>
                             </div>
                         </div>
@@ -177,6 +178,15 @@ export default {
             arrayMobileGroup2: [{ className: 'nuxt', iconName: 'nuxt', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
             { className: 'webpack', iconName: 'webpack', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' },
             { className: 'socket', iconName: 'socket', activeEffectProps: true, white: false, hoverProps: '#fff', fillProps: '#0085FF' }]
+        }
+    },
+    head(){
+        return {
+            title: 'Skills',
+            meta: [
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+            ],
         }
     },
     mounted(){
@@ -571,6 +581,7 @@ export default {
     top: 33%;
     opacity: 0;
     pointer-events: none;
+    cursor: pointer;
     transform: rotate(160deg);
 }
 .sequelize{
@@ -618,7 +629,7 @@ export default {
     left: 53px;
     top: 68%;
     opacity: 0;
-    pointer-events: nonde;
+    pointer-events: none;
 }
 .info {
     left: 5%;
@@ -667,6 +678,9 @@ export default {
 .text-group-leave-to{
     position: absolute;
     transform:translate(100%, -20%) scale(0);    
+}
+.active {
+    color: white;
 }
 
 </style>

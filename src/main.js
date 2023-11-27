@@ -6,10 +6,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons' // temporario, só para a criação
 import { fab } from '@fortawesome/free-brands-svg-icons' // temporario só para a criação
 import { MqResponsive, Vue3Mq } from "vue3-mq";
+import { createHead, VueHeadMixin } from '@unhead/vue'
 library.add(fas, fab)
 //import { faVuejs } from '@fortawesome/free-brands-svg-icons'
 
-
+const head = createHead()
 const myApp = createApp(App)
 myApp.component('Font-awesome-icon', FontAwesomeIcon)
 myApp.use(router)
@@ -25,5 +26,7 @@ myApp.use(Vue3Mq, {
     defaultBreakpoint: "xl"
 
 })
+myApp.use(head)
+  myApp.mixin(VueHeadMixin)
 myApp.component('MqResponsive', MqResponsive)
 myApp.mount('#app')

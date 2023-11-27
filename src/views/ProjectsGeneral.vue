@@ -6,15 +6,14 @@
     <MqResponsive class="menu" target="xs"> 
         <MainMenuMobile :closedProps="true" :ActivatedProps="'cdg'"/>
     </MqResponsive>
-    <div class="menu">
-    </div>
+    <h1>Projetos Gerais</h1>
     <div class="carrossel">
         <div class="carrossel-container">
             <div class="carrossel-itens">
                 <ProjectGeneral nameProps="Estética Excepcional" linkProps="https://esteticaexcepcional.com.br/" textProps="landing page sobre emagrecimento" :finishedProps="true" imgUrlProps="estetica.png" :iconsArrayProps="[{name:'html5', prefix:'fab'},{name:'css3', prefix:'fab'},{name:'js', prefix:'fab'},{name:'node',prefix:'fab'}]"></ProjectGeneral>
-                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
-                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
-                <ProjectGeneral nameProps="link cut" linkProps="https://linkcut.com.br" textProps="landing page sobre emagrecimento" imgUrlProps="eu33.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
+                <ProjectGeneral nameProps="Funil Whats" linkProps="https://www.ryannghisi.com.br/" textProps="landing page para venda de cursos" imgUrlProps="projetos/funnil.png" :finishedProps="true" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }, { name: 'vuejs', prefix: 'fab' }]"></ProjectGeneral>
+                <ProjectGeneral nameProps="Furty Of" linkProps="#" textProps="portifólio sobre games (projeto em freeze por solicitação do cliente)" imgUrlProps="projetos/furty.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
+                <ProjectGeneral nameProps=" MD2" linkProps="#" textProps="landing page sobre uma Barbearia" imgUrlProps="projetos/Barbearia.png" :finishedProps="false" :iconsArrayProps="[{ name: 'html5', prefix: 'fab' }, { name: 'css3', prefix: 'fab' }, { name: 'js', prefix: 'fab' }]"></ProjectGeneral>
             </div>
         </div>
     </div>
@@ -28,6 +27,15 @@ import MainMenuMobile from '../components/NavegationMenuMobile.vue'
 
 export default {
   components: { ProjectGeneral, Menu, MainMenuMobile },
+  head(){
+        return {
+            title: 'Projetos Gerais',
+            meta: [
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+            ],
+        }
+    },
 
 }
 </script>
@@ -48,9 +56,14 @@ export default {
         width: 100%;
         height: 100vh;
     }
+    #projects-general h1 {
+        font-size: 2.3rem;
+        margin-top: 40px;
+        color: var(--texto-padrao);
+    }
     .carrossel {
         width: 100%;
-        height: 100%;
+        height: calc(100% - 92px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -74,6 +87,11 @@ export default {
         overflow-x: auto;
         
     }
-
+    @media screen and (max-width: 556px) {
+        #projects-general h1 {
+            color: var(--texto-especial);
+        }
+        
+    }
 
 </style>

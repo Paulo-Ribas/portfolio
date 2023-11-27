@@ -10,7 +10,7 @@
             <div class="projects-window-container">
                 <WindowProject :ImgProps="'favIcone.png'"   @project="(showProject($event))" ProjectNameProps="LinkCut"></WindowProject>
                 <WindowProject :ImgProps="'fantasmaChatIcon.png'" @project="(showProject($event))" ProjectNameProps="ChatSocket"></WindowProject>
-                <WindowProject :ImgProps="'logotipo-ces.png'"  @project="(showProject($event))" ProjectNameProps="Portfolio"></WindowProject>
+                <WindowProject :ImgProps="'ryannlogo.png'"  @project="(showProject($event))" ProjectNameProps="Portfolio"></WindowProject>
                 <WindowProject :ImgProps="'amgLogotipo.png'" @project="(showProject($event))" ProjectNameProps="AMG"></WindowProject>
             </div>
         </MqResponsive>
@@ -18,7 +18,7 @@
             <div class="projects-window-container">
                     <ProjectWindowMobileV :ImgProps="'favIcone.png'"   @project="(showProject($event))" ProjectNameProps="LinkCut"></ProjectWindowMobileV>
                     <ProjectWindowMobileV :ImgProps="'fantasmaChatIcon.png'" @project="(showProject($event))" ProjectNameProps="ChatSocket"></ProjectWindowMobileV>
-                    <ProjectWindowMobileV :ImgProps="'logotipo-ces.png'"  @project="(showProject($event))" ProjectNameProps="Portfolio"></ProjectWindowMobileV>
+                    <ProjectWindowMobileV :ImgProps="'ryannlogo.png'"  @project="(showProject($event))" ProjectNameProps="Portfolio"></ProjectWindowMobileV>
                     <ProjectWindowMobileV :ImgProps="'amgLogotipo.png'" @project="(showProject($event))" ProjectNameProps="AMG"></ProjectWindowMobileV>
                 </div>
         </MqResponsive>
@@ -39,7 +39,7 @@
                     <Project v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="PapoBate" linkProps="https://papobate.fun" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 2, fillProps: '#fff' }, { nameIcon: 'webpack', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <Project v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vue', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></Project>
+                    <Project v-if="Portfolio_data" :projectImgProps="'Portfolio.png'" projectNameProps="Portfolio" linkProps="https://www.ryannghisii.site/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vuejs', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-4">
                     <Project v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2.1rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5, fillProps:'#fff' }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 6, fillProps: '#fff' }, ]"></Project>
@@ -68,7 +68,7 @@
                     <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="ChatSocket" linkProps="https://papobate.fun" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' }, { nameIcon: 'webpack', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'eu33.png'" projectNameProps="Portfolio" linkProps="#" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'vue', prefix: 'fab' }, { nameIcon: 'node', prefix: 'fab' }]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'Portfolio.png'" projectNameProps="Portfolio" linkProps="https://www.ryannghisii.site/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vue', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-4">
                     <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://qqq.com.br/" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 8, fillProps: '#fff' },]"></ProjectMobileVVue>
@@ -103,6 +103,15 @@ export default {
     mounted(){
         this.showProject('LinkCut')
     },
+    head(){
+        return {
+            title: 'Projetos',
+            meta: [
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+            ],
+        }
+    },
     data(){
         return {
             LinkCut_data: false,
@@ -131,13 +140,13 @@ export default {
         ChatSocket_data(){
             if(this.ChatSocket_data) {
                 this.tittle = 'PapoPate'
-                this.text = '(Um Chat Em Tempo Real) <br> o segundo projeto que eu criei para entrar no mundo das aplicações em tempo real, com um sistema simples de costumização de cores e tema junto a um sistema de modelação de mensagens e design feio com o figma, as técnologias usadas foram:<br> <span class="projects-span">(html, css, js, sass, ejs, webpack, express, node, express-flash).</span> '
+                this.text = '(Um Chat Em Tempo Real) <br> o segundo projeto que eu criei para entrar no mundo das aplicações em tempo real, com um sistema simples de costumização de cores e tema junto a um sistema de modelação de mensagens e design feito com o figma, as técnologias usadas foram:<br> <span class="projects-span">(html, css, js, sass, ejs, webpack, express, node, express-flash).</span> '
             }
         },
         Portfolio_data() {
             if (this.Portfolio_data) {
                 this.tittle = 'Master Tem Que Escolher O Nome'
-                this.text = '(Um Portfólio De Designer) <br> Um Portfólio feito para um designer feito em vue.js com api de envio de emails com design feito com o figma,  as técnologias usadas foram: <br>  <span class="projects-span">(html, css, js, vue.js, vueCli, express, node).</span>'
+                this.text = '(Um portfólio de designer) <br> um projeto que fiz focando em animações e efeitos mais dinamicos para aprimororar a experiencia do usuario e praticar a crianção de animação, feito em vue.js com uso de api de envio de emails, além de design feito no figma, as técnologias usadas foram: <br>  <span class="projects-span">(html, css, js, vue.js, vueCli, express, node).</span>'
             }
         },
         AMG_data() {

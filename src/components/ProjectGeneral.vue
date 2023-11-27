@@ -181,7 +181,7 @@ export default {
 .img-and-text-container .img-container {
     width: 100%;
     height: 100%;
-    max-height: 300px;
+    max-height: 193px;
     position: relative;
     overflow: hidden;
 }
@@ -189,11 +189,13 @@ export default {
 .img-and-text-container .img-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: 0.8s;
+    object-position: top;
 }
 .img-and-text-container .img-container img:hover {
     transform: scale(1.05);
+    object-position: center;
 }
 
 .text {
