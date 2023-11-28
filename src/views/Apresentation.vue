@@ -81,7 +81,7 @@ export default {
     methods: {
         ChangeText(){
             if (this.countText < 2) {
-                this.tittle = "FreeLancer/Pessoa Comum"
+                this.tittle = "Sobre Mim"
                 this.text = `Olá! Eu sou Paulo Ribas, um desenvolvedor web com 20 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. Isso me permitiu dar vida às ideias criativas na web. <br>
     Com o tempo, aprofundei meu conhecimento e aprendi JavaScript, o que me possibilitou criar sites interativos e dinâmicos. Também tenho experiência em construir sistemas de servidor eficientes usando Node.js e criar soluções personalizadas para diferentes necessidades. <br>
     Em meus projetos mais recentes, desenvolvi soluções completas, como sistemas de cadastro, login, chat em tempo real e upload de arquivos. Isso me ensinou a resolver problemas complexos de forma criativa. <br>
@@ -92,7 +92,7 @@ export default {
                 
             }
             if(this.countText > 1) {
-                this.tittle = "Empresa/Programador"
+                this.tittle = "Descrição Para Empresa"
                 this.text = `Olá, sou Paulo Ribas, um entusiasta de programação de 20 anos de idade. Iniciei minha jornada no mundo do desenvolvimento aos 17 anos, focando inicialmente no HTML e CSS para criar páginas web. Com dedicação e estudo, aprimorei minhas habilidades e mergulhei profundamente no JavaScript. <br>
 
 Explorando o JavaScript, aprofundei meu entendimento da lógica de programação e do Document Object Model (DOM). Isso me permitiu criar projetos práticos em JavaScript, sem depender de frameworks. <br>

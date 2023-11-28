@@ -29,7 +29,7 @@
                             <a href="https://github.com/Paulo-Ribas" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>Meu GitHub (Paulo Ribas)</a>
                         </li>
                         <li class="link-box " v-if="selected === 'email'">
-                            <a href="mailto:https://github.com/Paulo-Ribas" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>paulo13paulo423@gmail.com</a>
+                            <a href="mailto:https://github.com/Paulo-Ribas" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>pauloribasdev@gmail.com</a>
                         </li>
                         <li class="link-box"  v-if="selected === 'whats'">
                             <a href="https://wa.me/55992101585" target="_blank"><span class="link-background-icon"> <Icons prefixProps="fas" iconNameProps="link"></Icons></span>+55 55 9210-1585</a>
