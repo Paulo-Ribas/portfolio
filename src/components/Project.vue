@@ -123,6 +123,9 @@ export default {
     flex-direction: column;
     justify-content: space-evenly;
     flex: 1;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: pre;
 }
 .name-project{
     color: var(--texto-especial);
@@ -132,6 +135,9 @@ export default {
     color: var(--texto-padrao);
     font-size: 1.2em;
     text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
 
 }
 .link-project:hover {

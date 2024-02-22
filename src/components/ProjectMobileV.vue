@@ -144,6 +144,10 @@ export default {
     font-size: 1.2em;
     text-decoration: none;
     transform: translateX(5%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: pre;
 
 
 }

@@ -49,6 +49,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Permanent+Marker&display=swap');
 @font-face {
   font-family: 'Caveat', cursive;
   src: url('./assets/fonts/Caveat-VariableFont_wght.ttf');
@@ -123,7 +124,10 @@ body {
 
 @media screen and (max-width: 1200px) {
   *{
-    font-family: Caveat !important;
+    /* font-family: Caveat !important; */
+    font-family: "Permanent Marker", cursive;
+    font-weight: lighter;
+
   }
   
 }

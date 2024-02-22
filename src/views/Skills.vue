@@ -58,7 +58,7 @@
     <div class="sass-text" v-if="sass">
         <h2>SASS</h2>
         <h3>SASS é uma linguagem de estilos de CSS estáticos misturados com linguagem de programação para facilitar a gestão de estilos.</h3>
-        <p>Já utilizei SASS em meus projetos, então tenho algumas experiências. Posso me aprofundar mais no assunto caso seja necessário.</p>
+        <p>Já utilizei SASS em meus projetos, para facilitar e deixar mais prático o desenvolvimento deles . Posso me aprofundar mais no assunto caso seja necessário.</p>
     </div>
     <div class="vue-text" v-if="vue">
         <h2>Vue.js</h2>
@@ -86,7 +86,6 @@
         Consumo de API, API/Rest/Restful entre outros eu também aprendi e absorvi e pratiquei, não irei adicioná-los aqui pois, sinto que seria muitas "skills" sem um propósito direto, apenas para "aumentar a quantidade", não que API'S sejam desnecessárias ou deveriam ser deixadas de mão ou não tenham importância, longe e completamente longe disso, é uma das coisas mais importantes caso você queira mostrar conhecimentos, mas o uso e o quanto sei e o que eu criei, vai ficar nítido e mais claro nos projetos do que aqui, então optei por destacar isso na descrição dos projetos, e no fim, a melhor demonstração será o próprio projeto.</p>
     </div>
 
-            
                 </TransitionGroup>
             </div>
             <div class="container-skills">
@@ -375,7 +374,7 @@ export default {
                     if (iconGroup === 3) {
                         document.querySelector('.knex').style.opacity = 1 
                         document.querySelector('.mongoose').style.opacity = 1 
-                        document.querySelector('.sequelize').style.opacity = 1 
+                        document.querySelector('.sequelize').style.opacity = 1
 
                         document.querySelector('.knex').style.pointerEvents = 'all' 
                         document.querySelector('.mongoose').style.pointerEvents = 'all' 
@@ -400,7 +399,7 @@ export default {
                         document.querySelector('.socket').style.pointerEvents = 'all'
                     }
                 }
-            }, 300);
+            }, 200);
 
         }
     }
@@ -638,7 +637,7 @@ export default {
     z-index: -1;
 }
 .html, .css, .js, .node, .mysql, .mongo, .knex, .mongosse, .sequelize, .sass, .vue, .info , .nuxt {
-    transition: 0.1s;
+    transition: 0;
     cursor: pointer;
 }
 .html-text, .css-text, .js-text, 

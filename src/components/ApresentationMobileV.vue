@@ -62,31 +62,29 @@ export default {
     methods: {
         ChangeText() {
             if (this.countText < 2) {
-                this.tittle = "FreeLancer/Pessoa Comum"
-                this.text = `Olá! Eu sou Paulo Ribas, um desenvolvedor web com 20 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. Isso me permitiu dar vida às ideias criativas na web. <br>
-    Com o tempo, aprofundei meu conhecimento e aprendi JavaScript, o que me possibilitou criar sites interativos e dinâmicos. Também tenho experiência em construir sistemas de servidor eficientes usando Node.js e criar soluções personalizadas para diferentes necessidades. <br>
-    Em meus projetos mais recentes, desenvolvi soluções completas, como sistemas de cadastro, login, chat em tempo real e upload de arquivos. Isso me ensinou a resolver problemas complexos de forma criativa. <br>
-    Estou capacitado para criar uma ampla gama de sites, desde landing pages até lojas virtuais, assim como o design de tais.
+                this.tittle = "Sobre Mim"
+                this.text = `Eae! Eu sou Paulo Ribas, um desenvolvedor web com 21 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. <br>
+        Com o tempo, Ao longo dos meus 4 anos de jornada no desenvolvimento web, evolui de um iniciante utilizando HTML e CSS para um desenvolvedor completo  que domina JavaScript/Node.js. Em meus projetos recentes, criei soluções personalizadas, desde sistemas de cadastro, login, upload de arquivos, até implementações avançadas de chat em tempo real. Minha abordagem  se reflete na capacidade de adaptar-me a diferentes contextos, colaborando eficazmente com o cliente para atender às suas necessidades específicas.
 
 
     `
-
+                
             }
-            if (this.countText > 1) {
-                this.tittle = "Empresa/Programador"
-                this.text = `Olá, sou Paulo Ribas, um entusiasta de programação de 20 anos de idade. Iniciei minha jornada no mundo do desenvolvimento aos 17 anos, focando inicialmente no HTML e CSS para criar páginas web. Com dedicação e estudo, aprimorei minhas habilidades e mergulhei profundamente no JavaScript. <br>
+            if(this.countText > 1) {
+                this.tittle = "Descrição Para Empresa"
+                this.text = `Olá, sou Paulo Ribas, tenho 21 anos. Iniciei minha jornada no mundo do desenvolvimento aos 17 anos, focando inicialmente no HTML e CSS para criar páginas web. Com dedicação e estudo, aprimorei minhas habilidades e mergulhei profundamente no JavaScript. <br>
 
-Explorando o JavaScript, aprofundei meu entendimento da lógica de programação e do Document Object Model (DOM). Isso me permitiu criar projetos práticos em JavaScript, sem depender de frameworks. <br>
+Antes ao JavaScript, aprofundei meu entendimento da lógica de programação e do Document Object Model (DOM). Isso me ajudou muito a  criar projetos práticos com JavaScript, sem depender de frameworks no inicio. <br>
 
-Decidi então partir para o desenvolvimento back-end com Node.js, onde aprendi sobre rotas, protocolos e escopos da web. Criei minhas próprias APIs e aplicações para manipulação de arquivos locais, aprimorando minha capacidade técnica de solucionar desafios complexos. <br>
+Decidi então partir para o desenvolvimento back-end com Node.js, onde aprendi sobre rotas, protocolos e escopos da web. Criei minhas próprias APIs e aplicações para manipulação de arquivos locais, aprimorando minha capacidade técnica de solucionar problemas até em certo ponto, complexos. <br>
 
-Trabalhei com bancos de dados relacionais e não relacionais, como MySQL e MongoDB, além de explorar frameworks como EJS, Express, Sequelize, Knex e Mongoose para desenvolver aplicativos robustos. <br>
+Trabalhei com bancos de dados relacionais e não relacionais, como MySQL e MongoDB, além de explorar frameworks como EJS, Express, Sequelize, Knex e Mongoose. <br>
 
-Por fim, me apaixonei pelo Vue.js e dediquei tempo para aprofundar minhas habilidades nessa área, incluindo a exploração do Nuxt.js para aprimorar meu desenvolvimento front-end. <br>
+Por fim, me apaixonei pelo Vue.js e dediquei tempo para aprofundar minhas habilidades nesse framework, incluindo o Nuxt.js para aprimorar meu desenvolvimento front-end. <br>
 
 Nos últimos anos, foquei em projetos desafiadores que ampliaram minha capacidade técnica e solução de problemas. Um desses projetos em destaque, desenvolvido em Nuxt.js, inclui um sistema completo de cadastro e login, funcionalidade de upload de arquivos e a criação de salas com chat em tempo real. <br>
 
-Acredito que a verdadeira aprendizagem vem da prática e da resolução de problemas/desafios. Cada dificuldade que tive em todos esses projetos agregaram na minha evolução e fizeram eu melhorar cada vez mais. Mesmo quando me deparo com tecnologias ou arquiteturas desconhecidas, vejo isso como uma oportunidade de aprendizado e adaptação, confiante de que posso dominá-las com o tempo.`
+Acredito que a verdadeira aprendizagem vem da prática e da resolução de problemas/desafios. Cada dificuldade que tive em todos esses projetos agregaram na minha evolução e fizeram eu melhorar cada vez mais. Mesmo quando me deparo com "tecnologias" ou arquiteturas desconhecidas ou que tenho pouca experiência, vejo isso como uma oportunidade de aprendizado e adaptação, confio de que posso dominá-las a tempo.`
             }
         },
         ChangeCountText(signal) {

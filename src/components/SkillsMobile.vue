@@ -50,7 +50,8 @@
     </div>
     <div class="sass-text" v-if="sass">
         <h2>SASS</h2>
-        <p>AAAAA EU ESQUECI QUE APRENDI ISSO</p>
+        <h3>SASS é uma linguagem de estilos de CSS estáticos misturados com linguagem de programação para facilitar a gestão de estilos.</h3>
+        <p>Já utilizei SASS em meus projetos, para facilitar e deixar mais prático o desenvolvimento deles . Posso me aprofundar mais no assunto caso seja necessário.</p>
     </div>
     <div class="vue-text" v-if="vue">
         <h2>Vue.js</h2>

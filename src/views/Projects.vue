@@ -12,6 +12,8 @@
                 <WindowProject :ImgProps="'fantasmaChatIcon.png'" @project="(showProject($event))" ProjectNameProps="ChatSocket"></WindowProject>
                 <WindowProject :ImgProps="'ryannlogo.png'"  @project="(showProject($event))" ProjectNameProps="Portfolio"></WindowProject>
                 <WindowProject :ImgProps="'amgLogotipo.png'" @project="(showProject($event))" ProjectNameProps="AMG"></WindowProject>
+                <WindowProject :ImgProps="'goldenTimesLogo.png'" @project="(showProject($event))" ProjectNameProps="GoldenTimes"></WindowProject>
+
             </div>
         </MqResponsive>
         <MqResponsive target="xs">
@@ -20,6 +22,7 @@
                     <ProjectWindowMobileV :ImgProps="'fantasmaChatIcon.png'" @project="(showProject($event))" ProjectNameProps="ChatSocket"></ProjectWindowMobileV>
                     <ProjectWindowMobileV :ImgProps="'ryannlogo.png'"  @project="(showProject($event))" ProjectNameProps="Portfolio"></ProjectWindowMobileV>
                     <ProjectWindowMobileV :ImgProps="'amgLogotipo.png'" @project="(showProject($event))" ProjectNameProps="AMG"></ProjectWindowMobileV>
+                    <ProjectWindowMobileV :ImgProps="'goldenTimesLogo.png'" @project="(showProject($event))" ProjectNameProps="GoldenTimes"></ProjectWindowMobileV>
                 </div>
         </MqResponsive>
         <MqResponsive :target="['xl', 'sm', 'md', 'lg']">
@@ -39,10 +42,13 @@
                     <Project v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="PapoBate" linkProps="https://papobate.fun" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 2, fillProps: '#fff' }, { nameIcon: 'webpack', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <Project v-if="Portfolio_data" :projectImgProps="'Portfolio.png'" projectNameProps="Portfolio" linkProps="https://www.ryannghisii.site/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vuejs', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></Project>
+                    <Project v-if="Portfolio_data" :projectImgProps="'Portfolio.png'" projectNameProps="Portfolio" linkProps="https://www.ryannghisi.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vuejs', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></Project>
                 </Transition>
                 <Transition name="projectsTransition-4">
                     <Project v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2.1rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5, fillProps:'#fff' }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 6, fillProps: '#fff' }, ]"></Project>
+                </Transition>
+                <Transition name="projectsTransition-4">
+                    <Project v-if="GoldenTimes_data" :projectImgProps="'goldenTimes.png'" projectNameProps="Golden Times" linkProps="https://goldentimes.website/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, {nameIcon:'vuejs', prefix:'fab'}, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5, fillProps:'#fff' }, { nameIcon: 'leaf', prefix: 'fas' } ]"></Project>                
                 </Transition>    
                 <div class="project-text-container">
                     <h2>Descrição</h2>
@@ -68,11 +74,13 @@
                     <ProjectMobileVVue v-if="ChatSocket_data" :projectImgProps="'FantasmaChat.png'" projectNameProps="ChatSocket" linkProps="https://papobate.fun" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'ejs', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 0, fillProps: '#fff' }, { nameIcon: 'webpack', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 1, fillProps: '#fff' }]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-3">
-                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'Portfolio.png'" projectNameProps="Portfolio" linkProps="https://www.ryannghisii.site/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vue', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></ProjectMobileVVue>
+                    <ProjectMobileVVue v-if="Portfolio_data" :projectImgProps="'Portfolio.png'" projectNameProps="Portfolio" linkProps="https://www.ryannghisi.com.br/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'},{nameIcon:'vue', prefix:'fab'},{nameIcon:'node', prefix:'fab'}]"></ProjectMobileVVue>
                 </Transition>
                 <Transition name="projectsTransition-4">
-                    <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://qqq.com.br/" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 8, fillProps: '#fff' },]"></ProjectMobileVVue>
-                </Transition>    
+                    <ProjectMobileVVue v-if="AMG_data" :projectImgProps="'amigitosespanol.png'" projectNameProps="AMG" linkProps="https://amigitos-espanol-y-sla.com.br/" :iconsProps="[{ nameIcon: 'html5', prefix: 'fab' }, { nameIcon: 'css3', prefix: 'fab' }, { nameIcon: 'js', prefix: 'fab' }, { nameIcon: 'nuxt', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 3, fillProps: '#fff' }, { nameIcon: 'knex', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 4, fillProps: '#fff' }, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5 }, { nameIcon: 'database', prefix: 'fas' }, { nameIcon: 'leaf', prefix: 'fas' }, { nameIcon: 'socket', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 8, fillProps: '#fff' },]"></ProjectMobileVVue>
+                </Transition> <Transition name="projectsTransition-4">
+                    <ProjectMobileVVue v-if="GoldenTimes_data" :projectImgProps="'goldenTimes.png'" projectNameProps="Golden Times" linkProps="https://goldentimes.website/" :iconsProps="[{nameIcon:'html5', prefix:'fab'},{nameIcon:'css3', prefix:'fab'},{nameIcon:'js', prefix:'fab'}, {nameIcon:'vuejs', prefix:'fab'}, { nameIcon: 'mongoose', white: true, size: '2rem', iconClass: 'costumIcons', costum: true, index: 5, fillProps:'#fff' }, { nameIcon: 'leaf', prefix: 'fas' } ]"></ProjectMobileVVue>                
+                </Transition>
                 <div class="project-text-container">
                     <h2>Descrição</h2>
                     <p v-html="text"></p>
@@ -118,6 +126,7 @@ export default {
             ChatSocket_data: false,
             Portfolio_data: false,
             AMG_data: false,
+            GoldenTimes_data: false,
             text: '',
             tittle: '',
         }
@@ -128,33 +137,40 @@ export default {
             projeto === 'ChatSocket' ? this.ChatSocket_data = true : this.ChatSocket_data = false
             projeto === 'Portfolio' ? this.Portfolio_data = true : this.Portfolio_data = false
             projeto === 'AMG' ? this.AMG_data = true : this.AMG_data = false
+            projeto === 'GoldenTimes' ? this.GoldenTimes_data = true : this.GoldenTimes_data = false
         }
     },
     watch: {
         LinkCut_data(){
             if(this.LinkCut_data) {
                 this.tittle = 'Link Cut'
-                this.text = '(Um Encurtador de URL E Nomeador) <br> Um projeto tanto quanto simples e com o design feio com o figma. foi o meu primeiro projeto após completar o curso de node.js, as técnologias usadas foram:<br> <span class="projects-span">(html, css, js, ejs, node, express, sequelize).</span> <br> mantive o mesmo código de quando foi criado pela primeira vez e não utilizei nenhuma biblioteca para gerar as urls aleatórias'
+                this.text = '(Um Encurtador de URL E Nomeador) <br> Um projeto tanto quanto simples e com o design feio com o figma. foi o meu primeiro projeto após completar o curso de node.js, as tecnologias usadas foram:<br> <span class="projects-span">(html, css, js, ejs, node, express, sequelize).</span> <br> mantive o mesmo código de quando foi criado pela primeira vez e não utilizei nenhuma biblioteca para gerar as urls aleatórias'
             }
         },
         ChatSocket_data(){
             if(this.ChatSocket_data) {
                 this.tittle = 'PapoPate'
-                this.text = '(Um Chat Em Tempo Real) <br> o segundo projeto que eu criei para entrar no mundo das aplicações em tempo real, com um sistema simples de costumização de cores e tema junto a um sistema de modelação de mensagens e design feito com o figma, as técnologias usadas foram:<br> <span class="projects-span">(html, css, js, sass, ejs, webpack, express, node, express-flash).</span> '
+                this.text = '(Um Chat Em Tempo Real) <br> o segundo projeto que eu criei para entrar no mundo das aplicações em tempo real, com um sistema simples de costumização de cores e tema junto a um sistema de modelação de mensagens e design feito com o figma, as tecnologias usadas foram:<br> <span class="projects-span">(html, css, js, sass, ejs, webpack, express, node, express-flash).</span> '
             }
         },
         Portfolio_data() {
             if (this.Portfolio_data) {
                 this.tittle = 'Master Tem Que Escolher O Nome'
-                this.text = '(Um portfólio de designer) <br> um projeto que fiz focando em animações e efeitos mais dinamicos para aprimororar a experiencia do usuario e praticar a crianção de animação, feito em vue.js com uso de api de envio de emails, além de design feito no figma, as técnologias usadas foram: <br>  <span class="projects-span">(html, css, js, vue.js, vueCli, express, node).</span>'
+                this.text = '(Um portfólio de designer) <br> um projeto que fiz focando em animações e efeitos mais dinamicos para aprimororar a experiencia do usuario e praticar a crianção de animação, feito em vue.js com uso de API de envio de emails, além de design feito no figma, as tecnologias usadas foram: <br>  <span class="projects-span">(html, css, js, vue.js, vueCli, express, node).</span>'
             }
         },
         AMG_data() {
             if (this.AMG_data) {
                 this.tittle = 'Amigitos Spanol Y Sla'
-                this.text = '(Um Site Para Assistir Videos Ao Mesmo Tempo E Doctor Who) <br> Um projeto complexo que utilizei diversas técnologias para cria-lo, não utilizei nenhum design e fiz a mão, usei isso para práticar e concretizar totalmente meus conhecimentos de css para nunca depender de ferramentes de design, os sistemas desse site incluem, sistema de: cadastro, login, sistema de requisição, negação, remoção, adição de amizade em tempo real, gerenciamento de conta feito pelo usuario (editar nome, email, senha, imagem, descrição), recuperação de senha via email e token, upload e conversor de videos, criação de salas para assistir videos sincronizados (tanto videos enviados via upload e tanto videos enviados por link do youtube) e deletamento de tais em tempo real, admistração de salas e gestão de usuarios nas mesmas, player de video, escolher e assistir séries (Doctor Who), chat em tempo real, sincronização de sala, membros e videos e etc... <br> consumindo uma api própria feita em node.js utilizando node, express, fmpeg, multer, aws, mongoDB, Mysql, aws(sdk), socket.io, etc... <br> as técnologias usadas foram: <br> <span class="projects-span">(html, css, js, nuxt, mongoDB, mysql, mysql2, knex, mongoose, node, nodemailer, express, multer, multer-s3, ffmpeg, aws-sdk, bcrypt, jwt, uuid, socket.io, jest).</span><br> também cheguei a usar testes unitários como o jest, porém senti que isso estava deixando mais lento e atrapalhando do que ajudando (para meu nivel quando iniciei), porém após uns 7 meses e o conhecimento e evolução que essa aplicação me forneceu, tornou algo até que trivial eu diria, faria com ele se fosse atualmente'
+                this.text = '(Um Site Para Assistir Videos Ao Mesmo Tempo E Doctor Who) <br> Um projeto complexo que utilizei diversas tecnologias para cria-lo, não utilizei nenhum design e fiz a mão, usei isso para práticar e concretizar totalmente meus conhecimentos de css para nunca depender de ferramentes de design. <br> <br> os sistemas desse site incluem, sistema de: cadastro, login, sistema de requisição, negação, remoção, adição de amizade em tempo real, gerenciamento de conta feito pelo usuario <br> (editar nome, email, senha, imagem, descrição), <br> <br> recuperação de senha via email e token, upload e conversor de videos, criação de salas para assistir videos sincronizados <br> (tanto videos enviados via upload e tanto videos enviados por link do youtube) <br>  <br> e deletamento de tais em tempo real, admistração de salas e gestão de usuarios nas mesmas, player de video, escolher e assistir séries (Doctor Who), chat em tempo real, sincronização de sala, membros e videos e etc... <br> consumindo uma API  própria feita em node.js.  <br> As tecnologias usadas foram: <br> <span class="projects-span">(html, css, js, nuxt, mongoDB, mysql, mysql2, knex, mongoose, node, nodemailer, express, multer, multer-s3, ffmpeg, aws-sdk, bcrypt, jwt, socket.io, jest).</span><br> também cheguei a usar testes unitários como o jest, porém senti que isso estava deixando mais lento e atrapalhando do que ajudando (para meu nivel quando iniciei), porém após uns 7 meses e o conhecimento e evolução que essa aplicação me forneceu, tornou algo até que trivial eu diria, faria com ele se fosse atualmente'
             }
         },
+        GoldenTimes_data(){
+            if(this.GoldenTimes_data){
+                this.tittle = 'Golden Times'
+                this.text = '(Um Site Para Fazer Pesquisa De Locações/Estabelecimentos Que Se Encontram No Google Maps) <br> Um projeto que apliquei o conceito de "tenho um problema, mas eu mesmo posso criar uma solução". Esse projeto surgiu via uma ideia que tive durante um período que oferecia serviços contatando diretamente os clientes, procurava os estabelecimentos manualmente pelo google maps, porém isso demandava tempo e esforço, <br> <br> o cansaço de rolar o scroll para obter mais resultados e as chances da maioria dos resultados não atenderem os requisitos que eu queria eram grandes, então eu mesmo tive a ideia de resolver esse problema criando uma plataforma que trouxesse os locais que eu queria com base nos filtros que eu precisasse e que eu pudesse salvar esses locais, copiar o numero já preparado para o contato e também bloquear locais que já tinham sido escolhidos anteriormente. <br> <br>  Também tive a ideia de fazer um sistema de grupos para que eu e meu sócio designer pudessemos trabalhar juntos para procurar tais locais. Tudo isso, mais uma vez, usando uma API própria. <br> as tecnologias usadas foram:<br> <span class="projects-span">(html, scss, js, vueCli, node, express, mongoDB, mongoose, aws-sdk, bcrypt, jw, nodemailer ).</span> <br> "o projeto realiza apenas uma requisição à API do Google Maps para obter os resultados da pesquisa, enquanto os filtros e a organização são tratados exclusivamente pela minha  API. Não houve necessidade de incorporar API do Google neste projeto."'
+            }
+        }
     }
 }
 </script>
