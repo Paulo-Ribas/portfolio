@@ -63,7 +63,7 @@ export default {
         ChangeText() {
             if (this.countText < 2) {
                 this.tittle = "Sobre Mim"
-                this.text = `Eae! Eu sou Paulo Ribas, um desenvolvedor web com 21 anos de idade. Minha jornada começou aos 17 anos, quando entrei no mundo da programação usando "linguagens" como HTML e CSS. <br>
+                this.text = `Eae! Eu sou Paulo Ribas, um desenvolvedor web com 21 anos de idade. Minha jornada começou aos 17 anos quando entrei no mundo da programação usando "linguagens" como HTML e CSS. <br>
         Com o tempo, Ao longo dos meus 4 anos de jornada no desenvolvimento web, evolui de um iniciante utilizando HTML e CSS para um desenvolvedor completo  que domina JavaScript/Node.js. Em meus projetos recentes, criei soluções personalizadas, desde sistemas de cadastro, login, upload de arquivos, até implementações avançadas de chat em tempo real. Minha abordagem  se reflete na capacidade de adaptar-me a diferentes contextos, colaborando eficazmente com o cliente para atender às suas necessidades específicas.
 
 
